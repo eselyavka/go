@@ -68,3 +68,14 @@ func TestSolution88(t *testing.T) {
 	merge(nums1, m, nums2, n)
 	assert.Equal(nums1, []int{1, 2, 2, 3, 5, 6}, "Solution88")
 }
+
+func TestSolution200(t *testing.T) {
+	assert := assert.New(t)
+	var grid = [][]byte{
+		[]byte("11000"),
+		[]byte("11000"),
+		[]byte("00100"),
+		[]byte("00011")}
+	actual := numIslands(grid)
+	assert.Equal(actual, 3, "Solution200")
+}
