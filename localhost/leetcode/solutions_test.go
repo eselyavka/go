@@ -51,3 +51,10 @@ func TestSolution49(t *testing.T) {
 		assert.True(is_equal, "Solution49")
 	}
 }
+
+func TestSolution1480(t *testing.T) {
+	assert := assert.New(t)
+	var arr = []int{1, 2, 3, 4}
+	actual := runningSum(arr)
+	assert.Equal(actual, []int{1, 3, 6, 10}, "Solution1480")
+}
