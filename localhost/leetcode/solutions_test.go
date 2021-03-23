@@ -86,3 +86,10 @@ func TestSolution121(t *testing.T) {
 	actual := maxProfit(prices)
 	assert.Equal(actual, 5, "Solution121")
 }
+
+func TestSolution53(t *testing.T) {
+	assert := assert.New(t)
+	var nums = []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
+	actual := maxSubArray(nums)
+	assert.Equal(actual, 6, "Solution53")
+}
