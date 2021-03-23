@@ -21,7 +21,7 @@ func TestSolution1(t *testing.T) {
 func TestSolution287(t *testing.T) {
 	assert := assert.New(t)
 
-	var arr = []int{1, 3, 4, 2, 2}
+	var arr = []int{3, 3, 4, 2, 2}
 	actual := findDuplicate(arr)
 
 	assert.Equal(actual, 2, "Solution287")
@@ -78,4 +78,11 @@ func TestSolution200(t *testing.T) {
 		[]byte("00011")}
 	actual := numIslands(grid)
 	assert.Equal(actual, 3, "Solution200")
+}
+
+func TestSolution121(t *testing.T) {
+	assert := assert.New(t)
+	var prices = []int{7, 1, 5, 3, 6, 4}
+	actual := maxProfit(prices)
+	assert.Equal(actual, 5, "Solution121")
 }
