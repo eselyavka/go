@@ -93,3 +93,9 @@ func TestSolution53(t *testing.T) {
 	actual := maxSubArray(nums)
 	assert.Equal(actual, 6, "Solution53")
 }
+
+func TestSolution70(t *testing.T) {
+	assert := assert.New(t)
+	actual := climbStairs(4)
+	assert.Equal(actual, 5, "Solution70")
+}
