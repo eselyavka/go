@@ -99,3 +99,10 @@ func TestSolution70(t *testing.T) {
 	actual := climbStairs(4)
 	assert.Equal(actual, 5, "Solution70")
 }
+
+func TestSolution118(t *testing.T) {
+	assert := assert.New(t)
+	actual := generate(5)
+	var triangle = [][]int{{1}, {1, 1}, {1, 2, 1}, {1, 3, 3, 1}, {1, 4, 6, 4, 1}}
+	assert.Equal(actual, triangle, "Solution70")
+}
