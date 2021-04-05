@@ -103,6 +103,13 @@ func TestSolution70(t *testing.T) {
 func TestSolution118(t *testing.T) {
 	assert := assert.New(t)
 	actual := generate(5)
-	var triangle = [][]int{{1}, {1, 1}, {1, 2, 1}, {1, 3, 3, 1}, {1, 4, 6, 4, 1}}
-	assert.Equal(actual, triangle, "Solution70")
+	var expected = [][]int{{1}, {1, 1}, {1, 2, 1}, {1, 3, 3, 1}, {1, 4, 6, 4, 1}}
+	assert.Equal(actual, expected, "Solution118")
+}
+
+func TestSolution66(t *testing.T) {
+	assert := assert.New(t)
+	actual := plusOne([]int{9, 9, 9})
+	var expected = []int{1, 0, 0, 0}
+	assert.Equal(actual, expected, "Solution66")
 }
