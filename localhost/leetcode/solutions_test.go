@@ -113,3 +113,10 @@ func TestSolution66(t *testing.T) {
 	var expected = []int{1, 0, 0, 0}
 	assert.Equal(actual, expected, "Solution66")
 }
+
+func TestSolution26(t *testing.T) {
+	assert := assert.New(t)
+	actual := []int{1, 1, 2}
+	res := removeDuplicates(actual)
+	assert.Equal(res, 2, "Solution26")
+}
