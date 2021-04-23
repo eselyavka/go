@@ -120,3 +120,14 @@ func TestSolution26(t *testing.T) {
 	res := removeDuplicates(actual)
 	assert.Equal(res, 2, "Solution26")
 }
+
+func TestSolution1457(t *testing.T) {
+	assert := assert.New(t)
+	root := TreeNode{Val: 2, Left: nil, Right: nil}
+	root.Left = &TreeNode{Val: 3, Left: nil, Right: nil}
+	root.Left.Left = &TreeNode{3, nil, nil}
+	root.Left.Right = &TreeNode{1, nil, nil}
+	root.Right = &TreeNode{1, nil, nil}
+	root.Right.Right = &TreeNode{1, nil, nil}
+	assert.Equal(pseudoPalindromicPaths(&root), 2, "Solution1457")
+}
