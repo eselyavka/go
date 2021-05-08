@@ -131,3 +131,10 @@ func TestSolution1457(t *testing.T) {
 	root.Right.Right = &TreeNode{1, nil, nil}
 	assert.Equal(pseudoPalindromicPaths(&root), 2, "Solution1457")
 }
+
+func TestSolution169(t *testing.T) {
+	assert := assert.New(t)
+	actual := []int{3, 2, 3}
+	res := majorityElement(actual)
+	assert.Equal(res, 3, "Solution169")
+}
