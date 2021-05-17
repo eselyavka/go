@@ -138,3 +138,9 @@ func TestSolution169(t *testing.T) {
 	res := majorityElement(actual)
 	assert.Equal(res, 3, "Solution169")
 }
+
+func TestSolution844(t *testing.T) {
+	assert := assert.New(t)
+	res := backspaceCompare("ab#c", "ad#c")
+	assert.True(res, "Solution844")
+}
