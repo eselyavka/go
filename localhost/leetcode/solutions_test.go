@@ -144,3 +144,11 @@ func TestSolution844(t *testing.T) {
 	res := backspaceCompare("ab#c", "ad#c")
 	assert.True(res, "Solution844")
 }
+
+func TestSolution48(t *testing.T) {
+	assert := assert.New(t)
+	actual := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	expected := [][]int{{7, 4, 1}, {8, 5, 2}, {9, 6, 3}}
+	rotate(actual)
+	assert.Equal(actual, expected, "Solution48")
+}
