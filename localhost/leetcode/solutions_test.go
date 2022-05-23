@@ -163,3 +163,9 @@ func TestSolution938(t *testing.T) {
 	root.Right.Right = &TreeNode{18, nil, nil}
 	assert.Equal(rangeSumBST(&root, 7, 15), 32, "Solution938")
 }
+
+func TestSolution680(t *testing.T) {
+	assert := assert.New(t)
+	res := validPalindrome("abca")
+	assert.True(res, "Solution680")
+}
