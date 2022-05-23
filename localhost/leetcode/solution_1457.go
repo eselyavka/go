@@ -1,11 +1,5 @@
 package solutions
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func pseudoPalindromicPaths(root *TreeNode) int {
 	s := make(map[int]struct{})
 	res := rec(root, s)
