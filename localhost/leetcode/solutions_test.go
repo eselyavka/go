@@ -169,3 +169,9 @@ func TestSolution680(t *testing.T) {
 	res := validPalindrome("abca")
 	assert.True(res, "Solution680")
 }
+
+func TestSolution1249(t *testing.T) {
+	assert := assert.New(t)
+	res := minRemoveToMakeValid("lee(t(c)o)de)")
+	assert.Equal(res, "lee(t(c)o)de", "Solution1249")
+}
