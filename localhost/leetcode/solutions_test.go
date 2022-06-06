@@ -175,3 +175,10 @@ func TestSolution1249(t *testing.T) {
 	res := minRemoveToMakeValid("lee(t(c)o)de)")
 	assert.Equal(res, "lee(t(c)o)de", "Solution1249")
 }
+
+func TestSolution1762(t *testing.T) {
+	assert := assert.New(t)
+	expected := []int{0, 2, 3}
+	res := findBuildings([]int{4, 2, 3, 1})
+	assert.Equal(res, expected, "Solution1762")
+}
