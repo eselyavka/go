@@ -182,3 +182,9 @@ func TestSolution1762(t *testing.T) {
 	res := findBuildings([]int{4, 2, 3, 1})
 	assert.Equal(res, expected, "Solution1762")
 }
+
+func TestSolution408(t *testing.T) {
+	assert := assert.New(t)
+	res := validWordAbbreviation("internationalization", "i12ip4n")
+	assert.False(res, "Solution408")
+}
