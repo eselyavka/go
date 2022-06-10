@@ -5,3 +5,7 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
+type SparseVector struct {
+	storage map[int]int
+}

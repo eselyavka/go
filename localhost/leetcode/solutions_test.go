@@ -188,3 +188,11 @@ func TestSolution408(t *testing.T) {
 	res := validWordAbbreviation("internationalization", "i12ip4n")
 	assert.False(res, "Solution408")
 }
+
+func TestSolution1570(t *testing.T) {
+	assert := assert.New(t)
+	v1 := Constructor([]int{1, 0, 0, 2, 3})
+	v2 := Constructor([]int{0, 3, 0, 4, 0})
+	res := v1.dotProduct(v2)
+	assert.Equal(res, 8, "Solution1570")
+}
