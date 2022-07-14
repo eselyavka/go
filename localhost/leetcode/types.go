@@ -9,3 +9,10 @@ type TreeNode struct {
 type SparseVector struct {
 	storage map[int]int
 }
+
+type Node struct {
+	Val int
+	Left *Node
+	Right *Node
+	Parent *Node
+}
