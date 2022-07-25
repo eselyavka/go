@@ -11,8 +11,13 @@ type SparseVector struct {
 }
 
 type Node struct {
-	Val int
-	Left *Node
-	Right *Node
+	Val    int
+	Left   *Node
+	Right  *Node
 	Parent *Node
+}
+
+type tuple struct {
+	node *TreeNode
+	col  int
 }
