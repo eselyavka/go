@@ -244,3 +244,12 @@ func TestSolution198(t *testing.T) {
 	res := rob([]int{2, 7, 9, 3, 1})
 	assert.Equal(res, 12, "Solution198")
 }
+
+func TestSolution94(t *testing.T) {
+	assert := assert.New(t)
+	root := TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Right = &TreeNode{Val: 2, Left: nil, Right: nil}
+	root.Right.Left = &TreeNode{Val: 3, Left: nil, Right: nil}
+
+	assert.Equal(inorderTraversal(&root), []int{1, 3, 2}, "Solution94")
+}
