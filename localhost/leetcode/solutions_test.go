@@ -227,3 +227,14 @@ func TestSolution314(t *testing.T) {
 
 	assert.Equal(verticalOrder(&root), [][]int{{4}, {9}, {3, 0, 1}, {8}, {7}}, "Solution314")
 }
+
+func TestSolution876(t *testing.T) {
+	assert := assert.New(t)
+	head := ListNode{Val: 1, Next: nil}
+	head.Next = &ListNode{Val: 2, Next: nil}
+	head.Next.Next = &ListNode{Val: 3, Next: nil}
+	head.Next.Next.Next = &ListNode{Val: 4, Next: nil}
+	head.Next.Next.Next.Next = &ListNode{Val: 5, Next: nil}
+
+	assert.Equal(middleNode(&head), head.Next.Next, "Solution876")
+}

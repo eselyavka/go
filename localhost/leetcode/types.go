@@ -21,3 +21,8 @@ type tuple struct {
 	node *TreeNode
 	col  int
 }
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
