@@ -238,3 +238,9 @@ func TestSolution876(t *testing.T) {
 
 	assert.Equal(middleNode(&head), head.Next.Next, "Solution876")
 }
+
+func TestSolution198(t *testing.T) {
+	assert := assert.New(t)
+	res := rob([]int{2, 7, 9, 3, 1})
+	assert.Equal(res, 12, "Solution198")
+}
