@@ -274,3 +274,10 @@ func TestSolution114(t *testing.T) {
 
 	assert.Equal(res, []int{1, 2, 3, 4, 5, 6}, "Solution114")
 }
+
+func TestSolution249(t *testing.T) {
+	assert := assert.New(t)
+	res := groupStrings([]string{"abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"})
+	expected := [][]string{{"a", "z"}, {"abc", "bcd", "xyz"}, {"az", "ba"}, {"acef"}}
+	assert.Equal(len(res), len(expected), "Solution249")
+}
