@@ -191,8 +191,8 @@ func TestSolution408(t *testing.T) {
 
 func TestSolution1570(t *testing.T) {
 	assert := assert.New(t)
-	v1 := Constructor([]int{1, 0, 0, 2, 3})
-	v2 := Constructor([]int{0, 3, 0, 4, 0})
+	v1 := ConstructorSparseVector([]int{1, 0, 0, 2, 3})
+	v2 := ConstructorSparseVector([]int{0, 3, 0, 4, 0})
 	res := v1.dotProduct(v2)
 	assert.Equal(res, 8, "Solution1570")
 }
@@ -292,4 +292,20 @@ func TestSolution249(t *testing.T) {
 		array_equals = append(array_equals, exists)
 	}
 	assert.Equal(array_equals, []bool{true, true, true, true})
+}
+
+func TestSolution528(t *testing.T) {
+	assert := assert.New(t)
+	obj := ConstructorPickIndex([]int{1, 3})
+	actual := make([]int, 0)
+	expected := []int{0, 1, 1, 1, 1}
+	for intSliceEqual(actual, expected) != true {
+		actual = make([]int, 0)
+		for i := 0; i < 5; i++ {
+			actual = append(actual, obj.PickIndex())
+		}
+
+	}
+
+	assert.Equal(actual, expected, "Solution528")
 }

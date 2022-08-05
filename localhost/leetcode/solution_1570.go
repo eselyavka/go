@@ -1,6 +1,6 @@
 package solutions
 
-func Constructor(nums []int) SparseVector {
+func ConstructorSparseVector(nums []int) SparseVector {
 	vector := SparseVector{}
 	vector.storage = make(map[int]int)
 

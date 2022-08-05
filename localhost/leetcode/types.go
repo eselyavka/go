@@ -26,3 +26,8 @@ type ListNode struct {
 	Val  int
 	Next *ListNode
 }
+
+type PickIdx struct {
+	prefix_sum []int
+	total_sum  int
+}
