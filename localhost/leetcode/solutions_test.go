@@ -333,3 +333,9 @@ func TestSolution426(t *testing.T) {
 
 	assert.Equal(actual, []int{1, 2, 3, 4, 5}, "Solution426")
 }
+
+func TestSolution1091(t *testing.T) {
+	assert := assert.New(t)
+	res := shortestPathBinaryMatrix([][]int{{0, 1}, {1, 0}})
+	assert.Equal(res, 2, "Solution1091")
+}
