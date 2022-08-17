@@ -339,3 +339,9 @@ func TestSolution1091(t *testing.T) {
 	res := shortestPathBinaryMatrix([][]int{{0, 1}, {1, 0}})
 	assert.Equal(res, 2, "Solution1091")
 }
+
+func TestSolution498(t *testing.T) {
+	assert := assert.New(t)
+	res := findDiagonalOrder([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})
+	assert.Equal(res, []int{1, 2, 4, 7, 5, 3, 6, 8, 9}, "Solution498")
+}

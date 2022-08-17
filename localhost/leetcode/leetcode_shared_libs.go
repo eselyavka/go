@@ -47,3 +47,13 @@ func intSliceEqual(a, b []int) bool {
 
 	return true
 }
+
+func Reverse(input []int) []int {
+	var output []int
+
+	for i := len(input) - 1; i >= 0; i-- {
+		output = append(output, input[i])
+	}
+
+	return output
+}
