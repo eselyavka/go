@@ -57,3 +57,12 @@ func Reverse(input []int) []int {
 
 	return output
 }
+
+func sum(array []int) int {
+	result := 0
+	for _, v := range array {
+		result += v
+	}
+
+	return result
+}

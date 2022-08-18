@@ -345,3 +345,9 @@ func TestSolution498(t *testing.T) {
 	res := findDiagonalOrder([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})
 	assert.Equal(res, []int{1, 2, 4, 7, 5, 3, 6, 8, 9}, "Solution498")
 }
+
+func TestSolution227(t *testing.T) {
+	assert := assert.New(t)
+	res := calculate("14-3/2")
+	assert.Equal(res, 13, "Solution227")
+}
