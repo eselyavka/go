@@ -375,3 +375,9 @@ func TestSolution708(t *testing.T) {
 
 	assert.Equal(acc, []int{3, 4, 1, 2}, "Solution708")
 }
+
+func TestSolution3(t *testing.T) {
+	assert := assert.New(t)
+	res := lengthOfLongestSubstring("abcabcbb")
+	assert.Equal(res, 3, "Solution3")
+}
