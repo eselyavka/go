@@ -381,3 +381,21 @@ func TestSolution3(t *testing.T) {
 	res := lengthOfLongestSubstring("abcabcbb")
 	assert.Equal(res, 3, "Solution3")
 }
+
+func TestSolution2(t *testing.T) {
+	assert := assert.New(t)
+	l1 := ListNode{Val: 2, Next: nil}
+	l1.Next = &ListNode{Val: 4, Next: nil}
+	l1.Next.Next = &ListNode{Val: 3, Next: nil}
+
+	l2 := ListNode{Val: 5, Next: nil}
+	l2.Next = &ListNode{Val: 6, Next: nil}
+	l2.Next.Next = &ListNode{Val: 4, Next: nil}
+
+	ans := addTwoNumbers(&l1, &l2)
+
+	assert.Equal(ans.Val, 7, "Solution2")
+	assert.Equal(ans.Next.Val, 0, "Solution2")
+	assert.Equal(ans.Next.Next.Val, 8, "Solution2")
+	assert.Nil(ans.Next.Next.Next)
+}
