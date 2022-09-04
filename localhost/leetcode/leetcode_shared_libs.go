@@ -66,3 +66,14 @@ func sum(array []int) int {
 
 	return result
 }
+
+func isPalindrome(s string, l int, r int) bool {
+	for l < r {
+		if s[l] != s[r] {
+			return false
+		}
+		l += 1
+		r -= 1
+	}
+	return true
+}

@@ -399,3 +399,9 @@ func TestSolution2(t *testing.T) {
 	assert.Equal(ans.Next.Next.Val, 8, "Solution2")
 	assert.Nil(ans.Next.Next.Next)
 }
+
+func TestSolution5(t *testing.T) {
+	assert := assert.New(t)
+	res := longestPalindrome("babad")
+	assert.Equal(res, "bab", "Solution5")
+}
