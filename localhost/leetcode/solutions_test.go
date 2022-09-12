@@ -405,3 +405,9 @@ func TestSolution5(t *testing.T) {
 	res := longestPalindrome("babad")
 	assert.Equal(res, "bab", "Solution5")
 }
+
+func TestSolution4(t *testing.T) {
+	assert := assert.New(t)
+	res := findMedianSortedArrays([]int{1, 2}, []int{3})
+	assert.Equal(res, 2.0, "Solution4")
+}
