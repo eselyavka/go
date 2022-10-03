@@ -411,3 +411,9 @@ func TestSolution4(t *testing.T) {
 	res := findMedianSortedArrays([]int{1, 2}, []int{3})
 	assert.Equal(res, 2.0, "Solution4")
 }
+
+func TestSolution238(t *testing.T) {
+	assert := assert.New(t)
+	res := productExceptSelf([]int{1, 2, 3, 4})
+	assert.Equal(res, []int{24, 12, 8, 6}, "Solution238")
+}
