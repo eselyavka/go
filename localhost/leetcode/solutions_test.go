@@ -426,3 +426,9 @@ func TestSolution271(t *testing.T) {
 	decode := codec.Decode(encode)
 	assert.Equal(decode, strs, "Solution271")
 }
+
+func TestSolution128(t *testing.T) {
+	assert := assert.New(t)
+	res := longestConsecutive([]int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1})
+	assert.Equal(res, 9, "Solution128")
+}
