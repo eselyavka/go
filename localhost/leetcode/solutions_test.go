@@ -417,3 +417,12 @@ func TestSolution238(t *testing.T) {
 	res := productExceptSelf([]int{1, 2, 3, 4})
 	assert.Equal(res, []int{24, 12, 8, 6}, "Solution238")
 }
+
+func TestSolution271(t *testing.T) {
+	assert := assert.New(t)
+	var strs = []string{"Hello", "world"}
+	var codec Codec
+	encode := codec.Encode(strs)
+	decode := codec.Decode(encode)
+	assert.Equal(decode, strs, "Solution271")
+}
