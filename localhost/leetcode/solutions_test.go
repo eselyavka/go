@@ -432,3 +432,9 @@ func TestSolution128(t *testing.T) {
 	res := longestConsecutive([]int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1})
 	assert.Equal(res, 9, "Solution128")
 }
+
+func TestSolution15(t *testing.T) {
+	assert := assert.New(t)
+	res := threeSum([]int{-1, 0, 1, 2, -1, -4})
+	assert.Equal(res, [][]int{{-1, 0, 1}, {-1, -1, 2}}, "Solution15")
+}

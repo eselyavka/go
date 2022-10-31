@@ -22,6 +22,12 @@ type tuple struct {
 	col  int
 }
 
+type tuple3 struct {
+	num1 int
+	num2 int
+	num3 int
+}
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
