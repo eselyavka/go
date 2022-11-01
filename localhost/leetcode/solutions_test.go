@@ -438,3 +438,9 @@ func TestSolution15(t *testing.T) {
 	res := threeSum([]int{-1, 0, 1, 2, -1, -4})
 	assert.Equal(res, [][]int{{-1, 0, 1}, {-1, -1, 2}}, "Solution15")
 }
+
+func TestSolution11(t *testing.T) {
+	assert := assert.New(t)
+	res := maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7})
+	assert.Equal(res, 49, "Solution11")
+}
