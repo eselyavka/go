@@ -444,3 +444,9 @@ func TestSolution11(t *testing.T) {
 	res := maxArea([]int{1, 8, 6, 2, 5, 4, 8, 3, 7})
 	assert.Equal(res, 49, "Solution11")
 }
+
+func TestSolution424(t *testing.T) {
+	assert := assert.New(t)
+	res := characterReplacement("AABABBA", 1)
+	assert.Equal(res, 4, "Solution424")
+}
