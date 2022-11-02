@@ -456,3 +456,9 @@ func TestSolution20(t *testing.T) {
 	res := isValid("()")
 	assert.Equal(res, true, "Solution20")
 }
+
+func TestSolution76(t *testing.T) {
+	assert := assert.New(t)
+	res := minWindow("ADOBECODEBANC", "ABC")
+	assert.Equal(res, "BANC", "Solution76")
+}

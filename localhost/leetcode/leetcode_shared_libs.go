@@ -1,6 +1,6 @@
 package solutions
 
-func MaxInt(nums []int) int {
+func MaxInts(nums []int) int {
 	if len(nums) == 0 {
 		return -1
 	}

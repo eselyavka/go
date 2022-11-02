@@ -13,7 +13,7 @@ func lengthOfLongestSubstring(s string) int {
 	buf := 0
 	for i < len(s) {
 		if _, ok := seen[s[i]]; ok {
-			res = MaxInt([]int{res, buf})
+			res = MaxInts([]int{res, buf})
 			i = j
 			j++
 			buf = 0
@@ -25,5 +25,5 @@ func lengthOfLongestSubstring(s string) int {
 		}
 	}
 
-	return MaxInt([]int{res, buf})
+	return MaxInts([]int{res, buf})
 }

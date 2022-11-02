@@ -17,7 +17,7 @@ func characterReplacement(s string, k int) int {
 			seen[rune(s[l])]--
 			l++
 		}
-		ans = MaxInt([]int{ans, r - l + 1})
+		ans = MaxInts([]int{ans, r - l + 1})
 	}
 
 	return ans

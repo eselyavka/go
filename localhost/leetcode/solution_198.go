@@ -6,7 +6,7 @@ func rob(nums []int) int {
 	}
 
 	if len(nums) == 2 {
-		return MaxInt(nums)
+		return MaxInts(nums)
 	}
 
 	dp := make([]int, len(nums))
