@@ -450,3 +450,9 @@ func TestSolution424(t *testing.T) {
 	res := characterReplacement("AABABBA", 1)
 	assert.Equal(res, 4, "Solution424")
 }
+
+func TestSolution20(t *testing.T) {
+	assert := assert.New(t)
+	res := isValid("()")
+	assert.Equal(res, true, "Solution20")
+}
