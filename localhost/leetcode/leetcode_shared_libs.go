@@ -103,3 +103,32 @@ func binarySearch(l int, r int, nums []int, target int) int {
 
 	return binarySearch(l, mid-1, nums, target)
 }
+
+func binarySearchMin(l, r int, nums []int) int {
+	mid := (l + r) / 2
+
+	elem := nums[mid]
+	var idx_left, idx_right int
+
+	if mid-1 < 0 {
+		idx_left = len(nums) - 1
+	} else {
+		idx_left = mid - 1
+	}
+
+	if mid+1 == len(nums) {
+		idx_right = 0
+	} else {
+		idx_right = mid + 1
+	}
+
+	if nums[idx_left] > elem && nums[idx_right] > elem {
+		return elem
+	}
+
+	if nums[r] <= elem {
+		return binarySearchMin(mid+1, r, nums)
+	} else {
+		return binarySearchMin(l, mid-1, nums)
+	}
+}

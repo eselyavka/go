@@ -470,3 +470,11 @@ func TestSolution33(t *testing.T) {
 	res = search([]int{1, 2, 3, 4, 5, 6, 7}, 3)
 	assert.Equal(res, 2, "Solution33")
 }
+
+func TestSolution153(t *testing.T) {
+	assert := assert.New(t)
+	res := findMin([]int{4, 5, 6, 7, 0, 1, 2})
+	assert.Equal(res, 0, "Solution153")
+	res = findMin([]int{1, 2, 3, 4, 5, 6, 7})
+	assert.Equal(res, 1, "Solution153")
+}
