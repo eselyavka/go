@@ -77,3 +77,29 @@ func isPalindrome(s string, l int, r int) bool {
 	}
 	return true
 }
+
+func binarySearch(l int, r int, nums []int, target int) int {
+	if l > r {
+		return -1
+	}
+
+	mid := (l + r) / 2
+
+	if nums[mid] == target {
+		return mid
+	}
+
+	if nums[l] <= nums[mid] {
+		if nums[l] <= target && nums[mid] >= target {
+			return binarySearch(l, mid-1, nums, target)
+		}
+
+		return binarySearch(mid+1, r, nums, target)
+	}
+
+	if nums[mid] < target && nums[r] >= target {
+		return binarySearch(mid+1, r, nums, target)
+	}
+
+	return binarySearch(l, mid-1, nums, target)
+}
