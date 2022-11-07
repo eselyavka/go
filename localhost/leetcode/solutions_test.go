@@ -496,3 +496,22 @@ func TestSolution206(t *testing.T) {
 
 	assert.Equal([]int{5, 4, 3, 2, 1}, actual, "Solution206")
 }
+
+func TestSolution21(t *testing.T) {
+	assert := assert.New(t)
+	l1 := ListNode{Val: 1, Next: nil}
+	l1.Next = &ListNode{Val: 2, Next: nil}
+	l1.Next.Next = &ListNode{Val: 4, Next: nil}
+	l2 := ListNode{Val: 1, Next: nil}
+	l2.Next = &ListNode{Val: 3, Next: nil}
+	l2.Next.Next = &ListNode{Val: 4, Next: nil}
+
+	res := mergeTwoLists(&l1, &l2)
+	actual := make([]int, 0)
+	for res != nil {
+		actual = append(actual, res.Val)
+		res = res.Next
+	}
+
+	assert.Equal([]int{1, 1, 2, 3, 4, 4}, actual, "Solution21")
+}
