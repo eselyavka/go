@@ -478,3 +478,21 @@ func TestSolution153(t *testing.T) {
 	res = findMin([]int{1, 2, 3, 4, 5, 6, 7})
 	assert.Equal(res, 1, "Solution153")
 }
+
+func TestSolution206(t *testing.T) {
+	assert := assert.New(t)
+	l1 := ListNode{Val: 1, Next: nil}
+	l1.Next = &ListNode{Val: 2, Next: nil}
+	l1.Next.Next = &ListNode{Val: 3, Next: nil}
+	l1.Next.Next.Next = &ListNode{Val: 4, Next: nil}
+	l1.Next.Next.Next.Next = &ListNode{Val: 5, Next: nil}
+
+	res := reverseList(&l1)
+	actual := make([]int, 0)
+	for res != nil {
+		actual = append(actual, res.Val)
+		res = res.Next
+	}
+
+	assert.Equal([]int{5, 4, 3, 2, 1}, actual, "Solution206")
+}
