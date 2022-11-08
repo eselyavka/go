@@ -132,3 +132,14 @@ func binarySearchMin(l, r int, nums []int) int {
 		return binarySearchMin(l, mid-1, nums)
 	}
 }
+
+func initLinkedList(nums []int) *ListNode {
+	head := &ListNode{Val: -1, Next: nil}
+	tail := head
+
+	for _, num := range nums {
+		tail.Next = &ListNode{Val: num, Next: nil}
+		tail = tail.Next
+	}
+	return head.Next
+}

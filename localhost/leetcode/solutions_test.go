@@ -384,15 +384,10 @@ func TestSolution3(t *testing.T) {
 
 func TestSolution2(t *testing.T) {
 	assert := assert.New(t)
-	l1 := ListNode{Val: 2, Next: nil}
-	l1.Next = &ListNode{Val: 4, Next: nil}
-	l1.Next.Next = &ListNode{Val: 3, Next: nil}
+	l1 := initLinkedList([]int{2, 4, 3})
+	l2 := initLinkedList([]int{5, 6, 4})
 
-	l2 := ListNode{Val: 5, Next: nil}
-	l2.Next = &ListNode{Val: 6, Next: nil}
-	l2.Next.Next = &ListNode{Val: 4, Next: nil}
-
-	ans := addTwoNumbers(&l1, &l2)
+	ans := addTwoNumbers(l1, l2)
 
 	assert.Equal(ans.Val, 7, "Solution2")
 	assert.Equal(ans.Next.Val, 0, "Solution2")
@@ -481,13 +476,9 @@ func TestSolution153(t *testing.T) {
 
 func TestSolution206(t *testing.T) {
 	assert := assert.New(t)
-	l1 := ListNode{Val: 1, Next: nil}
-	l1.Next = &ListNode{Val: 2, Next: nil}
-	l1.Next.Next = &ListNode{Val: 3, Next: nil}
-	l1.Next.Next.Next = &ListNode{Val: 4, Next: nil}
-	l1.Next.Next.Next.Next = &ListNode{Val: 5, Next: nil}
+	l1 := initLinkedList([]int{1, 2, 3, 4, 5})
 
-	res := reverseList(&l1)
+	res := reverseList(l1)
 	actual := make([]int, 0)
 	for res != nil {
 		actual = append(actual, res.Val)
@@ -499,14 +490,10 @@ func TestSolution206(t *testing.T) {
 
 func TestSolution21(t *testing.T) {
 	assert := assert.New(t)
-	l1 := ListNode{Val: 1, Next: nil}
-	l1.Next = &ListNode{Val: 2, Next: nil}
-	l1.Next.Next = &ListNode{Val: 4, Next: nil}
-	l2 := ListNode{Val: 1, Next: nil}
-	l2.Next = &ListNode{Val: 3, Next: nil}
-	l2.Next.Next = &ListNode{Val: 4, Next: nil}
+	l1 := initLinkedList([]int{1, 2, 4})
+	l2 := initLinkedList([]int{1, 3, 4})
 
-	res := mergeTwoLists(&l1, &l2)
+	res := mergeTwoLists(l1, l2)
 	actual := make([]int, 0)
 	for res != nil {
 		actual = append(actual, res.Val)
@@ -518,14 +505,20 @@ func TestSolution21(t *testing.T) {
 
 func TestSolution19(t *testing.T) {
 	assert := assert.New(t)
-	l1 := ListNode{Val: 1, Next: nil}
-	l1.Next = &ListNode{Val: 2, Next: nil}
-	l1.Next.Next = &ListNode{Val: 3, Next: nil}
-	l1.Next.Next.Next = &ListNode{Val: 4, Next: nil}
-	l1.Next.Next.Next.Next = &ListNode{Val: 5, Next: nil}
+	l1 := initLinkedList([]int{1, 2, 3, 4, 5})
 
-	res := removeNthFromEnd(&l1, 2)
+	res := removeNthFromEnd(l1, 2)
 	actual := make([]int, 0)
+	for res != nil {
+		actual = append(actual, res.Val)
+		res = res.Next
+	}
+
+	assert.Equal([]int{1, 2, 3, 5}, actual, "Solution19")
+
+	l2 := initLinkedList([]int{1, 2, 3, 4, 5})
+	res = removeNthFromEndFast(l2, 2)
+	actual = make([]int, 0)
 	for res != nil {
 		actual = append(actual, res.Val)
 		res = res.Next
