@@ -515,3 +515,21 @@ func TestSolution21(t *testing.T) {
 
 	assert.Equal([]int{1, 1, 2, 3, 4, 4}, actual, "Solution21")
 }
+
+func TestSolution19(t *testing.T) {
+	assert := assert.New(t)
+	l1 := ListNode{Val: 1, Next: nil}
+	l1.Next = &ListNode{Val: 2, Next: nil}
+	l1.Next.Next = &ListNode{Val: 3, Next: nil}
+	l1.Next.Next.Next = &ListNode{Val: 4, Next: nil}
+	l1.Next.Next.Next.Next = &ListNode{Val: 5, Next: nil}
+
+	res := removeNthFromEnd(&l1, 2)
+	actual := make([]int, 0)
+	for res != nil {
+		actual = append(actual, res.Val)
+		res = res.Next
+	}
+
+	assert.Equal([]int{1, 2, 3, 5}, actual, "Solution19")
+}
