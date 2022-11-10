@@ -34,31 +34,6 @@ func reorderList(head *ListNode) {
 	}
 }
 
-/*
-   arr = []
-
-   it = head
-
-   while it:
-       arr.append(it.val)
-       it = it.next
-
-   l = 0
-   r = len(arr) - 1
-
-   ans = head
-   i=0
-   while ans:
-       if i % 2 == 0:
-           ans.val = arr[l]
-           l +=1
-       else:
-           ans.val = arr[r]
-           r -= 1
-       i+=1
-       ans = ans.next
-   return head
-*/
 func reorderListMem(head *ListNode) {
 	arr := make([]int, 0)
 	it := head

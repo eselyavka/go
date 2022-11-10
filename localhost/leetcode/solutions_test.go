@@ -550,3 +550,15 @@ func TestSolution143(t *testing.T) {
 
 	assert.Equal([]int{1, 5, 2, 4, 3}, actual, "Solution143")
 }
+
+func TestSolution141(t *testing.T) {
+	assert := assert.New(t)
+	l1 := initLinkedList([]int{1, 2, 3})
+
+	l1.Next.Next.Next = l1
+
+	actual := hasCycle(l1)
+
+	assert.True(actual, "Solution143")
+
+}
