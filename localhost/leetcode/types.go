@@ -22,6 +22,11 @@ type tuple struct {
 	col  int
 }
 
+type tupleInt struct {
+	row int
+	col int
+}
+
 type tuple3 struct {
 	num1 int
 	num2 int

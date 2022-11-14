@@ -143,3 +143,10 @@ func initLinkedList(nums []int) *ListNode {
 	}
 	return head.Next
 }
+
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
