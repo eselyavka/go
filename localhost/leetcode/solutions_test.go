@@ -431,7 +431,21 @@ func TestSolution128(t *testing.T) {
 func TestSolution15(t *testing.T) {
 	assert := assert.New(t)
 	res := threeSum([]int{-1, 0, 1, 2, -1, -4})
-	assert.Equal(res, [][]int{{-1, 0, 1}, {-1, -1, 2}}, "Solution15")
+	ans := make([]bool, 0)
+
+	for _, arr := range res {
+		if intSliceEqual(arr, []int{-1, 0, 1}) {
+			ans = append(ans, true)
+			continue
+		}
+
+		if intSliceEqual(arr, []int{-1, -1, 2}) {
+			ans = append(ans, true)
+			continue
+		}
+	}
+
+	assert.Equal([]bool{true, true}, ans, "Solution15")
 }
 
 func TestSolution11(t *testing.T) {
@@ -584,4 +598,38 @@ func TestSolution1631(t *testing.T) {
 	actual := minimumEffortPath([][]int{{1, 2, 2}, {3, 8, 2}, {5, 3, 5}})
 
 	assert.Equal(2, actual, "Solution1631")
+}
+
+func TestSolution226(t *testing.T) {
+	assert := assert.New(t)
+
+	root := TreeNode{Val: 4, Left: nil, Right: nil}
+	root.Left = &TreeNode{Val: 2, Left: nil, Right: nil}
+	root.Left.Left = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left.Right = &TreeNode{Val: 3, Left: nil, Right: nil}
+	root.Right = &TreeNode{Val: 7, Left: nil, Right: nil}
+	root.Right.Left = &TreeNode{Val: 6, Left: nil, Right: nil}
+	root.Right.Right = &TreeNode{Val: 9, Left: nil, Right: nil}
+
+	curr := invertTree(&root)
+
+	q := make([]*TreeNode, 0)
+	q = append(q, curr)
+	var node *TreeNode
+	actual := make([]int, 0)
+
+	for len(q) > 0 {
+		node = q[0]
+		actual = append(actual, node.Val)
+		q = q[1:]
+		if node.Left != nil {
+			q = append(q, node.Left)
+		}
+
+		if node.Right != nil {
+			q = append(q, node.Right)
+		}
+	}
+
+	assert.Equal([]int{4, 7, 2, 9, 6, 3, 1}, actual, "Solution226")
 }
