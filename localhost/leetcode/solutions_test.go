@@ -633,3 +633,23 @@ func TestSolution226(t *testing.T) {
 
 	assert.Equal([]int{4, 7, 2, 9, 6, 3, 1}, actual, "Solution226")
 }
+
+func TestSolution23(t *testing.T) {
+	assert := assert.New(t)
+	l1 := initLinkedList([]int{1, 4, 5})
+	l2 := initLinkedList([]int{1, 3, 4})
+	l3 := initLinkedList([]int{2, 6})
+
+	lists := []*ListNode{l1, l2, l3}
+
+	ans := mergeKLists(lists)
+
+	actual := make([]int, 0)
+	for ans != nil {
+		actual = append(actual, ans.Val)
+		ans = ans.Next
+	}
+
+	assert.Equal([]int{1, 1, 2, 3, 4, 4, 5, 6}, actual, "Solution23")
+
+}
