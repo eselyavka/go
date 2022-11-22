@@ -10,12 +10,8 @@ func maxSubArray(nums []int) int {
 	max_so_far := math.MinInt64
 	for _, num := range nums {
 		max_ending_here += num
-		if max_ending_here > max_so_far {
-			max_so_far = max_ending_here
-		}
-		if max_ending_here < 0 {
-			max_ending_here = 0
-		}
+		max_so_far = MaxInts([]int{max_so_far, max_ending_here})
+		max_ending_here = MaxInts([]int{max_ending_here, 0})
 	}
 	return int(max_so_far)
 }
