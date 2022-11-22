@@ -754,3 +754,9 @@ func TestSolution102(t *testing.T) {
 
 	assert.Equal([][]int{{6}, {2, 8}, {0, 4, 7, 9}, {3, 5}}, actual, "Solution102")
 }
+
+func TestSolution213(t *testing.T) {
+	assert := assert.New(t)
+	res := rob2([]int{1, 2, 3, 1})
+	assert.Equal(res, 4, "Solution213")
+}
