@@ -22,3 +22,27 @@ func longestPalindrome(s string) string {
 
 	return max
 }
+
+func longestPalindromeDP(s string) string {
+	n := len(s)
+	ans := ""
+	dp := make([]bool, n, n)
+
+	for j := 0; j < n; j++ {
+		for i := 0; i < j+1; i++ {
+			if i == j {
+				dp[i] = true
+			} else if j == i+1 {
+				dp[i] = s[i] == s[j]
+			} else {
+				flag := dp[i+1] && s[i] == s[j]
+				dp[i] = flag
+			}
+			if dp[i] && j-i+1 > len(ans) {
+				ans = s[i : j+1]
+			}
+		}
+	}
+
+	return ans
+}

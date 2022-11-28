@@ -399,6 +399,9 @@ func TestSolution5(t *testing.T) {
 	assert := assert.New(t)
 	res := longestPalindrome("babad")
 	assert.Equal(res, "bab", "Solution5")
+
+	res = longestPalindromeDP("babad")
+	assert.Equal(res, "bab", "Solution5")
 }
 
 func TestSolution4(t *testing.T) {
