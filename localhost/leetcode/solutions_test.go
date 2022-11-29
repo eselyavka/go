@@ -769,3 +769,12 @@ func TestSolution1658(t *testing.T) {
 	res := minOperations([]int{3, 2, 20, 1, 1, 3}, 10)
 	assert.Equal(res, 5, "Solution1658")
 }
+
+func TestSolution647(t *testing.T) {
+	assert := assert.New(t)
+	res := countSubstrings("abc")
+	assert.Equal(res, 3, "Solution647")
+
+	res = countSubstrings("aaa")
+	assert.Equal(res, 6, "Solution647")
+}
