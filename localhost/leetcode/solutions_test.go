@@ -778,3 +778,9 @@ func TestSolution647(t *testing.T) {
 	res = countSubstrings("aaa")
 	assert.Equal(res, 6, "Solution647")
 }
+
+func TestSolution2399(t *testing.T) {
+	assert := assert.New(t)
+	res := checkDistances("abaccb", []int{1, 3, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0})
+	assert.True(res, "Solution2399")
+}
