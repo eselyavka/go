@@ -807,3 +807,9 @@ func TestSolution2482(t *testing.T) {
 	actual := onesMinusZeros([][]int{{0, 1, 1}, {1, 0, 1}, {0, 0, 1}})
 	assert.Equal([][]int{{0, 0, 4}, {0, 0, 4}, {-2, -2, 2}}, actual, "Solution2482")
 }
+
+func TestSolution91(t *testing.T) {
+	assert := assert.New(t)
+	actual := numDecodings("112")
+	assert.Equal(3, actual, "Solution91")
+}
