@@ -819,3 +819,9 @@ func TestSolution2475(t *testing.T) {
 	actual := unequalTriplets([]int{4, 4, 2, 4, 3})
 	assert.Equal(3, actual, "Solution2475")
 }
+
+func TestSolution2442(t *testing.T) {
+	assert := assert.New(t)
+	actual := countDistinctIntegers([]int{1, 13, 10, 12, 31})
+	assert.Equal(6, actual, "Solution2442")
+}

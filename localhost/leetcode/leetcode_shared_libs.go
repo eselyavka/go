@@ -170,3 +170,14 @@ func Abs(x int) int {
 	}
 	return x
 }
+
+func reverseInt(n int) int {
+	rev := 0
+	for n != 0 {
+		mod := n % 10
+		rev = rev*10 + mod
+		n = n / 10
+	}
+
+	return rev
+}
