@@ -813,3 +813,9 @@ func TestSolution91(t *testing.T) {
 	actual := numDecodings("112")
 	assert.Equal(3, actual, "Solution91")
 }
+
+func TestSolution2475(t *testing.T) {
+	assert := assert.New(t)
+	actual := unequalTriplets([]int{4, 4, 2, 4, 3})
+	assert.Equal(3, actual, "Solution2475")
+}
