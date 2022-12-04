@@ -825,3 +825,9 @@ func TestSolution2442(t *testing.T) {
 	actual := countDistinctIntegers([]int{1, 13, 10, 12, 31})
 	assert.Equal(6, actual, "Solution2442")
 }
+
+func TestSolution2452(t *testing.T) {
+	assert := assert.New(t)
+	actual := twoEditWords([]string{"word", "note", "ants", "wood"}, []string{"wood", "joke", "moat"})
+	assert.Equal([]string{"word", "note", "wood"}, actual, "Solution2452")
+}
