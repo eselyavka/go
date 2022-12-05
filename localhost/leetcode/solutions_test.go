@@ -848,3 +848,9 @@ func TestSolution2408(t *testing.T) {
 	assert.Equal("", actual.SelectCell("two", 1, 2), "Solution2408")
 	assert.Equal("fifth", actual.SelectCell("two", 2, 2), "Solution2408")
 }
+
+func TestSolution2405(t *testing.T) {
+	assert := assert.New(t)
+	actual := partitionString("abacaba")
+	assert.Equal(4, actual, "Solution2405")
+}
