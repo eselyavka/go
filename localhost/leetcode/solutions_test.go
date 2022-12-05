@@ -837,3 +837,14 @@ func TestSolution2483(t *testing.T) {
 	actual := bestClosingTime("YYNY")
 	assert.Equal(2, actual, "Solution2483")
 }
+
+func TestSolution2408(t *testing.T) {
+	assert := assert.New(t)
+	actual := Constructor([]string{"one", "two", "three"}, []int{2, 3, 1})
+	actual.InsertRow("two", []string{"first", "second", "third"})
+	assert.Equal("third", actual.SelectCell("two", 1, 3), "Solution2408")
+	actual.InsertRow("two", []string{"fourth", "fifth", "sixth"})
+	actual.DeleteRow("two", 1)
+	assert.Equal("", actual.SelectCell("two", 1, 2), "Solution2408")
+	assert.Equal("fifth", actual.SelectCell("two", 2, 2), "Solution2408")
+}
