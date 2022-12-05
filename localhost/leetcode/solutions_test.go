@@ -831,3 +831,9 @@ func TestSolution2452(t *testing.T) {
 	actual := twoEditWords([]string{"word", "note", "ants", "wood"}, []string{"wood", "joke", "moat"})
 	assert.Equal([]string{"word", "note", "wood"}, actual, "Solution2452")
 }
+
+func TestSolution2483(t *testing.T) {
+	assert := assert.New(t)
+	actual := bestClosingTime("YYNY")
+	assert.Equal(2, actual, "Solution2483")
+}
