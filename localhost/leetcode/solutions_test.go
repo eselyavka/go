@@ -854,3 +854,9 @@ func TestSolution2405(t *testing.T) {
 	actual := partitionString("abacaba")
 	assert.Equal(4, actual, "Solution2405")
 }
+
+func TestSolution322(t *testing.T) {
+	assert := assert.New(t)
+	actual := coinChange([]int{1, 2, 5}, 11)
+	assert.Equal(3, actual, "Solution322")
+}
