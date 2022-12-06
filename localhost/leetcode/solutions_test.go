@@ -872,3 +872,9 @@ func TestSolution328(t *testing.T) {
 	}
 	assert.Equal([]int{1, 3, 5, 2, 4}, actual, "Solution322")
 }
+
+func TestSolution152(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxProduct([]int{-2, 3, -4})
+	assert.Equal(24, actual, "Solution152")
+}
