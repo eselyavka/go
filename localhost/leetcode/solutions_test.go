@@ -884,3 +884,15 @@ func TestSolution96(t *testing.T) {
 	actual := numTrees(5)
 	assert.Equal(42, actual, "Solution96")
 }
+
+func TestSolution2487(t *testing.T) {
+	assert := assert.New(t)
+	l := initLinkedList([]int{5, 2, 13, 3, 8})
+	res := removeNodes(l)
+	actual := make([]int, 0)
+	for res != nil {
+		actual = append(actual, res.Val)
+		res = res.Next
+	}
+	assert.Equal([]int{13, 8}, actual, "Solution2487")
+}
