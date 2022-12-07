@@ -878,3 +878,9 @@ func TestSolution152(t *testing.T) {
 	actual := maxProduct([]int{-2, 3, -4})
 	assert.Equal(24, actual, "Solution152")
 }
+
+func TestSolution96(t *testing.T) {
+	assert := assert.New(t)
+	actual := numTrees(5)
+	assert.Equal(42, actual, "Solution96")
+}
