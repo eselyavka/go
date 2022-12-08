@@ -896,3 +896,9 @@ func TestSolution2487(t *testing.T) {
 	}
 	assert.Equal([]int{13, 8}, actual, "Solution2487")
 }
+
+func TestSolution2436(t *testing.T) {
+	assert := assert.New(t)
+	actual := minimumSplits([]int{12, 6, 3, 14, 8})
+	assert.Equal(2, actual, "Solution2436")
+}
