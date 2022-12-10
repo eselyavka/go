@@ -908,3 +908,9 @@ func TestSolution2486(t *testing.T) {
 	actual := appendCharacters("coaching", "coding")
 	assert.Equal(4, actual, "Solution2486")
 }
+
+func TestSolution2447(t *testing.T) {
+	assert := assert.New(t)
+	actual := subarrayGCD([]int{9, 3, 1, 2, 6, 3}, 3)
+	assert.Equal(4, actual, "Solution2447")
+}
