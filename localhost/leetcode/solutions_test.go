@@ -920,3 +920,9 @@ func TestSolution2433(t *testing.T) {
 	actual := findArray([]int{5, 2, 0, 3, 1})
 	assert.Equal([]int{5, 7, 2, 3, 2}, actual, "Solution2433")
 }
+
+func TestSolution2348(t *testing.T) {
+	assert := assert.New(t)
+	actual := largestPalindromic("444947137")
+	assert.Equal("7449447", actual, "Solution2348")
+}
