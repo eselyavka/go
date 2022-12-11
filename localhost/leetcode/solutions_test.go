@@ -914,3 +914,9 @@ func TestSolution2447(t *testing.T) {
 	actual := subarrayGCD([]int{9, 3, 1, 2, 6, 3}, 3)
 	assert.Equal(4, actual, "Solution2447")
 }
+
+func TestSolution2433(t *testing.T) {
+	assert := assert.New(t)
+	actual := findArray([]int{5, 2, 0, 3, 1})
+	assert.Equal([]int{5, 7, 2, 3, 2}, actual, "Solution2433")
+}
