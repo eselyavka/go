@@ -926,3 +926,9 @@ func TestSolution2348(t *testing.T) {
 	actual := largestPalindromic("444947137")
 	assert.Equal("7449447", actual, "Solution2348")
 }
+
+func TestSolution2370(t *testing.T) {
+	assert := assert.New(t)
+	actual := longestIdealString("acfgbd", 2)
+	assert.Equal(4, actual, "Solution2370")
+}
