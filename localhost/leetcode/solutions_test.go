@@ -932,3 +932,9 @@ func TestSolution2370(t *testing.T) {
 	actual := longestIdealString("acfgbd", 2)
 	assert.Equal(4, actual, "Solution2370")
 }
+
+func TestSolution300(t *testing.T) {
+	assert := assert.New(t)
+	actual := lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18})
+	assert.Equal(4, actual, "Solution300")
+}
