@@ -938,3 +938,9 @@ func TestSolution300(t *testing.T) {
 	actual := lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18})
 	assert.Equal(4, actual, "Solution300")
 }
+
+func TestSolution2470(t *testing.T) {
+	assert := assert.New(t)
+	actual := subarrayLCM([]int{3, 6, 2, 7, 1}, 6)
+	assert.Equal(4, actual, "Solution2470")
+}
