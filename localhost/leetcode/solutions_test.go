@@ -944,3 +944,9 @@ func TestSolution2470(t *testing.T) {
 	actual := subarrayLCM([]int{3, 6, 2, 7, 1}, 6)
 	assert.Equal(4, actual, "Solution2470")
 }
+
+func TestSolution2453(t *testing.T) {
+	assert := assert.New(t)
+	actual := destroyTargets([]int{3, 7, 8, 1, 1, 5}, 2)
+	assert.Equal(1, actual, "Solution2453")
+}
