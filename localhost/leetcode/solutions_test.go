@@ -983,3 +983,9 @@ func TestSolution2500(t *testing.T) {
 	actual := deleteGreatestValue([][]int{{1, 2, 4}, {3, 3, 1}})
 	assert.Equal(8, actual, "Solution139")
 }
+
+func TestSolution2498(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxJump([]int{0, 2, 5, 6, 7})
+	assert.Equal(5, actual, "Solution2498")
+}
