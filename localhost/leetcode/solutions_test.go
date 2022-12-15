@@ -977,3 +977,9 @@ func TestSolution109(t *testing.T) {
 
 	assert.Equal([]int{0, -3, 9, -10, 5}, actual, "Solution109")
 }
+
+func TestSolution2500(t *testing.T) {
+	assert := assert.New(t)
+	actual := deleteGreatestValue([][]int{{1, 2, 4}, {3, 3, 1}})
+	assert.Equal(8, actual, "Solution139")
+}
