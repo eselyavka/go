@@ -989,3 +989,9 @@ func TestSolution2498(t *testing.T) {
 	actual := maxJump([]int{0, 2, 5, 6, 7})
 	assert.Equal(5, actual, "Solution2498")
 }
+
+func TestSolution2491(t *testing.T) {
+	assert := assert.New(t)
+	actual := dividePlayers([]int{3, 2, 5, 1, 3, 4})
+	assert.Equal(int64(22), actual, "Solution2491")
+}
