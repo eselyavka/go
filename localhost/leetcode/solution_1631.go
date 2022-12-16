@@ -1,6 +1,6 @@
 package solutions
 
-func bfs(mid int, heights [][]int) bool {
+func bfs1631(mid int, heights [][]int) bool {
 	row := len(heights)
 	col := len(heights[0])
 	adj := [][]int{{-1, 0}, {1, 0}, {0, 1}, {0, -1}}
@@ -57,7 +57,7 @@ func minimumEffortPath(heights [][]int) int {
 
 	for left < right {
 		mid := (left + right) / 2
-		if bfs(mid, heights) {
+		if bfs1631(mid, heights) {
 			right = mid
 		} else {
 			left = mid + 1
