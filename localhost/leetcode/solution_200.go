@@ -14,7 +14,7 @@ func numIslands(grid [][]byte) int {
 			if seen[i][j] {
 				continue
 			}
-			if dfs(grid, seen, m, n, i, j) > 0 {
+			if dfs200(grid, seen, m, n, i, j) > 0 {
 				res++
 			}
 		}
@@ -22,7 +22,7 @@ func numIslands(grid [][]byte) int {
 	return res
 }
 
-func dfs(grid [][]byte, seen [][]bool, m, n, x, y int) int {
+func dfs200(grid [][]byte, seen [][]bool, m, n, x, y int) int {
 	if x >= m || x < 0 || y >= n || y < 0 {
 		return 0
 	}
@@ -37,5 +37,5 @@ func dfs(grid [][]byte, seen [][]bool, m, n, x, y int) int {
 		return 0
 	}
 
-	return 1 + dfs(grid, seen, m, n, x-1, y) + dfs(grid, seen, m, n, x+1, y) + dfs(grid, seen, m, n, x, y-1) + dfs(grid, seen, m, n, x, y+1)
+	return 1 + dfs200(grid, seen, m, n, x-1, y) + dfs200(grid, seen, m, n, x+1, y) + dfs200(grid, seen, m, n, x, y-1) + dfs200(grid, seen, m, n, x, y+1)
 }

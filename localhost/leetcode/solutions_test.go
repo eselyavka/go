@@ -1007,3 +1007,9 @@ func TestSolution463(t *testing.T) {
 	actual := islandPerimeter([][]int{{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}})
 	assert.Equal(16, actual, "Solution463")
 }
+
+func TestSolution2101(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximumDetonation([][]int{{2, 1, 3}, {6, 1, 4}})
+	assert.Equal(2, actual, "Solution2101")
+}
