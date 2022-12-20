@@ -1013,3 +1013,9 @@ func TestSolution2101(t *testing.T) {
 	actual := maximumDetonation([][]int{{2, 1, 3}, {6, 1, 4}})
 	assert.Equal(2, actual, "Solution2101")
 }
+
+func TestSolution945(t *testing.T) {
+	assert := assert.New(t)
+	actual := minIncrementForUnique([]int{3, 2, 1, 2, 1, 7})
+	assert.Equal(6, actual, "Solution945")
+}
