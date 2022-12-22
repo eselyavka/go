@@ -1031,3 +1031,9 @@ func TestSolution252(t *testing.T) {
 	actual := canAttendMeetings([][]int{{0, 30}, {5, 10}, {15, 20}})
 	assert.False(actual, "Solution252")
 }
+
+func TestSolution56(t *testing.T) {
+	assert := assert.New(t)
+	actual := mergeIntervals([][]int{{1, 3}, {2, 6}, {8, 10}, {15, 18}})
+	assert.Equal([][]int{{1, 6}, {8, 10}, {15, 18}}, actual, "Solution56")
+}
