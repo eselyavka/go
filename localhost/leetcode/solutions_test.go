@@ -1025,3 +1025,9 @@ func TestSolution55(t *testing.T) {
 	actual := canJump([]int{2, 3, 1, 1, 4})
 	assert.True(actual, "Solution55")
 }
+
+func TestSolution252(t *testing.T) {
+	assert := assert.New(t)
+	actual := canAttendMeetings([][]int{{0, 30}, {5, 10}, {15, 20}})
+	assert.False(actual, "Solution252")
+}
