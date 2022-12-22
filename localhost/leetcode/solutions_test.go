@@ -1019,3 +1019,9 @@ func TestSolution945(t *testing.T) {
 	actual := minIncrementForUnique([]int{3, 2, 1, 2, 1, 7})
 	assert.Equal(6, actual, "Solution945")
 }
+
+func TestSolution55(t *testing.T) {
+	assert := assert.New(t)
+	actual := canJump([]int{2, 3, 1, 1, 4})
+	assert.True(actual, "Solution55")
+}
