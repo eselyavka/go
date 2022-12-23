@@ -1037,3 +1037,9 @@ func TestSolution56(t *testing.T) {
 	actual := mergeIntervals([][]int{{1, 3}, {2, 6}, {8, 10}, {15, 18}})
 	assert.Equal([][]int{{1, 6}, {8, 10}, {15, 18}}, actual, "Solution56")
 }
+
+func TestSolution159(t *testing.T) {
+	assert := assert.New(t)
+	actual := lengthOfLongestSubstringTwoDistinct("ccaabbb")
+	assert.Equal(5, actual, "Solution159")
+}
