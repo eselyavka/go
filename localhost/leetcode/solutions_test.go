@@ -1043,3 +1043,9 @@ func TestSolution159(t *testing.T) {
 	actual := lengthOfLongestSubstringTwoDistinct("ccaabbb")
 	assert.Equal(5, actual, "Solution159")
 }
+
+func TestSolution340(t *testing.T) {
+	assert := assert.New(t)
+	actual := lengthOfLongestSubstringKDistinct("aa", 1)
+	assert.Equal(2, actual, "Solution340")
+}
