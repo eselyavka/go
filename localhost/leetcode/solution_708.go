@@ -1,6 +1,6 @@
 package solutions
 
-func insert(aNode *ListNode, x int) *ListNode {
+func insert_708(aNode *ListNode, x int) *ListNode {
 	if aNode == nil {
 		node := ListNode{Val: x, Next: nil}
 		node.Next = &node

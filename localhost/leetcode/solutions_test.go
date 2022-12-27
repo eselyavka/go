@@ -359,7 +359,7 @@ func TestSolution708(t *testing.T) {
 	head.Next.Next = &ListNode{Val: 1, Next: nil}
 	head.Next.Next.Next = &head
 
-	res := insert(&head, 2)
+	res := insert_708(&head, 2)
 	acc := make([]int, 0)
 
 	curr := res.Next
@@ -1048,4 +1048,10 @@ func TestSolution340(t *testing.T) {
 	assert := assert.New(t)
 	actual := lengthOfLongestSubstringKDistinct("aa", 1)
 	assert.Equal(2, actual, "Solution340")
+}
+
+func TestSolution57(t *testing.T) {
+	assert := assert.New(t)
+	actual := insert_57([][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}}, []int{4, 8})
+	assert.Equal([][]int{{1, 2}, {3, 10}, {12, 16}}, actual, "Solution57")
 }
