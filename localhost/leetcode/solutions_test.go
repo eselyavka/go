@@ -1,7 +1,6 @@
 package solutions
 
 import (
-	"fmt"
 	"sort"
 	"strings"
 	"testing"
@@ -1081,6 +1080,18 @@ func TestSolution99(t *testing.T) {
 			q = append(q, node.Right)
 		}
 	}
-	fmt.Println(res)
 	assert.Equal([]int{3, 1, 2}, res, "Solution99")
+}
+
+func TestSolution24(t *testing.T) {
+	assert := assert.New(t)
+	l := initLinkedList([]int{1, 2, 3, 4})
+	root := swapPairs(l)
+	actual := make([]int, 0)
+	for root != nil {
+		actual = append(actual, root.Val)
+		root = root.Next
+	}
+
+	assert.Equal([]int{2, 1, 4, 3}, actual, "Solution24")
 }
