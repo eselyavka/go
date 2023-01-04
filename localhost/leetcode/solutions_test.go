@@ -1134,3 +1134,9 @@ func TestSolution73(t *testing.T) {
 		assert.True(flag, "Solution73")
 	}
 }
+
+func TestSolution2391(t *testing.T) {
+	assert := assert.New(t)
+	actual := garbageCollection([]string{"G", "P", "GP", "GG"}, []int{2, 4, 3})
+	assert.Equal(21, actual, "Solution2391")
+}
