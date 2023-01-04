@@ -766,7 +766,7 @@ func TestSolution213(t *testing.T) {
 
 func TestSolution1658(t *testing.T) {
 	assert := assert.New(t)
-	res := minOperations([]int{3, 2, 20, 1, 1, 3}, 10)
+	res := minOperations_1658([]int{3, 2, 20, 1, 1, 3}, 10)
 	assert.Equal(res, 5, "Solution1658")
 }
 
@@ -1139,4 +1139,10 @@ func TestSolution2391(t *testing.T) {
 	assert := assert.New(t)
 	actual := garbageCollection([]string{"G", "P", "GP", "GG"}, []int{2, 4, 3})
 	assert.Equal(21, actual, "Solution2391")
+}
+
+func TestSolution1769(t *testing.T) {
+	assert := assert.New(t)
+	actual := minOperations_1769("001011")
+	assert.Equal([]int{11, 8, 5, 4, 3, 4}, actual, "Solution1658")
 }

@@ -2,7 +2,7 @@ package solutions
 
 import "math"
 
-func minOperations(nums []int, x int) int {
+func minOperations_1658(nums []int, x int) int {
 	curr := sum(nums)
 	ans := math.MaxInt
 	left := 0
