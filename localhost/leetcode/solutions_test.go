@@ -1146,3 +1146,16 @@ func TestSolution1769(t *testing.T) {
 	actual := minOperations_1769("001011")
 	assert.Equal([]int{11, 8, 5, 4, 3, 4}, actual, "Solution1658")
 }
+
+func TestSolution148(t *testing.T) {
+	assert := assert.New(t)
+	l := initLinkedList([]int{4, 2, 1, 3})
+	root := sortList(l)
+	actual := make([]int, 0)
+	for root != nil {
+		actual = append(actual, root.Val)
+		root = root.Next
+	}
+
+	assert.Equal([]int{1, 2, 3, 4}, actual, "Solution148")
+}
