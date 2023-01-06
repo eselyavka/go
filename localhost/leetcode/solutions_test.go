@@ -1159,3 +1159,9 @@ func TestSolution148(t *testing.T) {
 
 	assert.Equal([]int{1, 2, 3, 4}, actual, "Solution148")
 }
+
+func TestSolution253(t *testing.T) {
+	assert := assert.New(t)
+	actual := minMeetingRooms([][]int{{0, 30}, {5, 10}, {15, 20}})
+	assert.Equal(2, actual, "Solution253")
+}
