@@ -1165,3 +1165,9 @@ func TestSolution253(t *testing.T) {
 	actual := minMeetingRooms([][]int{{0, 30}, {5, 10}, {15, 20}})
 	assert.Equal(2, actual, "Solution253")
 }
+
+func TestSolution1010(t *testing.T) {
+	assert := assert.New(t)
+	actual := numPairsDivisibleBy60([]int{30, 20, 150, 100, 40})
+	assert.Equal(3, actual, "Solution1010")
+}
