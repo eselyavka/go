@@ -1177,3 +1177,9 @@ func TestSolution2038(t *testing.T) {
 	actual := winnerOfGame("ABBBBBBBAAA")
 	assert.False(actual, "Solution2038")
 }
+
+func TestSolution1861(t *testing.T) {
+	assert := assert.New(t)
+	actual := rotateTheBox([][]byte{{'#', '.', '#'}})
+	assert.Equal([][]byte{{'.'}, {'#'}, {'#'}}, actual, "Solution1861")
+}
