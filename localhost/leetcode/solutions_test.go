@@ -1171,3 +1171,9 @@ func TestSolution1010(t *testing.T) {
 	actual := numPairsDivisibleBy60([]int{30, 20, 150, 100, 40})
 	assert.Equal(3, actual, "Solution1010")
 }
+
+func TestSolution2038(t *testing.T) {
+	assert := assert.New(t)
+	actual := winnerOfGame("ABBBBBBBAAA")
+	assert.False(actual, "Solution2038")
+}
