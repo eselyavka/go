@@ -87,6 +87,16 @@ func sum(array []int) int {
 	return result
 }
 
+func nTrue(array []bool) int {
+	n := 0
+	for _, v := range array {
+		if v {
+			n++
+		}
+	}
+	return n
+}
+
 func isPalindrome(s string, l int, r int) bool {
 	for l < r {
 		if s[l] != s[r] {

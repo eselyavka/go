@@ -1189,3 +1189,9 @@ func TestSolution1099(t *testing.T) {
 	actual := twoSumLessThanK([]int{34, 23, 1, 24, 75, 33, 54, 8}, 60)
 	assert.Equal(58, actual, "Solution1099")
 }
+
+func TestSolution204(t *testing.T) {
+	assert := assert.New(t)
+	actual := countPrimes(10)
+	assert.Equal(4, actual, "Solution204")
+}
