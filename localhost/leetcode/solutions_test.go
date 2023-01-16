@@ -1195,3 +1195,9 @@ func TestSolution204(t *testing.T) {
 	actual := countPrimes(10)
 	assert.Equal(4, actual, "Solution204")
 }
+
+func TestSolution1229(t *testing.T) {
+	assert := assert.New(t)
+	actual := minAvailableDuration([][]int{{10, 50}, {60, 120}, {140, 210}}, [][]int{{0, 15}, {60, 70}}, 8)
+	assert.Equal([]int{60, 68}, actual, "Solution1229")
+}
