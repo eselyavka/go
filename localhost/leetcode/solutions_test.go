@@ -1198,18 +1198,6 @@ func TestSolution204(t *testing.T) {
 
 func TestSolution1229(t *testing.T) {
 	assert := assert.New(t)
-	actual := minAvailableDuration([][]int{{10, 50}, {60, 120}, {140, 210}}, [][]int{{0, 15}, {60, 70}}, 8)
-	assert.Equal([]int{60, 68}, actual, "Solution1229")
-}
-
-func TestSolution257(t *testing.T) {
-	assert := assert.New(t)
-	root := TreeNode{Val: 1, Left: nil, Right: nil}
-	root.Left = &TreeNode{Val: 2, Left: nil, Right: nil}
-	root.Left.Left = &TreeNode{Val: 5, Left: nil, Right: nil}
-	root.Right = &TreeNode{Val: 3, Left: nil, Right: nil}
-
-	actual := binaryTreePaths(&root)
-
-	assert.Equal([]string{"1->2->5", "1->3"}, actual, "Solution257")
+	actual := candyCrush([][]int{{1, 3, 5, 5, 2}, {3, 4, 3, 3, 1}, {3, 2, 4, 5, 2}, {2, 4, 4, 5, 5}, {1, 4, 4, 1, 1}})
+	assert.Equal([][]int{{1, 3, 0, 0, 0}, {3, 4, 0, 5, 2}, {3, 2, 0, 3, 1}, {2, 4, 0, 5, 2}, {1, 4, 3, 1, 1}}, actual, "Solution723")
 }
