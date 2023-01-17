@@ -1207,3 +1207,9 @@ func TestSolution258(t *testing.T) {
 	actual := addDigits(38)
 	assert.Equal(2, actual, "Solution258")
 }
+
+func TestSolution54(t *testing.T) {
+	assert := assert.New(t)
+	actual := spiralOrder([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})
+	assert.Equal([]int{1, 2, 3, 6, 9, 8, 7, 4, 5}, actual, "Solution54")
+}
