@@ -1213,3 +1213,9 @@ func TestSolution54(t *testing.T) {
 	actual := spiralOrder([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})
 	assert.Equal([]int{1, 2, 3, 6, 9, 8, 7, 4, 5}, actual, "Solution54")
 }
+
+func TestSolution755(t *testing.T) {
+	assert := assert.New(t)
+	actual := pourWater([]int{2, 1, 1, 2, 1, 2, 2}, 4, 3)
+	assert.Equal([]int{2, 2, 2, 3, 2, 2, 2}, actual, "Solution755")
+}
