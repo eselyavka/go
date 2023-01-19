@@ -1219,3 +1219,10 @@ func TestSolution755(t *testing.T) {
 	actual := pourWater([]int{2, 1, 1, 2, 1, 2, 2}, 4, 3)
 	assert.Equal([]int{2, 2, 2, 3, 2, 2, 2}, actual, "Solution755")
 }
+
+func TestSolution1257(t *testing.T) {
+	assert := assert.New(t)
+	actual := findSmallestRegion([][]string{{"Earth", "North America", "South America"}, {"North America", "United States", "Canada"}, {"United States", "New York", "Boston"}, {"Canada", "Ontario", "Quebec"}, {"South America", "Brazil"}}, "Quebec", "New York")
+	assert.Equal("North America", actual, "Solution1257")
+
+}

@@ -213,3 +213,13 @@ func IntSliceReverse(s []int) {
 		s[i], s[j] = s[j], s[i]
 	}
 }
+
+func inStringArray(array []string, target string) bool {
+	for _, item := range array {
+		if item == target {
+			return true
+		}
+	}
+
+	return false
+}
