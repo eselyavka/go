@@ -1238,3 +1238,9 @@ func TestSolution910(t *testing.T) {
 	actual := smallestRangeII([]int{1, 3, 6}, 3)
 	assert.Equal(3, actual, "Solution910")
 }
+
+func TestSolution974(t *testing.T) {
+	assert := assert.New(t)
+	actual := subarraysDivByK([]int{2, -2, 2, -4}, 6)
+	assert.Equal(2, actual, "Solution974")
+}
