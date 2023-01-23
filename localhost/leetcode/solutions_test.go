@@ -1232,3 +1232,9 @@ func TestSolution370(t *testing.T) {
 	actual := getModifiedArray(5, [][]int{{1, 3, 2}, {2, 4, 3}, {0, 2, -2}})
 	assert.Equal([]int{-2, 0, 3, 5, 3}, actual, "Solution370")
 }
+
+func TestSolution910(t *testing.T) {
+	assert := assert.New(t)
+	actual := smallestRangeII([]int{1, 3, 6}, 3)
+	assert.Equal(3, actual, "Solution910")
+}
