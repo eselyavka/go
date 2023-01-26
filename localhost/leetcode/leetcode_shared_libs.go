@@ -232,3 +232,12 @@ func inStringArray(array []string, target string) bool {
 
 	return false
 }
+
+func arrayUniq(array []byte) bool {
+	set := make(map[byte]struct{})
+	for _, num := range array {
+		set[num] = struct{}{}
+	}
+
+	return len(array) == len(set)
+}
