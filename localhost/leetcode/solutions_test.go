@@ -1250,3 +1250,9 @@ func TestSolution490(t *testing.T) {
 	actual := hasPath([][]int{{0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 1, 0}, {1, 1, 0, 1, 1}, {0, 0, 0, 0, 0}}, []int{0, 4}, []int{4, 4})
 	assert.True(actual, "Solution490")
 }
+
+func TestSolution1328(t *testing.T) {
+	assert := assert.New(t)
+	actual := breakPalindrome("abccba")
+	assert.Equal("aaccba", actual, "Solution1328")
+}
