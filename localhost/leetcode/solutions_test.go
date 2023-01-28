@@ -12,7 +12,7 @@ func TestSolution1(t *testing.T) {
 	assert := assert.New(t)
 
 	var arr = []int{2, 7, 11, 15}
-	actual := twoSum(arr, 9)
+	actual := twoSum_1(arr, 9)
 	var expected = []int{0, 1}
 
 	assert.Equal(actual, expected, "Solution1")
@@ -1270,4 +1270,14 @@ func TestSolution36(t *testing.T) {
 		{'.', '.', '.', '4', '1', '9', '.', '.', '5'},
 		{'.', '.', '.', '.', '8', '.', '.', '7', '9'}})
 	assert.True(actual, "Solution36")
+}
+
+func TestSolution167(t *testing.T) {
+	assert := assert.New(t)
+
+	var arr = []int{2, 7, 11, 15}
+	actual := twoSum_167(arr, 9)
+	var expected = []int{1, 2}
+
+	assert.Equal(actual, expected, "Solution167")
 }
