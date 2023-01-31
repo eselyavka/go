@@ -1305,3 +1305,9 @@ func TestSolution452(t *testing.T) {
 	actual := findMinArrowShots([][]int{{10, 16}, {2, 8}, {1, 6}, {7, 12}})
 	assert.Equal(2, actual, "Solution452")
 }
+
+func TestSolution2055(t *testing.T) {
+	assert := assert.New(t)
+	actual := platesBetweenCandles("**|**|***|", [][]int{{2, 5}, {5, 9}})
+	assert.Equal([]int{2, 3}, actual, "Solution2055")
+}
