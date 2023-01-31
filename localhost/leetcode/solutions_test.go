@@ -1299,3 +1299,9 @@ func TestSolution1680(t *testing.T) {
 	actual := concatenatedBinary(3)
 	assert.Equal(27, actual, "Solution1680")
 }
+
+func TestSolution452(t *testing.T) {
+	assert := assert.New(t)
+	actual := findMinArrowShots([][]int{{10, 16}, {2, 8}, {1, 6}, {7, 12}})
+	assert.Equal(2, actual, "Solution452")
+}
