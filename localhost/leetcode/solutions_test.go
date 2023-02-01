@@ -1311,3 +1311,9 @@ func TestSolution2055(t *testing.T) {
 	actual := platesBetweenCandles("**|**|***|", [][]int{{2, 5}, {5, 9}})
 	assert.Equal([]int{2, 3}, actual, "Solution2055")
 }
+
+func TestSolution239(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3)
+	assert.Equal([]int{3, 3, 5, 5, 6, 7}, actual, "Solution239")
+}
