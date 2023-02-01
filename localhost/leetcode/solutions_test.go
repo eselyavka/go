@@ -1323,3 +1323,10 @@ func TestSolution739(t *testing.T) {
 	actual := dailyTemperatures([]int{73, 74, 75, 71, 69, 72, 76, 73})
 	assert.Equal([]int{1, 1, 4, 2, 1, 1, 0, 0}, actual, "Solution739")
 }
+
+func TestSolution283(t *testing.T) {
+	assert := assert.New(t)
+	actual := []int{0, 1, 0, 3, 12}
+	moveZeroes(actual)
+	assert.Equal([]int{1, 3, 12, 0, 0}, actual, "Solution283")
+}
