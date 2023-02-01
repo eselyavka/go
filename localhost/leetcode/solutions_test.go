@@ -1317,3 +1317,9 @@ func TestSolution239(t *testing.T) {
 	actual := maxSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3)
 	assert.Equal([]int{3, 3, 5, 5, 6, 7}, actual, "Solution239")
 }
+
+func TestSolution739(t *testing.T) {
+	assert := assert.New(t)
+	actual := dailyTemperatures([]int{73, 74, 75, 71, 69, 72, 76, 73})
+	assert.Equal([]int{1, 1, 4, 2, 1, 1, 0, 0}, actual, "Solution739")
+}
