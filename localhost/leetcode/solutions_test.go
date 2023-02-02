@@ -1330,3 +1330,9 @@ func TestSolution283(t *testing.T) {
 	moveZeroes(actual)
 	assert.Equal([]int{1, 3, 12, 0, 0}, actual, "Solution283")
 }
+
+func TestSolution853(t *testing.T) {
+	assert := assert.New(t)
+	actual := carFleet(12, []int{10, 8, 0, 5, 3}, []int{2, 4, 1, 1, 3})
+	assert.Equal(3, actual, "Solution853")
+}
