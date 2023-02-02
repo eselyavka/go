@@ -1336,3 +1336,9 @@ func TestSolution853(t *testing.T) {
 	actual := carFleet(12, []int{10, 8, 0, 5, 3}, []int{2, 4, 1, 1, 3})
 	assert.Equal(3, actual, "Solution853")
 }
+
+func TestSolution64(t *testing.T) {
+	assert := assert.New(t)
+	actual := minPathSum([][]int{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}})
+	assert.Equal(7, actual, "Solution64")
+}
