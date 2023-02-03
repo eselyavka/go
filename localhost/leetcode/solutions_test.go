@@ -1342,3 +1342,9 @@ func TestSolution64(t *testing.T) {
 	actual := minPathSum([][]int{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}})
 	assert.Equal(7, actual, "Solution64")
 }
+
+func TestSolution1481(t *testing.T) {
+	assert := assert.New(t)
+	actual := findLeastNumOfUniqueInts([]int{5, 5, 4}, 1)
+	assert.Equal(1, actual, "Solution1481")
+}
