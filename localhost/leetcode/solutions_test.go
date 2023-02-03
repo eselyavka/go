@@ -1348,3 +1348,9 @@ func TestSolution1481(t *testing.T) {
 	actual := findLeastNumOfUniqueInts([]int{5, 5, 4}, 1)
 	assert.Equal(1, actual, "Solution1481")
 }
+
+func TestSolution259(t *testing.T) {
+	assert := assert.New(t)
+	actual := threeSumSmaller([]int{-2, 0, 1, 3}, 2)
+	assert.Equal(2, actual, "Solution259")
+}
