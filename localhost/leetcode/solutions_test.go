@@ -1363,3 +1363,9 @@ func TestSolution285(t *testing.T) {
 	actual := inorderSuccessor(&root, root.Left)
 	assert.Equal(2, actual.Val, "Solution285")
 }
+
+func TestSolution1419(t *testing.T) {
+	assert := assert.New(t)
+	actual := minNumberOfFrogs("crcoakroak")
+	assert.Equal(2, actual, "Solution1419")
+}
