@@ -1354,3 +1354,12 @@ func TestSolution259(t *testing.T) {
 	actual := threeSumSmaller([]int{-2, 0, 1, 3}, 2)
 	assert.Equal(2, actual, "Solution259")
 }
+
+func TestSolution285(t *testing.T) {
+	assert := assert.New(t)
+	root := TreeNode{Val: 2, Left: nil, Right: nil}
+	root.Left = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Right = &TreeNode{Val: 3, Left: nil, Right: nil}
+	actual := inorderSuccessor(&root, root.Left)
+	assert.Equal(2, actual.Val, "Solution285")
+}
