@@ -1375,3 +1375,9 @@ func TestSolution150(t *testing.T) {
 	actual := evalRPN([]string{"2", "1", "+", "3", "*"})
 	assert.Equal(9, actual, "Solution150")
 }
+
+func TestSolution823(t *testing.T) {
+	assert := assert.New(t)
+	actual := numFactoredBinaryTrees([]int{2, 4, 5, 10})
+	assert.Equal(7, actual, "Solution823")
+}
