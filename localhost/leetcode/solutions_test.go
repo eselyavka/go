@@ -1369,3 +1369,9 @@ func TestSolution1419(t *testing.T) {
 	actual := minNumberOfFrogs("crcoakroak")
 	assert.Equal(2, actual, "Solution1419")
 }
+
+func TestSolution150(t *testing.T) {
+	assert := assert.New(t)
+	actual := evalRPN([]string{"2", "1", "+", "3", "*"})
+	assert.Equal(9, actual, "Solution150")
+}
