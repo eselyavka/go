@@ -1381,3 +1381,9 @@ func TestSolution823(t *testing.T) {
 	actual := numFactoredBinaryTrees([]int{2, 4, 5, 10})
 	assert.Equal(7, actual, "Solution823")
 }
+
+func TestSolution2517(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximumTastiness([]int{13, 5, 1, 8, 21, 2}, 3)
+	assert.Equal(8, actual, "Solution2517")
+}
