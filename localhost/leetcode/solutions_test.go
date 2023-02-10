@@ -1387,3 +1387,9 @@ func TestSolution2517(t *testing.T) {
 	actual := maximumTastiness([]int{13, 5, 1, 8, 21, 2}, 3)
 	assert.Equal(8, actual, "Solution2517")
 }
+
+func TestSolution784(t *testing.T) {
+	assert := assert.New(t)
+	actual := letterCasePermutation("a1b2")
+	assert.Equal([]string{"a1b2", "a1B2", "A1b2", "A1B2"}, actual, "Solution784")
+}
