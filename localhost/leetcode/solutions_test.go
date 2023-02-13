@@ -1393,3 +1393,18 @@ func TestSolution784(t *testing.T) {
 	actual := letterCasePermutation("a1b2")
 	assert.Equal([]string{"a1b2", "a1B2", "A1b2", "A1B2"}, actual, "Solution784")
 }
+
+func TestSolution78(t *testing.T) {
+	assert := assert.New(t)
+	actual := subsets([]int{1, 2, 3})
+	expected := [][]int{{}, {1}, {2}, {3}, {1, 2}, {1, 2, 3}, {1, 3}, {2, 3}}
+	for _, left := range expected {
+		is_equal := false
+		for _, right := range actual {
+			if intSliceEqual(left, right) {
+				is_equal = true
+			}
+		}
+		assert.True(is_equal, "Solution78")
+	}
+}
