@@ -1408,3 +1408,16 @@ func TestSolution78(t *testing.T) {
 		assert.True(is_equal, "Solution78")
 	}
 }
+
+func TestSolution1448(t *testing.T) {
+	assert := assert.New(t)
+	root := TreeNode{Val: 3, Left: nil, Right: nil}
+	root.Left = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left.Left = &TreeNode{Val: 3, Left: nil, Right: nil}
+	root.Right = &TreeNode{Val: 4, Left: nil, Right: nil}
+	root.Right.Left = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Right.Right = &TreeNode{Val: 5, Left: nil, Right: nil}
+
+	actual := goodNodes(&root)
+	assert.Equal(4, actual, "Solution1448")
+}
