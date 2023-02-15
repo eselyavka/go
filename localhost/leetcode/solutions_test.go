@@ -1421,3 +1421,9 @@ func TestSolution1448(t *testing.T) {
 	actual := goodNodes(&root)
 	assert.Equal(4, actual, "Solution1448")
 }
+
+func TestSolution187(t *testing.T) {
+	assert := assert.New(t)
+	actual := findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT")
+	assert.Equal([]string{"AAAAACCCCC", "CCCCCAAAAA"}, actual, "Solution187")
+}
