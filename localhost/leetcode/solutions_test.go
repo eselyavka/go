@@ -1438,5 +1438,11 @@ func TestSolution155(t *testing.T) {
 	assert.Equal(-3, actual.Pop(), "Solution155")
 	assert.Equal(0, actual.Top(), "Solution155")
 	assert.Equal(-2, actual.GetMin(), "Solution155")
+}
 
+func TestSolution347(t *testing.T) {
+	assert := assert.New(t)
+	actual := topKFrequent([]int{1, 1, 1, 2, 2, 3}, 2)
+	sort.Ints(actual)
+	assert.Equal(actual, []int{1, 2}, "Solution347")
 }
