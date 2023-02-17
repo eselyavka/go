@@ -840,7 +840,7 @@ func TestSolution2483(t *testing.T) {
 
 func TestSolution2408(t *testing.T) {
 	assert := assert.New(t)
-	actual := Constructor([]string{"one", "two", "three"}, []int{2, 3, 1})
+	actual := Constructor_2408([]string{"one", "two", "three"}, []int{2, 3, 1})
 	actual.InsertRow("two", []string{"first", "second", "third"})
 	assert.Equal("third", actual.SelectCell("two", 1, 3), "Solution2408")
 	actual.InsertRow("two", []string{"fourth", "fifth", "sixth"})
@@ -1426,4 +1426,17 @@ func TestSolution187(t *testing.T) {
 	assert := assert.New(t)
 	actual := findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT")
 	assert.Equal([]string{"AAAAACCCCC", "CCCCCAAAAA"}, actual, "Solution187")
+}
+
+func TestSolution155(t *testing.T) {
+	assert := assert.New(t)
+	actual := Constructor_155()
+	actual.Push(-2)
+	actual.Push(0)
+	actual.Push(-3)
+	assert.Equal(-3, actual.GetMin(), "Solution155")
+	assert.Equal(-3, actual.Pop(), "Solution155")
+	assert.Equal(0, actual.Top(), "Solution155")
+	assert.Equal(-2, actual.GetMin(), "Solution155")
+
 }

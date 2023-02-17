@@ -4,7 +4,7 @@ type SQL struct {
 	storage map[string][][]string
 }
 
-func Constructor(names []string, columns []int) SQL {
+func Constructor_2408(names []string, columns []int) SQL {
 	sql := SQL{storage: make(map[string][][]string)}
 	return sql
 }
