@@ -1446,3 +1446,10 @@ func TestSolution347(t *testing.T) {
 	sort.Ints(actual)
 	assert.Equal(actual, []int{1, 2}, "Solution347")
 }
+
+func TestSolution967(t *testing.T) {
+	assert := assert.New(t)
+	actual := numsSameConsecDiff(3, 7)
+	sort.Ints(actual)
+	assert.Equal(actual, []int{181, 292, 707, 818, 929}, "Solution967")
+}
