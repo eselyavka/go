@@ -1453,3 +1453,12 @@ func TestSolution967(t *testing.T) {
 	sort.Ints(actual)
 	assert.Equal(actual, []int{181, 292, 707, 818, 929}, "Solution967")
 }
+
+func TestSolution22(t *testing.T) {
+	assert := assert.New(t)
+	actual := generateParenthesis(2)
+	sort.Strings(actual)
+	expected := []string{"()()", "(())"}
+	sort.Strings(expected)
+	assert.Equal(actual, expected, "Solution22")
+}
