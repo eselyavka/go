@@ -1425,7 +1425,10 @@ func TestSolution1448(t *testing.T) {
 func TestSolution187(t *testing.T) {
 	assert := assert.New(t)
 	actual := findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT")
-	assert.Equal([]string{"AAAAACCCCC", "CCCCCAAAAA"}, actual, "Solution187")
+	sort.Strings(actual)
+	expected := []string{"AAAAACCCCC", "CCCCCAAAAA"}
+	sort.Strings(expected)
+	assert.Equal(expected, actual, "Solution187")
 }
 
 func TestSolution155(t *testing.T) {
@@ -1461,4 +1464,16 @@ func TestSolution22(t *testing.T) {
 	expected := []string{"()()", "(())"}
 	sort.Strings(expected)
 	assert.Equal(actual, expected, "Solution22")
+}
+
+func TestSolution543(t *testing.T) {
+	assert := assert.New(t)
+	root := TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left = &TreeNode{Val: 2, Left: nil, Right: nil}
+	root.Left.Left = &TreeNode{Val: 4, Left: nil, Right: nil}
+	root.Left.Right = &TreeNode{Val: 5, Left: nil, Right: nil}
+	root.Right = &TreeNode{Val: 3, Left: nil, Right: nil}
+
+	actual := diameterOfBinaryTree(&root)
+	assert.Equal(3, actual, "Solution543")
 }

@@ -241,3 +241,14 @@ func arrayUniq(array []byte) bool {
 
 	return len(array) == len(set)
 }
+
+func binaryTreeHeight(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+
+	left := binaryTreeHeight(root.Left)
+	right := binaryTreeHeight(root.Right)
+
+	return 1 + MaxInts([]int{left, right})
+}
