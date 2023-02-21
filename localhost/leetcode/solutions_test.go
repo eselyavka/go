@@ -1489,3 +1489,9 @@ func TestSolution110(t *testing.T) {
 	actual := isBalanced(&root)
 	assert.True(actual, "Solution110")
 }
+
+func TestSolution540(t *testing.T) {
+	assert := assert.New(t)
+	actual := singleNonDuplicate([]int{1, 1, 2, 3, 3, 4, 4, 8, 8})
+	assert.Equal(actual, 2, "Solution540")
+}
