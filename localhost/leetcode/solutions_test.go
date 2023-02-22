@@ -1507,3 +1507,9 @@ func TestSolution199(t *testing.T) {
 	actual := rightSideView(&root)
 	assert.Equal([]int{1, 3, 4}, actual, "Solution199")
 }
+
+func TestSolution1011(t *testing.T) {
+	assert := assert.New(t)
+	actual := shipWithinDays([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5)
+	assert.Equal(actual, 15, "Solution1011")
+}
