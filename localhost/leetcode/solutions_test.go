@@ -1513,3 +1513,9 @@ func TestSolution1011(t *testing.T) {
 	actual := shipWithinDays([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5)
 	assert.Equal(actual, 15, "Solution1011")
 }
+
+func TestSolution410(t *testing.T) {
+	assert := assert.New(t)
+	actual := splitArray([]int{7, 2, 5, 10, 8}, 2)
+	assert.Equal(actual, 18, "Solution410")
+}
