@@ -1525,3 +1525,9 @@ func TestSolution2031(t *testing.T) {
 	actual := subarraysWithMoreZerosThanOnes([]int{0, 1, 1, 0, 1})
 	assert.Equal(actual, 9, "Solution2031")
 }
+
+func TestSolution17(t *testing.T) {
+	assert := assert.New(t)
+	actual := letterCombinations("23")
+	assert.Equal(actual, []string{"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"}, "Solution17")
+}
