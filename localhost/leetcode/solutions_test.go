@@ -1519,3 +1519,9 @@ func TestSolution410(t *testing.T) {
 	actual := splitArray([]int{7, 2, 5, 10, 8}, 2)
 	assert.Equal(actual, 18, "Solution410")
 }
+
+func TestSolution2031(t *testing.T) {
+	assert := assert.New(t)
+	actual := subarraysWithMoreZerosThanOnes([]int{0, 1, 1, 0, 1})
+	assert.Equal(actual, 9, "Solution2031")
+}
