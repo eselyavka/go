@@ -1531,3 +1531,9 @@ func TestSolution17(t *testing.T) {
 	actual := letterCombinations("23")
 	assert.Equal(actual, []string{"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"}, "Solution17")
 }
+
+func TestSolution2244(t *testing.T) {
+	assert := assert.New(t)
+	actual := minimumRounds([]int{2, 2, 3, 3, 2, 4, 4, 4, 4, 4})
+	assert.Equal(actual, 4, "Solution2244")
+}
