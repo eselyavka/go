@@ -7,8 +7,8 @@ func numTilings(n int) int {
 	ans[3] = 5
 
 	for i := 4; i <= n; i++ {
-		ans[i] = 2*ans[i-1] + ans[i-3]
+		ans[i] = (2*ans[i-1] + ans[i-3]) % 1000000007
 	}
 
-	return ans[n]
+	return ans[n] % 1000000007
 }
