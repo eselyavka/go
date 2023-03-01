@@ -1537,3 +1537,9 @@ func TestSolution2244(t *testing.T) {
 	actual := minimumRounds([]int{2, 2, 3, 3, 2, 4, 4, 4, 4, 4})
 	assert.Equal(actual, 4, "Solution2244")
 }
+
+func TestSolution790(t *testing.T) {
+	assert := assert.New(t)
+	actual := numTilings(4)
+	assert.Equal(actual, 11, "Solution790")
+}
