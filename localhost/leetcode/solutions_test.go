@@ -1543,3 +1543,9 @@ func TestSolution790(t *testing.T) {
 	actual := numTilings(4)
 	assert.Equal(actual, 11, "Solution790")
 }
+
+func TestSolution443(t *testing.T) {
+	assert := assert.New(t)
+	actual := compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'})
+	assert.Equal(actual, 6, "Solution443")
+}
