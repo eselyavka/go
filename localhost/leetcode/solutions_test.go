@@ -1549,3 +1549,9 @@ func TestSolution443(t *testing.T) {
 	actual := compress([]byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'})
 	assert.Equal(actual, 6, "Solution443")
 }
+
+func TestSolution2007(t *testing.T) {
+	assert := assert.New(t)
+	actual := findOriginalArray([]int{1, 3, 4, 2, 6, 8})
+	assert.Equal(actual, []int{1, 3, 4}, "Solution2007")
+}
