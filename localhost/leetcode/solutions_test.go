@@ -1555,3 +1555,10 @@ func TestSolution2007(t *testing.T) {
 	actual := findOriginalArray([]int{1, 3, 4, 2, 6, 8})
 	assert.Equal(actual, []int{1, 3, 4}, "Solution2007")
 }
+
+func TestSolution289(t *testing.T) {
+	assert := assert.New(t)
+	board := [][]int{{1, 1}, {1, 0}}
+	gameOfLife(board)
+	assert.Equal(board, [][]int{{1, 1}, {1, 1}}, "Solution289")
+}
