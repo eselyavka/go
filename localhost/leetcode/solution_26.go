@@ -1,6 +1,6 @@
 package solutions
 
-func removeDuplicates(nums []int) int {
+func removeDuplicatesArray(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}

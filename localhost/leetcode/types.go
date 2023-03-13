@@ -27,6 +27,11 @@ type tupleInt struct {
 	col int
 }
 
+type tupleChar struct {
+	c   uint8
+	num int
+}
+
 type tuple3 struct {
 	num1 int
 	num2 int

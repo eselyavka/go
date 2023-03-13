@@ -117,7 +117,7 @@ func TestSolution66(t *testing.T) {
 func TestSolution26(t *testing.T) {
 	assert := assert.New(t)
 	actual := []int{1, 1, 2}
-	res := removeDuplicates(actual)
+	res := removeDuplicatesArray(actual)
 	assert.Equal(res, 2, "Solution26")
 }
 
@@ -1567,4 +1567,10 @@ func TestSolution1413(t *testing.T) {
 	assert := assert.New(t)
 	actual := minStartValue([]int{-3, 2, -3, 4, 2})
 	assert.Equal(actual, 5, "Solution1413")
+}
+
+func TestSolution1209(t *testing.T) {
+	assert := assert.New(t)
+	actual := removeDuplicatesString("pbbcggttciiippooaais", 2)
+	assert.Equal(actual, "ps", "Solution1209")
 }
