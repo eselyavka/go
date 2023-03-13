@@ -1562,3 +1562,9 @@ func TestSolution289(t *testing.T) {
 	gameOfLife(board)
 	assert.Equal(board, [][]int{{1, 1}, {1, 1}}, "Solution289")
 }
+
+func TestSolution1413(t *testing.T) {
+	assert := assert.New(t)
+	actual := minStartValue([]int{-3, 2, -3, 4, 2})
+	assert.Equal(actual, 5, "Solution1413")
+}
