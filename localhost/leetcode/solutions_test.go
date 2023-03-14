@@ -1596,3 +1596,9 @@ func TestSolution703(t *testing.T) {
 	assert.Equal(actual.Add(9), 8, "Solution703")
 	assert.Equal(actual.Add(4), 8, "Solution703")
 }
+
+func TestSolution215(t *testing.T) {
+	assert := assert.New(t)
+	actual := findKthLargest([]int{3, 2, 1, 5, 6, 4}, 2)
+	assert.Equal(actual, 5, "Solution215")
+}
