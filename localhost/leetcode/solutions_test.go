@@ -1580,3 +1580,9 @@ func TestSolution746(t *testing.T) {
 	actual := minCostClimbingStairs([]int{1, 100, 1, 1, 1, 100, 1, 1, 100, 1})
 	assert.Equal(actual, 6, "Solution746")
 }
+
+func TestSolution926(t *testing.T) {
+	assert := assert.New(t)
+	actual := minFlipsMonoIncr("00110")
+	assert.Equal(actual, 1, "Solution926")
+}
