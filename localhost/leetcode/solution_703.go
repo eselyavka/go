@@ -7,7 +7,7 @@ type KthLargest struct {
 	k    int
 }
 
-func Constructor(k int, nums []int) KthLargest {
+func Constructor_703(k int, nums []int) KthLargest {
 	sort.Ints(nums)
 	instance := KthLargest{k: k, nums: nums}
 

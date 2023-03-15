@@ -1589,7 +1589,7 @@ func TestSolution926(t *testing.T) {
 
 func TestSolution703(t *testing.T) {
 	assert := assert.New(t)
-	actual := Constructor(3, []int{4, 5, 8, 2})
+	actual := Constructor_703(3, []int{4, 5, 8, 2})
 	assert.Equal(actual.Add(3), 4, "Solution703")
 	assert.Equal(actual.Add(5), 5, "Solution703")
 	assert.Equal(actual.Add(10), 5, "Solution703")
@@ -1601,4 +1601,20 @@ func TestSolution215(t *testing.T) {
 	assert := assert.New(t)
 	actual := findKthLargest([]int{3, 2, 1, 5, 6, 4}, 2)
 	assert.Equal(actual, 5, "Solution215")
+}
+
+func TestSolution382(t *testing.T) {
+	assert := assert.New(t)
+
+	head := initLinkedList([]int{1, 2, 3})
+	actual := Constructor_382(head)
+
+	exists := false
+	for _, num := range []int{1, 2, 3} {
+		if num == actual.GetRandom() {
+			exists = true
+		}
+	}
+
+	assert.True(exists, "Solution382")
 }
