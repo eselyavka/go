@@ -1632,3 +1632,9 @@ func TestSolution250(t *testing.T) {
 
 	assert.Equal(4, actual, "Solution250")
 }
+
+func TestSolution994(t *testing.T) {
+	assert := assert.New(t)
+	actual := orangesRotting([][]int{{2, 1, 1}, {1, 1, 0}, {0, 1, 1}})
+	assert.Equal(actual, 4, "Solution994")
+}
