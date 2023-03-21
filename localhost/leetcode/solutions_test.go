@@ -921,10 +921,10 @@ func TestSolution2433(t *testing.T) {
 	assert.Equal([]int{5, 7, 2, 3, 2}, actual, "Solution2433")
 }
 
-func TestSolution2348(t *testing.T) {
+func TestSolution2384(t *testing.T) {
 	assert := assert.New(t)
 	actual := largestPalindromic("444947137")
-	assert.Equal("7449447", actual, "Solution2348")
+	assert.Equal("7449447", actual, "Solution2384")
 }
 
 func TestSolution2370(t *testing.T) {
@@ -1637,4 +1637,10 @@ func TestSolution994(t *testing.T) {
 	assert := assert.New(t)
 	actual := orangesRotting([][]int{{2, 1, 1}, {1, 1, 0}, {0, 1, 1}})
 	assert.Equal(actual, 4, "Solution994")
+}
+
+func TestSolution2348(t *testing.T) {
+	assert := assert.New(t)
+	actual := zeroFilledSubarray([]int{1, 3, 0, 0, 2, 0, 0, 4})
+	assert.Equal(actual, int64(6), "Solution2348")
 }
