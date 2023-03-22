@@ -1644,3 +1644,9 @@ func TestSolution2348(t *testing.T) {
 	actual := zeroFilledSubarray([]int{1, 3, 0, 0, 2, 0, 0, 4})
 	assert.Equal(actual, int64(6), "Solution2348")
 }
+
+func TestSolution274(t *testing.T) {
+	assert := assert.New(t)
+	actual := hIndex([]int{3, 0, 6, 1, 5})
+	assert.Equal(actual, 3, "Solution274")
+}
