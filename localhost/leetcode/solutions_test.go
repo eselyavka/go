@@ -1650,3 +1650,9 @@ func TestSolution274(t *testing.T) {
 	actual := hIndex([]int{3, 0, 6, 1, 5})
 	assert.Equal(actual, 3, "Solution274")
 }
+
+func TestSolution39(t *testing.T) {
+	assert := assert.New(t)
+	actual := combinationSum([]int{2, 3, 6, 7}, 7)
+	assert.True(int2dSliceIsEqual(actual, [][]int{{2, 2, 3}, {7}}), "Solution39")
+}

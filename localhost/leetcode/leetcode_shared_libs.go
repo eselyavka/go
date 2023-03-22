@@ -252,3 +252,24 @@ func binaryTreeHeight(root *TreeNode) int {
 
 	return 1 + MaxInts([]int{left, right})
 }
+
+func int2dSliceIsEqual(this, that [][]int) bool {
+	if len(this) != len(that) {
+		return false
+	}
+
+	for i := 0; i < len(this); i++ {
+		flag := false
+		for j := 0; j < len(that); j++ {
+			if intSliceEqual(this[i], that[j]) {
+				flag = true
+			}
+		}
+
+		if !flag {
+			return false
+		}
+	}
+
+	return true
+}
