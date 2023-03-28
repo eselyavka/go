@@ -1656,3 +1656,9 @@ func TestSolution39(t *testing.T) {
 	actual := combinationSum([]int{2, 3, 6, 7}, 7)
 	assert.True(int2dSliceIsEqual(actual, [][]int{{2, 2, 3}, {7}}), "Solution39")
 }
+
+func TestSolution433(t *testing.T) {
+	assert := assert.New(t)
+	actual := minMutation("AACCGGTT", "AAACGGTA", []string{"AACCGGTA", "AACCGCTA", "AAACGGTA"})
+	assert.Equal(actual, 2, "Solution433")
+}
