@@ -1662,3 +1662,9 @@ func TestSolution433(t *testing.T) {
 	actual := minMutation("AACCGGTT", "AAACGGTA", []string{"AACCGGTA", "AACCGCTA", "AAACGGTA"})
 	assert.Equal(actual, 2, "Solution433")
 }
+
+func TestSolution1402(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxSatisfaction([]int{-1, -8, 0, 5, -9})
+	assert.Equal(actual, 14, "Solution1402")
+}
