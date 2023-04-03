@@ -1684,3 +1684,9 @@ func TestSolution90(t *testing.T) {
 		assert.True(is_equal, "Solution90")
 	}
 }
+
+func TestSolution881(t *testing.T) {
+	assert := assert.New(t)
+	actual := numRescueBoats([]int{3, 2, 2, 1}, 3)
+	assert.Equal(actual, 3, "Solution881")
+}
