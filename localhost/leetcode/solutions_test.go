@@ -1690,3 +1690,9 @@ func TestSolution881(t *testing.T) {
 	actual := numRescueBoats([]int{3, 2, 2, 1}, 3)
 	assert.Equal(actual, 3, "Solution881")
 }
+
+func TestSolution2226(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximumCandies([]int{5, 8, 6}, 3)
+	assert.Equal(actual, 5, "Solution2226")
+}
