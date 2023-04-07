@@ -233,6 +233,16 @@ func inStringArray(array []string, target string) bool {
 	return false
 }
 
+func in2dIntArray(array [][]int, target []int) bool {
+	for _, arr := range array {
+		if intSliceEqual(arr, target) {
+			return true
+		}
+	}
+
+	return false
+}
+
 func arrayUniq(array []byte) bool {
 	set := make(map[byte]struct{})
 	for _, num := range array {

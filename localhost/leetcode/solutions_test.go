@@ -1737,3 +1737,9 @@ func TestSolution1040(t *testing.T) {
 	actual := numEnclaves([][]int{{0, 0, 0, 0}, {1, 0, 1, 0}, {0, 1, 1, 0}, {0, 0, 0, 0}})
 	assert.Equal(actual, 3, "Solution1040")
 }
+
+func TestSolution79(t *testing.T) {
+	assert := assert.New(t)
+	actual := exist([][]byte{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "ABCCED")
+	assert.True(actual)
+}
