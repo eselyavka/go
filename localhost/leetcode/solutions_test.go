@@ -1731,3 +1731,9 @@ func TestSolution40(t *testing.T) {
 		assert.True(is_equal, "Solution40")
 	}
 }
+
+func TestSolution1040(t *testing.T) {
+	assert := assert.New(t)
+	actual := numEnclaves([][]int{{0, 0, 0, 0}, {1, 0, 1, 0}, {0, 1, 1, 0}, {0, 0, 0, 0}})
+	assert.Equal(actual, 3, "Solution1040")
+}
