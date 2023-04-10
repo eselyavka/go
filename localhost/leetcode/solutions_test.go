@@ -1743,3 +1743,9 @@ func TestSolution79(t *testing.T) {
 	actual := exist([][]byte{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "ABCCED")
 	assert.True(actual)
 }
+
+func TestSolution2340(t *testing.T) {
+	assert := assert.New(t)
+	actual := minimumSwaps([]int{3, 4, 5, 5, 3, 1})
+	assert.Equal(actual, 6, "Solution2340")
+}
