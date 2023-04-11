@@ -1755,3 +1755,19 @@ func TestSolution2406(t *testing.T) {
 	actual := minGroups([][]int{{5, 10}, {6, 8}, {1, 5}, {2, 3}, {1, 10}})
 	assert.Equal(actual, 3, "Solution2406")
 }
+
+func TestSolution131(t *testing.T) {
+	assert := assert.New(t)
+	actual := partition("aab")
+	expected := [][]string{{"a", "a", "b"}, {"aa", "b"}}
+	assert.Equal(len(actual), len(expected), "Solution131")
+	for _, left := range expected {
+		is_equal := false
+		for _, right := range actual {
+			if stringSlicesEqual(left, right) {
+				is_equal = true
+			}
+		}
+		assert.True(is_equal, "Solution131")
+	}
+}
