@@ -1749,3 +1749,9 @@ func TestSolution2340(t *testing.T) {
 	actual := minimumSwaps([]int{3, 4, 5, 5, 3, 1})
 	assert.Equal(actual, 6, "Solution2340")
 }
+
+func TestSolution2406(t *testing.T) {
+	assert := assert.New(t)
+	actual := minGroups([][]int{{5, 10}, {6, 8}, {1, 5}, {2, 3}, {1, 10}})
+	assert.Equal(actual, 3, "Solution2406")
+}
