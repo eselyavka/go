@@ -1771,3 +1771,9 @@ func TestSolution131(t *testing.T) {
 		assert.True(is_equal, "Solution131")
 	}
 }
+
+func TestSolution71(t *testing.T) {
+	assert := assert.New(t)
+	actual := simplifyPath("/home/./foo/")
+	assert.Equal(actual, "/home/foo", "Solution71")
+}
