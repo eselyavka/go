@@ -1777,3 +1777,9 @@ func TestSolution71(t *testing.T) {
 	actual := simplifyPath("/home/./foo/")
 	assert.Equal(actual, "/home/foo", "Solution71")
 }
+
+func TestSolution2125(t *testing.T) {
+	assert := assert.New(t)
+	actual := numberOfBeams([]string{"011001", "000000", "010100", "001000"})
+	assert.Equal(actual, 8, "Solution2125")
+}
