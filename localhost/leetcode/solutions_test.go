@@ -1783,3 +1783,9 @@ func TestSolution2125(t *testing.T) {
 	actual := numberOfBeams([]string{"011001", "000000", "010100", "001000"})
 	assert.Equal(actual, 8, "Solution2125")
 }
+
+func TestSolution946(t *testing.T) {
+	assert := assert.New(t)
+	actual := validateStackSequences([]int{1, 2, 3, 4, 5}, []int{4, 5, 3, 2, 1})
+	assert.True(actual, "Solution946")
+}
