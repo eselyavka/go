@@ -1795,3 +1795,9 @@ func TestSolution1143(t *testing.T) {
 	actual := longestCommonSubsequence("abcde", "ace")
 	assert.Equal(actual, 3, "Solution1143")
 }
+
+func TestSolution516(t *testing.T) {
+	assert := assert.New(t)
+	actual := longestPalindromeSubseq("bbbab")
+	assert.Equal(actual, 4, "Solution516")
+}
