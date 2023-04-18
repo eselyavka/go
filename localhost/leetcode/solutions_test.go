@@ -477,9 +477,9 @@ func TestSolution76(t *testing.T) {
 
 func TestSolution33(t *testing.T) {
 	assert := assert.New(t)
-	res := search([]int{4, 5, 6, 7, 0, 1, 2}, 0)
+	res := search_33([]int{4, 5, 6, 7, 0, 1, 2}, 0)
 	assert.Equal(res, 4, "Solution33")
-	res = search([]int{1, 2, 3, 4, 5, 6, 7}, 3)
+	res = search_33([]int{1, 2, 3, 4, 5, 6, 7}, 3)
 	assert.Equal(res, 2, "Solution33")
 }
 
@@ -1800,4 +1800,12 @@ func TestSolution516(t *testing.T) {
 	assert := assert.New(t)
 	actual := longestPalindromeSubseq("bbbab")
 	assert.Equal(actual, 4, "Solution516")
+}
+
+func TestSolution704(t *testing.T) {
+	assert := assert.New(t)
+	res := search_704([]int{4, 5, 6, 7, 0, 1, 2}, 0)
+	assert.Equal(res, 4, "Solution704")
+	res = search_704([]int{1, 2, 3, 4, 5, 6, 7}, 3)
+	assert.Equal(res, 2, "Solution704")
 }

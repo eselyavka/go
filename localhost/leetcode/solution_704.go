@@ -1,7 +1,8 @@
 package solutions
 
-func search_33(nums []int, target int) int {
+func search_704(nums []int, target int) int {
 	n := len(nums)
+
 	if n == 1 {
 		if nums[0] == target {
 			return 0
