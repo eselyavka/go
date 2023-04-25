@@ -1815,3 +1815,18 @@ func TestSolution74(t *testing.T) {
 	actual := searchMatrix([][]int{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}}, 3)
 	assert.True(actual, "Solution74")
 }
+
+func TestSolution1372(t *testing.T) {
+	assert := assert.New(t)
+	root := TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left.Right = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left.Right.Left = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left.Right.Left.Right = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Left.Right.Right = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Right = &TreeNode{Val: 1, Left: nil, Right: nil}
+
+	actual := longestZigZag(&root)
+
+	assert.Equal(4, actual, "Solution1372")
+}
