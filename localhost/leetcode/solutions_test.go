@@ -1809,3 +1809,9 @@ func TestSolution704(t *testing.T) {
 	res = search_704([]int{1, 2, 3, 4, 5, 6, 7}, 3)
 	assert.Equal(res, 2, "Solution704")
 }
+
+func TestSolution74(t *testing.T) {
+	assert := assert.New(t)
+	actual := searchMatrix([][]int{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}}, 3)
+	assert.True(actual, "Solution74")
+}
