@@ -283,3 +283,10 @@ func int2dSliceIsEqual(this, that [][]int) bool {
 
 	return true
 }
+
+func bool2int(b bool) int {
+	if b {
+		return 1
+	}
+	return 0
+}

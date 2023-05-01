@@ -1830,3 +1830,9 @@ func TestSolution1372(t *testing.T) {
 
 	assert.Equal(4, actual, "Solution1372")
 }
+
+func TestSolution63(t *testing.T) {
+	assert := assert.New(t)
+	actual := uniquePathsWithObstacles([][]int{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}})
+	assert.Equal(actual, 2, "Solution63")
+}
