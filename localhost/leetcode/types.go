@@ -17,6 +17,13 @@ type Node struct {
 	Parent *Node
 }
 
+type NodeNext struct {
+	Val   int
+	Left  *NodeNext
+	Right *NodeNext
+	Next  *NodeNext
+}
+
 type tuple struct {
 	node *TreeNode
 	col  int
