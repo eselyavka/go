@@ -1869,3 +1869,9 @@ func TestSolution117(t *testing.T) {
 
 	assert.Equal([]int{3, 5, 7}, ans, "Solution177")
 }
+
+func TestSolution649(t *testing.T) {
+	assert := assert.New(t)
+	actual := predictPartyVictory("RDD")
+	assert.Equal(actual, "Dire", "Solution649")
+}
