@@ -1875,3 +1875,9 @@ func TestSolution649(t *testing.T) {
 	actual := predictPartyVictory("RDD")
 	assert.Equal(actual, "Dire", "Solution649")
 }
+
+func TestSolution1456(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxVowels("abciiidef", 3)
+	assert.Equal(actual, 3, "Solution1456")
+}
