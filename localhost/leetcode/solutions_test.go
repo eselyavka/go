@@ -1881,3 +1881,9 @@ func TestSolution1456(t *testing.T) {
 	actual := maxVowels("abciiidef", 3)
 	assert.Equal(actual, 3, "Solution1456")
 }
+
+func TestSolution59(t *testing.T) {
+	assert := assert.New(t)
+	actual := generateMatrix(3)
+	assert.Equal(actual, [][]int{{1, 2, 3}, {8, 9, 4}, {7, 6, 5}}, "Solution59")
+}
