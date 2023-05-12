@@ -1887,3 +1887,9 @@ func TestSolution59(t *testing.T) {
 	actual := generateMatrix(3)
 	assert.Equal(actual, [][]int{{1, 2, 3}, {8, 9, 4}, {7, 6, 5}}, "Solution59")
 }
+
+func TestSolution2140(t *testing.T) {
+	assert := assert.New(t)
+	actual := mostPoints([][]int{{3, 2}, {4, 3}, {4, 4}, {2, 5}})
+	assert.Equal(actual, int64(5), "Solution2140")
+}
