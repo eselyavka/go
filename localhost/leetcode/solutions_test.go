@@ -1905,3 +1905,9 @@ func TestSolution1721(t *testing.T) {
 	}
 	assert.Equal(actual, []int{1, 4, 3, 2, 5}, "Solution1721")
 }
+
+func TestSolution2439(t *testing.T) {
+	assert := assert.New(t)
+	actual := minimizeArrayValue([]int{3, 7, 1, 6})
+	assert.Equal(actual, 5, "Solution2439")
+}
