@@ -1911,3 +1911,10 @@ func TestSolution2439(t *testing.T) {
 	actual := minimizeArrayValue([]int{3, 7, 1, 6})
 	assert.Equal(actual, 5, "Solution2439")
 }
+
+func TestSolution2130(t *testing.T) {
+	assert := assert.New(t)
+	head := initLinkedList([]int{5, 4, 2, 1})
+	actual := pairSum(head)
+	assert.Equal(actual, 6, "Solution2130")
+}
