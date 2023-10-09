@@ -1918,3 +1918,9 @@ func TestSolution2130(t *testing.T) {
 	actual := pairSum(head)
 	assert.Equal(actual, 6, "Solution2130")
 }
+
+func TestSolution27(t *testing.T) {
+	assert := assert.New(t)
+	actual := removeElement([]int{3, 2, 2, 3}, 3)
+	assert.Equal(actual, 2, "Solution27")
+}
