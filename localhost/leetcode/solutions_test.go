@@ -1924,3 +1924,9 @@ func TestSolution27(t *testing.T) {
 	actual := removeElement([]int{3, 2, 2, 3}, 3)
 	assert.Equal(actual, 2, "Solution27")
 }
+
+func TestSolution1929(t *testing.T) {
+	assert := assert.New(t)
+	actual := getConcatenation([]int{1, 2, 1})
+	assert.Equal(actual, []int{1, 2, 1, 1, 2, 1}, "Solution1929")
+}
