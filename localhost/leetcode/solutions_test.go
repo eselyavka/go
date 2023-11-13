@@ -1930,3 +1930,16 @@ func TestSolution1929(t *testing.T) {
 	actual := getConcatenation([]int{1, 2, 1})
 	assert.Equal(actual, []int{1, 2, 1, 1, 2, 1}, "Solution1929")
 }
+
+func TestSolution2265(t *testing.T) {
+	assert := assert.New(t)
+	root := TreeNode{Val: 4, Left: nil, Right: nil}
+	root.Left = &TreeNode{Val: 8, Left: nil, Right: nil}
+	root.Left.Left = &TreeNode{Val: 0, Left: nil, Right: nil}
+	root.Left.Right = &TreeNode{Val: 1, Left: nil, Right: nil}
+	root.Right = &TreeNode{Val: 5, Left: nil, Right: nil}
+	root.Right.Right = &TreeNode{Val: 6, Left: nil, Right: nil}
+
+	actual := averageOfSubtree(&root)
+	assert.Equal(actual, 5, "Solution2265")
+}

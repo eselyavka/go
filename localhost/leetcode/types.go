@@ -45,6 +45,11 @@ type tuple3 struct {
 	num3 int
 }
 
+type tuple4 struct {
+	count int
+	sum   int
+}
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
