@@ -1943,3 +1943,9 @@ func TestSolution2265(t *testing.T) {
 	actual := averageOfSubtree(&root)
 	assert.Equal(actual, 5, "Solution2265")
 }
+
+func TestSolution2785(t *testing.T) {
+	assert := assert.New(t)
+	actual := sortVowels("lEetcOde")
+	assert.Equal(actual, "lEOtcede", "Solution2785")
+}
