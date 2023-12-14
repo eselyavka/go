@@ -1949,3 +1949,9 @@ func TestSolution2785(t *testing.T) {
 	actual := sortVowels("lEetcOde")
 	assert.Equal(actual, "lEOtcede", "Solution2785")
 }
+
+func TestSolution1930(t *testing.T) {
+	assert := assert.New(t)
+	actual := countPalindromicSubsequence("bbcbaba")
+	assert.Equal(actual, 4, "Solution1930")
+}
