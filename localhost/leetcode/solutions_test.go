@@ -1955,3 +1955,9 @@ func TestSolution1930(t *testing.T) {
 	actual := countPalindromicSubsequence("bbcbaba")
 	assert.Equal(actual, 4, "Solution1930")
 }
+
+func TestSolution1436(t *testing.T) {
+	assert := assert.New(t)
+	actual := destCity([][]string{{"London", "New York"}, {"New York", "Lima"}, {"Lima", "Sao Paulo"}})
+	assert.Equal(actual, "Sao Paulo", "Solution1436")
+}
