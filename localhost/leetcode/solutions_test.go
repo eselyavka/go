@@ -1961,3 +1961,9 @@ func TestSolution1436(t *testing.T) {
 	actual := destCity([][]string{{"London", "New York"}, {"New York", "Lima"}, {"Lima", "Sao Paulo"}})
 	assert.Equal(actual, "Sao Paulo", "Solution1436")
 }
+
+func TestSolution682(t *testing.T) {
+	assert := assert.New(t)
+	actual := calPoints([]string{"5", "2", "C", "D", "+"})
+	assert.Equal(actual, 30, "Solution682")
+}
