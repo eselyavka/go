@@ -1967,3 +1967,9 @@ func TestSolution682(t *testing.T) {
 	actual := calPoints([]string{"5", "2", "C", "D", "+"})
 	assert.Equal(actual, 30, "Solution682")
 }
+
+func TestSolution2501(t *testing.T) {
+	assert := assert.New(t)
+	actual := longestSquareStreak([]int{4, 3, 6, 16, 8, 2})
+	assert.Equal(actual, 3, "Solution2501")
+}
