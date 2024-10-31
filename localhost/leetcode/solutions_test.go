@@ -1973,3 +1973,9 @@ func TestSolution2501(t *testing.T) {
 	actual := longestSquareStreak([]int{4, 3, 6, 16, 8, 2})
 	assert.Equal(actual, 3, "Solution2501")
 }
+
+func TestSolution1277(t *testing.T) {
+	assert := assert.New(t)
+	actual := countSquares([][]int{{0, 1, 1, 1}, {1, 1, 1, 1}, {0, 1, 1, 1}})
+	assert.Equal(actual, 15, "Solution1277")
+}
