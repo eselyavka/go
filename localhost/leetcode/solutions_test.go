@@ -1987,3 +1987,9 @@ func TestSolution3163(t *testing.T) {
 	actual = compressedString("aaaaaaaaaaaaaabb")
 	assert.Equal(actual, "9a5a2b", "Solution3163")
 }
+
+func TestSolution2914(t *testing.T) {
+	assert := assert.New(t)
+	actual := minChanges("1001")
+	assert.Equal(actual, 2, "Solution2914")
+}
