@@ -1993,3 +1993,9 @@ func TestSolution2914(t *testing.T) {
 	actual := minChanges("1001")
 	assert.Equal(actual, 2, "Solution2914")
 }
+
+func TestSolution3011(t *testing.T) {
+	assert := assert.New(t)
+	actual := canSortArray([]int{8, 4, 2, 30, 15})
+	assert.True(actual, "Solution3011")
+}
