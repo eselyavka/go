@@ -1999,3 +1999,9 @@ func TestSolution3011(t *testing.T) {
 	actual := canSortArray([]int{8, 4, 2, 30, 15})
 	assert.True(actual, "Solution3011")
 }
+
+func TestSolution796(t *testing.T) {
+	assert := assert.New(t)
+	actual := rotateString("abcde", "cdeab")
+	assert.True(actual, "Solution796")
+}
