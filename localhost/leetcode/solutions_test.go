@@ -2005,3 +2005,9 @@ func TestSolution796(t *testing.T) {
 	actual := rotateString("abcde", "cdeab")
 	assert.True(actual, "Solution796")
 }
+
+func TestSolution2490(t *testing.T) {
+	assert := assert.New(t)
+	actual := isCircularSentence("leetcode eats soul")
+	assert.True(actual, "Solution2490")
+}
