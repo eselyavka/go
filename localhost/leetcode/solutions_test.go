@@ -2011,3 +2011,9 @@ func TestSolution2490(t *testing.T) {
 	actual := isCircularSentence("leetcode eats soul")
 	assert.True(actual, "Solution2490")
 }
+
+func TestSolution2592(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximizeGreatness([]int{1, 3, 5, 2, 1, 3, 1})
+	assert.Equal(actual, 4, "Solution2592")
+}
