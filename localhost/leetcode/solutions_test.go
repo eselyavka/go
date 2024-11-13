@@ -2017,3 +2017,10 @@ func TestSolution2592(t *testing.T) {
 	actual := maximizeGreatness([]int{1, 3, 5, 2, 1, 3, 1})
 	assert.Equal(actual, 4, "Solution2592")
 }
+
+func TestSolution108(t *testing.T) {
+	assert := assert.New(t)
+	root := sortedArrayToBST([]int{-10, -3, 0, 5, 9})
+	actual := binaryTreeBFS(root)
+	assert.Equal(actual, []int{0, -10, 5, -3, 9}, "Solution108")
+}

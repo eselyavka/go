@@ -299,3 +299,26 @@ func countSetBits(n int) int {
 	}
 	return count
 }
+
+func binaryTreeBFS(node *TreeNode) []int {
+	if node == nil {
+		return []int{}
+	}
+
+	arr := make([]int, 0)
+	queue := []*TreeNode{node}
+	current := 0
+	for current != len(queue) {
+		node := queue[current]
+		current += 1
+
+		if node == nil {
+			continue
+		}
+
+		arr = append(arr, node.Val)
+		queue = append(queue, node.Left, node.Right)
+	}
+
+	return arr
+}
