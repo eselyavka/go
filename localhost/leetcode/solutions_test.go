@@ -2024,3 +2024,9 @@ func TestSolution108(t *testing.T) {
 	actual := binaryTreeBFS(root)
 	assert.Equal(actual, []int{0, -10, 5, -3, 9}, "Solution108")
 }
+
+func TestSolution2064(t *testing.T) {
+	assert := assert.New(t)
+	actual := minimizedMaximum(6, []int{11, 6})
+	assert.Equal(actual, 3, "Solution2064")
+}
