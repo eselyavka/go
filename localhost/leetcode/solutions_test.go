@@ -2030,3 +2030,9 @@ func TestSolution2064(t *testing.T) {
 	actual := minimizedMaximum(6, []int{11, 6})
 	assert.Equal(actual, 3, "Solution2064")
 }
+
+func TestSolution1574(t *testing.T) {
+	assert := assert.New(t)
+	actual := findLengthOfShortestSubarray([]int{1, 2, 3, 10, 4, 2, 3, 5})
+	assert.Equal(actual, 3, "Solution1574")
+}
