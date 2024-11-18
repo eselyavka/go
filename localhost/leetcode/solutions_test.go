@@ -2036,3 +2036,9 @@ func TestSolution1574(t *testing.T) {
 	actual := findLengthOfShortestSubarray([]int{1, 2, 3, 10, 4, 2, 3, 5})
 	assert.Equal(actual, 3, "Solution1574")
 }
+
+func TestSolution1652(t *testing.T) {
+	assert := assert.New(t)
+	actual := decrypt([]int{5, 7, 1, 4}, 3)
+	assert.Equal(actual, []int{12, 10, 16, 13}, "Solution1652")
+}
