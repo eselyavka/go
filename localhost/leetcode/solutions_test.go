@@ -2042,3 +2042,9 @@ func TestSolution1652(t *testing.T) {
 	actual := decrypt([]int{5, 7, 1, 4}, 3)
 	assert.Equal(actual, []int{12, 10, 16, 13}, "Solution1652")
 }
+
+func TestSolution2461(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximumSubarraySum([]int{1, 5, 4, 2, 9, 9, 9}, 3)
+	assert.Equal(actual, int64(15), "Solution2461")
+}
