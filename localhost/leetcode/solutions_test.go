@@ -2048,3 +2048,9 @@ func TestSolution2461(t *testing.T) {
 	actual := maximumSubarraySum([]int{1, 5, 4, 2, 9, 9, 9}, 3)
 	assert.Equal(actual, int64(15), "Solution2461")
 }
+
+func TestSolution2516(t *testing.T) {
+	assert := assert.New(t)
+	actual := takeCharacters("aabaaaacaabc", 2)
+	assert.Equal(actual, 8, "Solution2516")
+}
