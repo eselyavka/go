@@ -2054,3 +2054,9 @@ func TestSolution2516(t *testing.T) {
 	actual := takeCharacters("aabaaaacaabc", 2)
 	assert.Equal(actual, 8, "Solution2516")
 }
+
+func TestSolution2257(t *testing.T) {
+	assert := assert.New(t)
+	actual := countUnguarded(4, 6, [][]int{{0, 0}, {1, 1}, {2, 3}}, [][]int{{0, 1}, {2, 2}, {1, 4}})
+	assert.Equal(actual, 7, "Solution2257")
+}
