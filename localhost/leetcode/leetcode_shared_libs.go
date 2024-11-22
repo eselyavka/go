@@ -1,5 +1,7 @@
 package solutions
 
+import "fmt"
+
 func MaxInts(nums []int) int {
 	if len(nums) == 0 {
 		return -1
@@ -321,4 +323,18 @@ func binaryTreeBFS(node *TreeNode) []int {
 	}
 
 	return arr
+}
+
+func flipArrayXOR(original []int) []int {
+	flipped := make([]int, len(original))
+
+	for i, v := range original {
+		flipped[i] = v ^ 1
+	}
+
+	return flipped
+}
+
+func sliceToString(slice []int) string {
+	return fmt.Sprintf("%v", slice)
 }

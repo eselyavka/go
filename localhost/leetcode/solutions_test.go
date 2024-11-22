@@ -2060,3 +2060,9 @@ func TestSolution2257(t *testing.T) {
 	actual := countUnguarded(4, 6, [][]int{{0, 0}, {1, 1}, {2, 3}}, [][]int{{0, 1}, {2, 2}, {1, 4}})
 	assert.Equal(actual, 7, "Solution2257")
 }
+
+func TestSolution1072(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxEqualRowsAfterFlips([][]int{{0, 0, 0}, {0, 0, 1}, {1, 1, 0}})
+	assert.Equal(actual, 2, "Solution1072")
+}
