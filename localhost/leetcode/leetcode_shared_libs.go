@@ -338,3 +338,22 @@ func flipArrayXOR(original []int) []int {
 func sliceToString(slice []int) string {
 	return fmt.Sprintf("%v", slice)
 }
+
+func twoDSliceToString(slice [][]int) string {
+	return fmt.Sprintf("%v", slice)
+}
+
+func copy2DArray(original [][]int) [][]int {
+	dup := make([][]int, len(original))
+	for i := range original {
+		dup[i] = make([]int, len(original[i]))
+		copyRow(dup[i], original[i])
+	}
+	return dup
+}
+
+func copyRow(dest, src []int) {
+	for i := range src {
+		dest[i] = src[i]
+	}
+}

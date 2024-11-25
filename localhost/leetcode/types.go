@@ -50,6 +50,11 @@ type tuple4 struct {
 	sum   int
 }
 
+type tuple5 struct {
+	steps int
+	board [][]int
+}
+
 type ListNode struct {
 	Val  int
 	Next *ListNode

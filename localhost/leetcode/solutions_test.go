@@ -2066,3 +2066,9 @@ func TestSolution1072(t *testing.T) {
 	actual := maxEqualRowsAfterFlips([][]int{{0, 0, 0}, {0, 0, 1}, {1, 1, 0}})
 	assert.Equal(actual, 2, "Solution1072")
 }
+
+func TestSolution773(t *testing.T) {
+	assert := assert.New(t)
+	actual := slidingPuzzle([][]int{{4, 1, 2}, {5, 0, 3}})
+	assert.Equal(actual, 5, "Solution773")
+}
