@@ -2073,6 +2073,12 @@ func TestSolution773(t *testing.T) {
 	assert.Equal(actual, 5, "Solution773")
 }
 
+func TestSolution2923(t *testing.T) {
+	assert := assert.New(t)
+	actual := findChampionEasy([][]int{{0, 0, 1}, {1, 0, 1}, {0, 0, 0}})
+	assert.Equal(actual, 1, "Solution2923")
+}
+
 func TestSolution2924(t *testing.T) {
 	assert := assert.New(t)
 	actual := findChampion(3, [][]int{{0, 1}, {1, 2}})
