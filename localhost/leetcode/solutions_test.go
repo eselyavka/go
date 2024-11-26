@@ -2072,3 +2072,9 @@ func TestSolution773(t *testing.T) {
 	actual := slidingPuzzle([][]int{{4, 1, 2}, {5, 0, 3}})
 	assert.Equal(actual, 5, "Solution773")
 }
+
+func TestSolution2924(t *testing.T) {
+	assert := assert.New(t)
+	actual := findChampion(3, [][]int{{0, 1}, {1, 2}})
+	assert.Equal(actual, 0, "Solution2924")
+}
