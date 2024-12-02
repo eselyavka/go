@@ -2084,3 +2084,9 @@ func TestSolution2924(t *testing.T) {
 	actual := findChampion(3, [][]int{{0, 1}, {1, 2}})
 	assert.Equal(actual, 0, "Solution2924")
 }
+
+func TestSolution1455(t *testing.T) {
+	assert := assert.New(t)
+	actual := isPrefixOfWord("i love eating burger", "burg")
+	assert.Equal(actual, 4, "Solution1455")
+}
