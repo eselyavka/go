@@ -2094,5 +2094,11 @@ func TestSolution1455(t *testing.T) {
 func TestSolution2109(t *testing.T) {
 	assert := assert.New(t)
 	actual := addSpaces("LeetcodeHelpsMeLearn", []int{8, 13, 15})
-	assert.Equal(actual, "Leetcode Helps Me Learn", "Solution1455")
+	assert.Equal(actual, "Leetcode Helps Me Learn", "Solution2109")
+}
+
+func TestSolution3152(t *testing.T) {
+	assert := assert.New(t)
+	actual := isArraySpecial([]int{4, 3, 1, 6}, [][]int{{0, 2}, {2, 3}})
+	assert.Equal(actual, []bool{false, true}, "Solution3152")
 }
