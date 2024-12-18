@@ -2102,3 +2102,9 @@ func TestSolution3152(t *testing.T) {
 	actual := isArraySpecial([]int{4, 3, 1, 6}, [][]int{{0, 2}, {2, 3}})
 	assert.Equal(actual, []bool{false, true}, "Solution3152")
 }
+
+func TestSolution1475(t *testing.T) {
+	assert := assert.New(t)
+	actual := finalPrices([]int{8, 4, 6, 2, 3})
+	assert.Equal(actual, []int{4, 2, 4, 2, 3}, "Solution1475")
+}
