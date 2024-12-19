@@ -2108,3 +2108,9 @@ func TestSolution1475(t *testing.T) {
 	actual := finalPrices([]int{8, 4, 6, 2, 3})
 	assert.Equal(actual, []int{4, 2, 4, 2, 3}, "Solution1475")
 }
+
+func TestSolution769(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxChunksToSorted([]int{1, 0, 2, 3, 4})
+	assert.Equal(actual, 4, "Solution769")
+}
