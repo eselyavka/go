@@ -2177,3 +2177,9 @@ func TestSolution494(t *testing.T) {
 	actual := findTargetSumWays([]int{1, 1, 1, 1, 1}, 3)
 	assert.Equal(actual, 5, "Solution494")
 }
+
+func TestSolution983(t *testing.T) {
+	assert := assert.New(t)
+	actual := mincostTickets([]int{1, 4, 6, 7, 8, 20}, []int{2, 7, 15})
+	assert.Equal(actual, 11, "Solution983")
+}
