@@ -2183,3 +2183,11 @@ func TestSolution983(t *testing.T) {
 	actual := mincostTickets([]int{1, 4, 6, 7, 8, 20}, []int{2, 7, 15})
 	assert.Equal(actual, 11, "Solution983")
 }
+
+func TestSolution1422(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxScore("011101")
+	assert.Equal(actual, 5, "Solution1422")
+	actual = maxScore("00")
+	assert.Equal(actual, 1, "Solution1422")
+}
