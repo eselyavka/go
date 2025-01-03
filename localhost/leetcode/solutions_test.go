@@ -2191,3 +2191,9 @@ func TestSolution1422(t *testing.T) {
 	actual = maxScore("00")
 	assert.Equal(actual, 1, "Solution1422")
 }
+
+func TestSolution2559(t *testing.T) {
+	assert := assert.New(t)
+	actual := vowelStrings([]string{"aba", "bcb", "ece", "aa", "e"}, [][]int{{0, 2}, {1, 4}, {1, 1}})
+	assert.Equal(actual, []int{2, 3, 0}, "Solution2559")
+}
