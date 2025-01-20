@@ -2197,3 +2197,9 @@ func TestSolution2559(t *testing.T) {
 	actual := vowelStrings([]string{"aba", "bcb", "ece", "aa", "e"}, [][]int{{0, 2}, {1, 4}, {1, 1}})
 	assert.Equal(actual, []int{2, 3, 0}, "Solution2559")
 }
+
+func TestSolution2661(t *testing.T) {
+	assert := assert.New(t)
+	actual := firstCompleteIndex([]int{1, 3, 4, 2}, [][]int{{1, 4}, {2, 3}})
+	assert.Equal(actual, 2, "Solution2661")
+}
