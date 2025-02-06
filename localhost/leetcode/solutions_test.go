@@ -2203,3 +2203,9 @@ func TestSolution2661(t *testing.T) {
 	actual := firstCompleteIndex([]int{1, 3, 4, 2}, [][]int{{1, 4}, {2, 3}})
 	assert.Equal(actual, 2, "Solution2661")
 }
+
+func TestSolution1726(t *testing.T) {
+	assert := assert.New(t)
+	actual := tupleSameProduct([]int{2, 3, 4, 6, 8, 12})
+	assert.Equal(actual, 40, "Solution1726")
+}
