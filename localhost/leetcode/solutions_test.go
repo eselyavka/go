@@ -2209,3 +2209,9 @@ func TestSolution1726(t *testing.T) {
 	actual := tupleSameProduct([]int{2, 3, 4, 6, 8, 12})
 	assert.Equal(actual, 40, "Solution1726")
 }
+
+func TestSolution1415(t *testing.T) {
+	assert := assert.New(t)
+	actual := getHappyString(3, 9)
+	assert.Equal(actual, "cab", "Solution1415")
+}
