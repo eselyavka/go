@@ -2225,3 +2225,9 @@ func TestSolution1980(t *testing.T) {
 	}
 	assert.True(set[actual], "Solution1980")
 }
+
+func TestSolution3394(t *testing.T) {
+	assert := assert.New(t)
+	actual := checkValidCuts(5, [][]int{{1, 0, 5, 2}, {0, 2, 2, 4}, {3, 2, 5, 3}, {0, 4, 4, 5}})
+	assert.True(actual, "Solution3394")
+}
