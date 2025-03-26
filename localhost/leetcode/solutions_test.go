@@ -2231,3 +2231,9 @@ func TestSolution3394(t *testing.T) {
 	actual := checkValidCuts(5, [][]int{{1, 0, 5, 2}, {0, 2, 2, 4}, {3, 2, 5, 3}, {0, 4, 4, 5}})
 	assert.True(actual, "Solution3394")
 }
+
+func TestSolution2033(t *testing.T) {
+	assert := assert.New(t)
+	actual := minOperations_2033([][]int{{2, 4}, {6, 8}}, 2)
+	assert.Equal(actual, 4, "Solution2033")
+}

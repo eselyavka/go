@@ -357,3 +357,17 @@ func copyRow(dest, src []int) {
 		dest[i] = src[i]
 	}
 }
+
+func flatten2DArray(twoD [][]int) []int {
+	total := 0
+	for _, row := range twoD {
+		total += len(row)
+	}
+
+	flattened := make([]int, 0, total)
+
+	for _, row := range twoD {
+		flattened = append(flattened, row...)
+	}
+	return flattened
+}
