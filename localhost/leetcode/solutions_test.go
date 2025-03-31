@@ -2249,3 +2249,9 @@ func TestSolution3169(t *testing.T) {
 	actual := countDays(10, [][]int{{5, 7}, {1, 3}, {9, 10}})
 	assert.Equal(actual, 2, "Solution3169")
 }
+
+func TestSolution763(t *testing.T) {
+	assert := assert.New(t)
+	actual := partitionLabels("ababcbacadefegdehijhklij")
+	assert.Equal(actual, []int{9, 7, 8}, "Solution763")
+}
