@@ -2255,3 +2255,9 @@ func TestSolution763(t *testing.T) {
 	actual := partitionLabels("ababcbacadefegdehijhklij")
 	assert.Equal(actual, []int{9, 7, 8}, "Solution763")
 }
+
+func TestSolution2873(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximumTripletValue([]int{12, 6, 1, 2, 7})
+	assert.Equal(actual, int64(77), "Solution2873")
+}
