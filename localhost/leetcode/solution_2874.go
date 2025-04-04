@@ -1,6 +1,6 @@
 package solutions
 
-func maximumTripletValueOne(nums []int) int64 {
+func maximumTripletValueTwo(nums []int) int64 {
 	n := len(nums)
 	leftMax := make([]int, n, n)
 	rightMax := make([]int, n, n)

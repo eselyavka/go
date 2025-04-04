@@ -2258,6 +2258,12 @@ func TestSolution763(t *testing.T) {
 
 func TestSolution2873(t *testing.T) {
 	assert := assert.New(t)
-	actual := maximumTripletValue([]int{12, 6, 1, 2, 7})
+	actual := maximumTripletValueOne([]int{12, 6, 1, 2, 7})
 	assert.Equal(actual, int64(77), "Solution2873")
+}
+
+func TestSolution2874(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximumTripletValueTwo([]int{12, 6, 1, 2, 7})
+	assert.Equal(actual, int64(77), "Solution2874")
 }
