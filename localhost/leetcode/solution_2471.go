@@ -7,7 +7,7 @@ type tupleValIdx struct {
 	index int
 }
 
-func minimumOperations(root *TreeNode) int {
+func minimumOperations_2471(root *TreeNode) int {
 	q := []*TreeNode{root}
 	ans := 0
 
