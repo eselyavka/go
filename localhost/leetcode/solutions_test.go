@@ -2283,3 +2283,9 @@ func TestSolution1123(t *testing.T) {
 	actual := lcaDeepestLeaves(&root)
 	assert.Equal(binaryTreeBFS(actual), []int{2, 7, 4}, "Solution1123")
 }
+
+func TestSolution3375(t *testing.T) {
+	assert := assert.New(t)
+	actual := minOperations_3375([]int{5, 2, 5, 4, 5}, 2)
+	assert.Equal(actual, 2, "Solution3375")
+}
