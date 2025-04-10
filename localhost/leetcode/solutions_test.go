@@ -2295,3 +2295,9 @@ func TestSolution33796(t *testing.T) {
 	actual := minimumOperations_3396([]int{1, 2, 3, 4, 2, 3, 3, 5, 7})
 	assert.Equal(actual, 2, "Solution3396")
 }
+
+func TestSolution416(t *testing.T) {
+	assert := assert.New(t)
+	actual := canPartition([]int{1, 5, 11, 5})
+	assert.True(actual, "Solution416")
+}
