@@ -2301,3 +2301,9 @@ func TestSolution416(t *testing.T) {
 	actual := canPartition([]int{1, 5, 11, 5})
 	assert.True(actual, "Solution416")
 }
+
+func TestSolution2843(t *testing.T) {
+	assert := assert.New(t)
+	actual := countSymmetricIntegers(1, 100)
+	assert.Equal(actual, 9, "Solution2843")
+}
