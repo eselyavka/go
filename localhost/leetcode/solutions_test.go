@@ -2313,3 +2313,9 @@ func TestSolution2176(t *testing.T) {
 	actual := countPairs([]int{3, 1, 2, 2, 2, 1, 3}, 2)
 	assert.Equal(actual, 4, "Solution2176")
 }
+
+func TestSolution1922(t *testing.T) {
+	assert := assert.New(t)
+	actual := countGoodNumbers(50)
+	assert.Equal(actual, 564908303, "Solution1922")
+}
