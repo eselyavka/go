@@ -2307,3 +2307,9 @@ func TestSolution2843(t *testing.T) {
 	actual := countSymmetricIntegers(1, 100)
 	assert.Equal(actual, 9, "Solution2843")
 }
+
+func TestSolution2176(t *testing.T) {
+	assert := assert.New(t)
+	actual := countPairs([]int{3, 1, 2, 2, 2, 1, 3}, 2)
+	assert.Equal(actual, 4, "Solution2176")
+}
