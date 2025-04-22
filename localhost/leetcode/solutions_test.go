@@ -2325,3 +2325,9 @@ func TestSolution1282(t *testing.T) {
 	actual := groupThePeople([]int{3, 3, 3, 3, 3, 1, 3})
 	assert.True(int2dSliceIsEqual(actual, [][]int{{0, 1, 2}, {5}, {3, 4, 6}}), "Solution1282")
 }
+
+func TestSolution781(t *testing.T) {
+	assert := assert.New(t)
+	actual := numRabbits([]int{1, 1, 2})
+	assert.Equal(actual, 5, "Solution781")
+}
