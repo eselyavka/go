@@ -371,3 +371,12 @@ func flatten2DArray(twoD [][]int) []int {
 	}
 	return flattened
 }
+
+func sumDigits(num int) int {
+	total := 0
+	for num > 0 {
+		total += num % 10
+		num /= 10
+	}
+	return total
+}

@@ -2331,3 +2331,9 @@ func TestSolution781(t *testing.T) {
 	actual := numRabbits([]int{1, 1, 2})
 	assert.Equal(actual, 5, "Solution781")
 }
+
+func TestSolution1399(t *testing.T) {
+	assert := assert.New(t)
+	actual := countLargestGroup(13)
+	assert.Equal(actual, 4, "Solution1399")
+}
