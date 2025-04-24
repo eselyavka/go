@@ -2337,3 +2337,9 @@ func TestSolution1399(t *testing.T) {
 	actual := countLargestGroup(13)
 	assert.Equal(actual, 4, "Solution1399")
 }
+
+func TestSolution2799(t *testing.T) {
+	assert := assert.New(t)
+	actual := countCompleteSubarrays([]int{1, 3, 1, 2, 2})
+	assert.Equal(actual, 4, "Solution2799")
+}
