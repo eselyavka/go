@@ -2349,3 +2349,9 @@ func TestSolution2845(t *testing.T) {
 	actual := countInterestingSubarrays([]int{3, 2, 4}, 2, 1)
 	assert.Equal(actual, int64(3), "Solution2845")
 }
+
+func TestSolution3392(t *testing.T) {
+	assert := assert.New(t)
+	actual := countSubarrays([]int{1, 2, 1, 4, 1})
+	assert.Equal(actual, 1, "Solution3392")
+}
