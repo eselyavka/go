@@ -2367,3 +2367,9 @@ func TestSolution386(t *testing.T) {
 	actual := largestDivisibleSubset([]int{4, 8, 10, 240})
 	assert.Equal(actual, []int{4, 8, 240}, "Solution386")
 }
+
+func TestSolution2264(t *testing.T) {
+	assert := assert.New(t)
+	actual := largestGoodInteger("6777133339")
+	assert.Equal(actual, "777", "Solution2264")
+}
