@@ -1645,6 +1645,12 @@ func TestSolution2348(t *testing.T) {
 	assert.Equal(actual, int64(6), "Solution2348")
 }
 
+func TestSolution2348Ref(t *testing.T) {
+	assert := assert.New(t)
+	actual := zeroFilledSubarrayRef([]int{1, 3, 0, 0, 2, 0, 0, 4})
+	assert.Equal(actual, int64(6), "Solution2348")
+}
+
 func TestSolution274(t *testing.T) {
 	assert := assert.New(t)
 	actual := hIndex([]int{3, 0, 6, 1, 5})
