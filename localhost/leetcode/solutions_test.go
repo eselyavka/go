@@ -2385,3 +2385,9 @@ func TestSolution3195(t *testing.T) {
 	actual := minimumArea([][]int{{0, 1, 0}, {1, 0, 1}})
 	assert.Equal(actual, 6, "Solution3195")
 }
+
+func TestSolution3000(t *testing.T) {
+	assert := assert.New(t)
+	actual := areaOfMaxDiagonal([][]int{{9, 3}, {8, 6}})
+	assert.Equal(actual, 48, "Solution3000")
+}
