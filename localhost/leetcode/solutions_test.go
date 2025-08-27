@@ -2391,3 +2391,9 @@ func TestSolution3000(t *testing.T) {
 	actual := areaOfMaxDiagonal([][]int{{9, 3}, {8, 6}})
 	assert.Equal(actual, 48, "Solution3000")
 }
+
+func TestSolution1493(t *testing.T) {
+	assert := assert.New(t)
+	actual := longestSubarray([]int{1, 1, 0, 1})
+	assert.Equal(actual, 3, "Solution1493")
+}
