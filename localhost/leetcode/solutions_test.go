@@ -2397,3 +2397,9 @@ func TestSolution1493(t *testing.T) {
 	actual := longestSubarray([]int{1, 1, 0, 1})
 	assert.Equal(actual, 3, "Solution1493")
 }
+
+func TestSolution485(t *testing.T) {
+	assert := assert.New(t)
+	actual := findMaxConsecutiveOnes([]int{1, 1, 0, 1, 1, 1})
+	assert.Equal(actual, 3, "Solution485")
+}
