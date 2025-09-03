@@ -2403,3 +2403,9 @@ func TestSolution485(t *testing.T) {
 	actual := findMaxConsecutiveOnes([]int{1, 1, 0, 1, 1, 1})
 	assert.Equal(actual, 3, "Solution485")
 }
+
+func TestSolution323(t *testing.T) {
+	assert := assert.New(t)
+	actual := countComponents(5, [][]int{{0, 1}, {1, 2}, {3, 4}})
+	assert.Equal(actual, 2, "Solution323")
+}
