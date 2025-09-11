@@ -2421,3 +2421,9 @@ func TestSolution3446(t *testing.T) {
 	actual := sortMatrix([][]int{{1, 7, 3}, {9, 8, 2}, {4, 5, 6}})
 	assert.Equal(actual, [][]int{{8, 2, 3}, {9, 6, 7}, {4, 5, 1}}, "Solution3446")
 }
+
+func TestSolution2899(t *testing.T) {
+	assert := assert.New(t)
+	actual := lastVisitedIntegers([]int{1, 2, -1, -1, -1})
+	assert.Equal(actual, []int{2, 1, -1}, "Solution2899")
+}
