@@ -2433,3 +2433,9 @@ func TestSolution1637(t *testing.T) {
 	actual := maxWidthOfVerticalArea([][]int{{8, 7}, {9, 9}, {7, 4}, {9, 7}})
 	assert.Equal(actual, 1, "Solution1637")
 }
+
+func TestSolution1904(t *testing.T) {
+	assert := assert.New(t)
+	actual := numberOfRounds("09:31", "10:14")
+	assert.Equal(actual, 1, "Solution1904")
+}
