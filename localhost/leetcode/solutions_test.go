@@ -2445,3 +2445,9 @@ func TestSolution2221(t *testing.T) {
 	actual := triangularSum([]int{1, 2, 3, 4, 5})
 	assert.Equal(actual, 8, "Solution2221")
 }
+
+func TestSolution1518(t *testing.T) {
+	assert := assert.New(t)
+	actual := numWaterBottles(15, 4)
+	assert.Equal(actual, 19, "Solution1518")
+}
