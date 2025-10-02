@@ -2457,3 +2457,9 @@ func TestSolution1039(t *testing.T) {
 	actual := minScoreTriangulation([]int{3, 7, 4, 5})
 	assert.Equal(actual, 144, "Solution1039")
 }
+
+func TestSolution3100(t *testing.T) {
+	assert := assert.New(t)
+	actual := maxBottlesDrunk(13, 6)
+	assert.Equal(actual, 15, "Solution3100")
+}
