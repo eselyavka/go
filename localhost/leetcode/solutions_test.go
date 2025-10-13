@@ -2463,3 +2463,9 @@ func TestSolution3100(t *testing.T) {
 	actual := maxBottlesDrunk(13, 6)
 	assert.Equal(actual, 15, "Solution3100")
 }
+
+func TestSolution207(t *testing.T) {
+	assert := assert.New(t)
+	actual := canFinish(2, [][]int{{1, 0}})
+	assert.True(actual, "Solution207")
+}
