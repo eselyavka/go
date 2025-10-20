@@ -2469,3 +2469,9 @@ func TestSolution207(t *testing.T) {
 	actual := canFinish(2, [][]int{{1, 0}})
 	assert.True(actual, "Solution207")
 }
+
+func TestSolution2011(t *testing.T) {
+	assert := assert.New(t)
+	actual := finalValueAfterOperations([]string{"--X", "X++", "X++"})
+	assert.Equal(actual, 1, "Solution2011")
+}
