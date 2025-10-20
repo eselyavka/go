@@ -2475,3 +2475,9 @@ func TestSolution2011(t *testing.T) {
 	actual := finalValueAfterOperations([]string{"--X", "X++", "X++"})
 	assert.Equal(actual, 1, "Solution2011")
 }
+
+func TestSolution1625(t *testing.T) {
+	assert := assert.New(t)
+	actual := findLexSmallestString("5525", 9, 2)
+	assert.Equal(actual, "2050", "Solution1625")
+}
