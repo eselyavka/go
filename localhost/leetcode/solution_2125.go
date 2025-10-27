@@ -1,6 +1,8 @@
 package solutions
 
-import "strings"
+import (
+	"strings"
+)
 
 func numberOfBeams(bank []string) int {
 	rows := len(bank)
@@ -23,6 +25,29 @@ func numberOfBeams(bank []string) int {
 		}
 		ans += d[rows] * d[k]
 		rows--
+	}
+
+	return ans
+}
+
+func numberOfBeamsOther(bank []string) int {
+
+	prevRowDevCnt := 0
+	ans := 0
+	var noBeams bool
+	for _, item := range bank {
+		runningDevCnt := 0
+		noBeams = true
+		for _, c := range item {
+			if c == '1' {
+				noBeams = false
+				runningDevCnt++
+				ans += prevRowDevCnt
+			}
+		}
+		if !noBeams {
+			prevRowDevCnt = runningDevCnt
+		}
 	}
 
 	return ans

@@ -2481,3 +2481,9 @@ func TestSolution1625(t *testing.T) {
 	actual := findLexSmallestString("5525", 9, 2)
 	assert.Equal(actual, "2050", "Solution1625")
 }
+
+func TestSolutionOther2125(t *testing.T) {
+	assert := assert.New(t)
+	actual := numberOfBeamsOther([]string{"011001", "000000", "010100", "001000"})
+	assert.Equal(actual, 8, "SolutionOther2125")
+}
