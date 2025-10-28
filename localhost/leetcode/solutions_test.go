@@ -2487,3 +2487,9 @@ func TestSolutionOther2125(t *testing.T) {
 	actual := numberOfBeamsOther([]string{"011001", "000000", "010100", "001000"})
 	assert.Equal(actual, 8, "SolutionOther2125")
 }
+
+func TestSolution3354(t *testing.T) {
+	assert := assert.New(t)
+	actual := countValidSelections([]int{1, 0, 2, 0, 3})
+	assert.Equal(actual, 2, "SolutionOther3354")
+}
