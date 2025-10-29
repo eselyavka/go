@@ -2493,3 +2493,9 @@ func TestSolution3354(t *testing.T) {
 	actual := countValidSelections([]int{1, 0, 2, 0, 3})
 	assert.Equal(actual, 2, "SolutionOther3354")
 }
+
+func TestSolution3370(t *testing.T) {
+	assert := assert.New(t)
+	actual := smallestNumber(5)
+	assert.Equal(actual, 7, "SolutionOther3370")
+}
