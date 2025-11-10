@@ -2499,3 +2499,9 @@ func TestSolution3370(t *testing.T) {
 	actual := smallestNumber(5)
 	assert.Equal(actual, 7, "SolutionOther3370")
 }
+
+func TestSolution1578(t *testing.T) {
+	assert := assert.New(t)
+	actual := minCost("aaabbbabbbb", []int{3, 5, 10, 7, 5, 3, 5, 5, 4, 8, 1})
+	assert.Equal(actual, 26, "SolutionOther1578")
+}
