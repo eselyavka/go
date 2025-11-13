@@ -2511,3 +2511,9 @@ func TestSolution474(t *testing.T) {
 	actual := findMaxForm([]string{"10", "0001", "111001", "1", "0"}, 5, 3)
 	assert.Equal(actual, 4, "SolutionOther474")
 }
+
+func TestSolution2654(t *testing.T) {
+	assert := assert.New(t)
+	actual := minOperations_2654([]int{2, 6, 3, 4})
+	assert.Equal(actual, 4, "SolutionOther2654")
+}
