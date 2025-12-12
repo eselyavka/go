@@ -2517,3 +2517,9 @@ func TestSolution2654(t *testing.T) {
 	actual := minOperations_2654([]int{2, 6, 3, 4})
 	assert.Equal(actual, 4, "SolutionOther2654")
 }
+
+func TestSolution3542(t *testing.T) {
+	assert := assert.New(t)
+	actual := minOperations_3542([]int{1, 2, 1, 2, 1, 2})
+	assert.Equal(actual, 4, "SolutionOther3542")
+}
