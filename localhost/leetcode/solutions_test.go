@@ -2523,3 +2523,9 @@ func TestSolution3542(t *testing.T) {
 	actual := minOperations_3542([]int{1, 2, 1, 2, 1, 2})
 	assert.Equal(actual, 4, "SolutionOther3542")
 }
+
+func TestSolution2110(t *testing.T) {
+	assert := assert.New(t)
+	actual := getDescentPeriods([]int{3, 2, 1, 4})
+	assert.Equal(actual, int64(7), "SolutionOther2110")
+}
