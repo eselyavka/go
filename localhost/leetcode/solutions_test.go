@@ -2529,3 +2529,9 @@ func TestSolution2110(t *testing.T) {
 	actual := getDescentPeriods([]int{3, 2, 1, 4})
 	assert.Equal(actual, int64(7), "SolutionOther2110")
 }
+
+func TestSolution1390(t *testing.T) {
+	assert := assert.New(t)
+	actual := sumFourDivisors([]int{21, 4, 7})
+	assert.Equal(actual, 32, "SolutionOther1390")
+}
