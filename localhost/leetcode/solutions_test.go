@@ -2535,3 +2535,9 @@ func TestSolution1390(t *testing.T) {
 	actual := sumFourDivisors([]int{21, 4, 7})
 	assert.Equal(actual, 32, "SolutionOther1390")
 }
+
+func TestSolution393(t *testing.T) {
+	assert := assert.New(t)
+	actual := validUtf8([]int{197, 130, 1})
+	assert.True(actual, "SolutionOther393")
+}
