@@ -2541,3 +2541,9 @@ func TestSolution393(t *testing.T) {
 	actual := validUtf8([]int{197, 130, 1})
 	assert.True(actual, "SolutionOther393")
 }
+
+func TestSolution2943(t *testing.T) {
+	assert := assert.New(t)
+	actual := maximizeSquareHoleArea(3, 13, []int{2, 4, 3}, []int{4, 6, 7, 12, 10, 13, 2})
+	assert.Equal(actual, 9, "SolutionOther2943")
+}
