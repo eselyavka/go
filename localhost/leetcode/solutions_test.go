@@ -2547,3 +2547,9 @@ func TestSolution2943(t *testing.T) {
 	actual := maximizeSquareHoleArea(3, 13, []int{2, 4, 3}, []int{4, 6, 7, 12, 10, 13, 2})
 	assert.Equal(actual, 9, "SolutionOther2943")
 }
+
+func TestSolution3314(t *testing.T) {
+	assert := assert.New(t)
+	actual := minBitwiseArray([]int{2, 3, 5, 7})
+	assert.Equal(actual, []int{-1, 1, 4, 3}, "SolutionOther3314")
+}
