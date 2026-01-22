@@ -2553,3 +2553,9 @@ func TestSolution3314(t *testing.T) {
 	actual := minBitwiseArray([]int{2, 3, 5, 7})
 	assert.Equal(actual, []int{-1, 1, 4, 3}, "SolutionOther3314")
 }
+
+func TestSolution3507(t *testing.T) {
+	assert := assert.New(t)
+	actual := minimumPairRemoval([]int{5, 2, 3, 1})
+	assert.Equal(actual, 2, "SolutionOther3507")
+}
