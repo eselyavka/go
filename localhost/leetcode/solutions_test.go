@@ -2559,3 +2559,9 @@ func TestSolution3507(t *testing.T) {
 	actual := minimumPairRemoval([]int{5, 2, 3, 1})
 	assert.Equal(actual, 2, "SolutionOther3507")
 }
+
+func TestSolution1984(t *testing.T) {
+	assert := assert.New(t)
+	actual := minimumDifference([]int{9, 4, 1, 7}, 2)
+	assert.Equal(actual, 2, "SolutionOther1984")
+}
