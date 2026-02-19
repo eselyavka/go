@@ -2565,3 +2565,9 @@ func TestSolution1984(t *testing.T) {
 	actual := minimumDifference([]int{9, 4, 1, 7}, 2)
 	assert.Equal(actual, 2, "SolutionOther1984")
 }
+
+func TestSolution3453(t *testing.T) {
+	assert := assert.New(t)
+	actual := separateSquares([][]int{{0, 0, 1}, {2, 2, 1}})
+	assert.Equal(actual, 1.0, "SolutionOther3453")
+}
