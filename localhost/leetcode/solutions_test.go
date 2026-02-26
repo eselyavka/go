@@ -2577,3 +2577,9 @@ func TestSolution2275(t *testing.T) {
 	actual := largestCombination([]int{16, 17, 71, 62, 12, 24, 14})
 	assert.Equal(actual, 4, "SolutionOther2275")
 }
+
+func TestSolution1404(t *testing.T) {
+	assert := assert.New(t)
+	actual := numSteps("1101")
+	assert.Equal(actual, 6, "SolutionOther1404")
+}
