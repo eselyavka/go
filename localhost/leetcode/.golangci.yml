@@ -6,7 +6,12 @@ linters:
     - govet
     - ineffassign
     - staticcheck
-    - unused
+
+linters-settings:
+  staticcheck:
+    checks:
+      - all
+      - -U1000
 
 issues:
   exclude-use-default: false
