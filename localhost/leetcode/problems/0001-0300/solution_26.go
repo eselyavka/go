@@ -11,8 +11,7 @@ func removeDuplicatesArray(nums []int) int {
 
 	n := len(nums)
 	j := 0
-	i := 1
-	for i = 0; i < n-1; i++ {
+	for i := 0; i < n-1; i++ {
 		if nums[i] != nums[i+1] {
 			nums[j] = nums[i]
 			j++
