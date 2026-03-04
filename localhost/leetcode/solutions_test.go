@@ -2589,3 +2589,9 @@ func TestSolution1536(t *testing.T) {
 	actual := minSwaps([][]int{{0, 0, 1}, {1, 1, 0}, {1, 0, 0}})
 	assert.Equal(actual, 3, "SolutionOther1536")
 }
+
+func TestSolution1582(t *testing.T) {
+	assert := assert.New(t)
+	actual := numSpecial([][]int{{1, 0, 0}, {0, 0, 1}, {1, 0, 0}})
+	assert.Equal(actual, 1, "SolutionOther1582")
+}
