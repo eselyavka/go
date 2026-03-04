@@ -5,10 +5,10 @@ GOMODCACHE_DIR := $(CURDIR)/pkg/mod
 .PHONY: fmt fmt-check test validate lint verify
 
 fmt:
-	cd $(GO_MODULE_DIR) && gofmt -w *.go
+	cd $(GO_MODULE_DIR) && find . -type f -name '*.go' -print0 | xargs -0 gofmt -w
 
 fmt-check:
-	cd $(GO_MODULE_DIR) && test -z "$$(gofmt -l *.go)"
+	cd $(GO_MODULE_DIR) && test -z "$$(find . -type f -name '*.go' -print0 | xargs -0 gofmt -l)"
 
 test:
 	cd $(GO_MODULE_DIR) && GOCACHE=$(GOCACHE_DIR) GOMODCACHE=$(GOMODCACHE_DIR) go test ./...

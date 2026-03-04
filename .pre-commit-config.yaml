@@ -10,7 +10,7 @@ repos:
     hooks:
       - id: gofmt-check
         name: gofmt check
-        entry: bash -c 'cd localhost/leetcode && test -z "$(gofmt -l *.go)"'
+        entry: bash -c 'cd localhost/leetcode && test -z "$(find . -type f -name '\''*.go'\'' -print0 | xargs -0 gofmt -l)"'
         language: system
         pass_filenames: false
 

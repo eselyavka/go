@@ -4,7 +4,11 @@ Repository for practicing LeetCode problems in Go, with consistent structure, au
 
 ## Structure
 
-- `localhost/leetcode/`: Go module with all solutions and tests.
+- `localhost/leetcode/`: Go module root.
+- `localhost/leetcode/problems/<0001-0300>/`: range folders (300 problems each).
+- `localhost/leetcode/problems/<range>/solution_<id>.go`: solution file.
+- `localhost/leetcode/problems/<range>/solution_<id>_test.go`: test file.
+- `localhost/leetcode/constants.go` and `localhost/leetcode/leetcode_shared_libs.go`: single shared source files symlinked into each range folder.
 - `.github/workflows/ci.yml`: CI pipeline.
 - `scripts/new_solution.sh`: Creates standardized solution stubs.
 - `scripts/validate_solutions.sh`: Validates naming and package conventions.
@@ -12,13 +16,14 @@ Repository for practicing LeetCode problems in Go, with consistent structure, au
 
 ## Conventions
 
-- Each solution lives in `localhost/leetcode/solution_<problem_id>.go`.
+- Each solution lives in its range folder:
+  - `localhost/leetcode/problems/<range>/solution_<problem_id>.go`
 - File package must be `solutions`.
 - Run `gofmt` on all files before commit.
-- Keep shared types/utilities in:
-  - `localhost/leetcode/types.go`
+- Shared constants/helpers are maintained once in module root and linked into each range folder:
   - `localhost/leetcode/constants.go`
   - `localhost/leetcode/leetcode_shared_libs.go`
+- `localhost/leetcode/types.go` is used as the template when initializing a new range folder.
 
 ## Local Commands
 
@@ -28,7 +33,7 @@ make test
 make verify
 ```
 
-`make verify` runs format checks, solution validation, and tests.
+`make verify` runs format checks, solution validation, and tests across all ranges.
 
 ## Pre-commit
 
