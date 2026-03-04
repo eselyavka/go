@@ -17,6 +17,15 @@ fi
 
 cd "${MODULE_DIR}"
 
+has_package_decl() {
+  local file="$1"
+  if command -v rg >/dev/null 2>&1; then
+    rg -q '^package solutions$' "${file}"
+  else
+    grep -qE '^package solutions$' "${file}"
+  fi
+}
+
 unexpected_root_solution_files="$(find . -maxdepth 1 -type f -name 'solution_*.go' | sort)"
 if [[ -n "${unexpected_root_solution_files}" ]]; then
   echo "Solution files must live under problems/<range>/, not module root:"
@@ -106,7 +115,7 @@ for dir in "${PROBLEMS_DIR}"/*; do
 
   invalid_package_files=""
   while IFS= read -r go_file; do
-    if ! rg -q '^package solutions$' "${go_file}"; then
+    if ! has_package_decl "${go_file}"; then
       invalid_package_files+="${go_file}"$'\n'
     fi
   done < <(find "${dir}" -maxdepth 1 -type f -name '*.go' | sort)
