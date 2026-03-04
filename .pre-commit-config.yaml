@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+
+  - repo: local
+    hooks:
+      - id: gofmt-check
+        name: gofmt check
+        entry: bash -c 'cd localhost/leetcode && test -z "$(gofmt -l *.go)"'
+        language: system
+        pass_filenames: false
+
+      - id: validate-solutions
+        name: validate solutions layout
+        entry: ./scripts/validate_solutions.sh
+        language: system
+        pass_filenames: false
+
+      - id: go-test
+        name: go test
+        entry: bash -c 'cd localhost/leetcode && GOCACHE=/tmp/go-build GOMODCACHE="$PWD/../../pkg/mod" go test ./...'
+        language: system
+        pass_filenames: false
