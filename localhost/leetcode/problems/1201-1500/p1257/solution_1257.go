@@ -2,7 +2,7 @@ package p1257
 
 import "localhost/leetcode/util"
 
-func dfs_1257(root string, graph map[string][]string, path []string, r string, paths map[string][]string) {
+func dfs(root string, graph map[string][]string, path []string, r string, paths map[string][]string) {
 	if _, ok := graph[root]; !ok {
 		return
 	}
@@ -17,7 +17,7 @@ func dfs_1257(root string, graph map[string][]string, path []string, r string, p
 	}
 
 	for _, item := range graph[root] {
-		dfs_1257(item, graph, path, r, paths)
+		dfs(item, graph, path, r, paths)
 	}
 
 	path = path[:len(path)-1]
@@ -34,9 +34,9 @@ func findSmallestRegion(regions [][]string, region1 string, region2 string) stri
 	paths := make(map[string][]string)
 
 	path := make([]string, 0)
-	dfs_1257(root, G, path, region1, paths)
+	dfs(root, G, path, region1, paths)
 	path = make([]string, 0)
-	dfs_1257(root, G, path, region2, paths)
+	dfs(root, G, path, region2, paths)
 
 	arr1 := paths[region1]
 	arr2 := paths[region2]

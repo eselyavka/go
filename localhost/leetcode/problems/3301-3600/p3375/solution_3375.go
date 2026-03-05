@@ -2,7 +2,7 @@ package p3375
 
 import "localhost/leetcode/util"
 
-func minOperations_3375(nums []int, k int) int {
+func minOperations(nums []int, k int) int {
 	if len(nums) == 0 {
 		return -1
 	}

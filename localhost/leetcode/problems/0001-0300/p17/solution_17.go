@@ -1,13 +1,13 @@
 package p17
 
-func backtrack_17(idx int, acc, digits string, mapping map[uint8][]string, ans *[]string) {
+func backtrack(idx int, acc, digits string, mapping map[uint8][]string, ans *[]string) {
 	if len(acc) == len(digits) {
 		*ans = append(*ans, acc)
 		return
 	}
 	for _, c := range mapping[digits[idx]] {
 		acc += c
-		backtrack_17(idx+1, acc, digits, mapping, ans)
+		backtrack(idx+1, acc, digits, mapping, ans)
 		acc = acc[:len(acc)-1]
 	}
 }
@@ -29,7 +29,7 @@ func letterCombinations(digits string) []string {
 	ans := make([]string, 0)
 	local_res := ""
 
-	backtrack_17(0, local_res, digits, mapping, &ans)
+	backtrack(0, local_res, digits, mapping, &ans)
 
 	return ans
 }

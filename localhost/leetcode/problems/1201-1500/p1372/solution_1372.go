@@ -2,18 +2,18 @@ package p1372
 
 import "localhost/leetcode/util"
 
-func rec_1372(root *util.TreeNode, goLeft bool, steps int, ans *int) {
+func rec(root *util.TreeNode, goLeft bool, steps int, ans *int) {
 	if root == nil {
 		*ans = util.MaxInts([]int{steps - 1, *ans})
 		return
 	}
 
 	if goLeft {
-		rec_1372(root.Left, false, steps+1, ans)
-		rec_1372(root.Right, true, 1, ans)
+		rec(root.Left, false, steps+1, ans)
+		rec(root.Right, true, 1, ans)
 	} else {
-		rec_1372(root.Left, false, 1, ans)
-		rec_1372(root.Right, true, steps+1, ans)
+		rec(root.Left, false, 1, ans)
+		rec(root.Right, true, steps+1, ans)
 	}
 }
 
@@ -24,8 +24,8 @@ func longestZigZag(root *util.TreeNode) int {
 
 	ans := 0
 
-	rec_1372(root, false, 0, &ans)
-	rec_1372(root, true, 0, &ans)
+	rec(root, false, 0, &ans)
+	rec(root, true, 0, &ans)
 
 	return ans
 }

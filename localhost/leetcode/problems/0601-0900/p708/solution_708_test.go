@@ -20,7 +20,7 @@ func TestSolution708(t *testing.T) {
 	head.Next.Next = &util.ListNode{Val: 1, Next: nil}
 	head.Next.Next.Next = &head
 
-	res := insert_708(&head, 2)
+	res := insert(&head, 2)
 	acc := make([]int, 0)
 
 	curr := res.Next

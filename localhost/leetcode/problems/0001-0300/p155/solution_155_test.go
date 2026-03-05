@@ -15,7 +15,7 @@ var (
 
 func TestSolution155(t *testing.T) {
 	assert := assert.New(t)
-	actual := Constructor_155()
+	actual := Constructor()
 	actual.Push(-2)
 	actual.Push(0)
 	actual.Push(-3)

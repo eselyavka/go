@@ -1,6 +1,6 @@
 package p3542
 
-func minOperations_3542(nums []int) int {
+func minOperations(nums []int) int {
 	stack := make([]int, 0)
 	ans := 0
 

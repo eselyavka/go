@@ -2,7 +2,7 @@ package p704
 
 import "localhost/leetcode/util"
 
-func search_704(nums []int, target int) int {
+func search(nums []int, target int) int {
 	n := len(nums)
 
 	if n == 1 {

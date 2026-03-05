@@ -2,7 +2,7 @@ package p167
 
 import "localhost/leetcode/util"
 
-func twoSum_167(numbers []int, target int) []int {
+func twoSum(numbers []int, target int) []int {
 	n := len(numbers)
 
 	for i := 0; i < n; i++ {

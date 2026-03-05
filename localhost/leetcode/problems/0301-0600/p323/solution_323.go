@@ -1,10 +1,10 @@
 package p323
 
-func dfs_323(graph map[int][]int, v []int, k int, visited map[int]bool) {
+func dfs(graph map[int][]int, v []int, k int, visited map[int]bool) {
 	visited[k] = true
 	for _, neighbor := range v {
 		if !visited[neighbor] {
-			dfs_323(graph, graph[neighbor], neighbor, visited)
+			dfs(graph, graph[neighbor], neighbor, visited)
 		}
 	}
 }
@@ -24,7 +24,7 @@ func countComponents(n int, edges [][]int) int {
 	visited := make(map[int]bool, n)
 	for k := 0; k < n; k++ {
 		if !visited[k] {
-			dfs_323(G, G[k], k, visited)
+			dfs(G, G[k], k, visited)
 			ans++
 		}
 	}

@@ -2,7 +2,7 @@ package p2140
 
 import "localhost/leetcode/util"
 
-func dfs_2140(i int, memo []int, q [][]int) int {
+func dfs(i int, memo []int, q [][]int) int {
 	if i >= len(q) {
 		return 0
 	}
@@ -14,7 +14,7 @@ func dfs_2140(i int, memo []int, q [][]int) int {
 	points := q[i][0]
 	bpower := q[i][1]
 
-	memo[i] = util.MaxInts([]int{dfs_2140(i+1, memo, q), points + dfs_2140(i+1+bpower, memo, q)})
+	memo[i] = util.MaxInts([]int{dfs(i+1, memo, q), points + dfs(i+1+bpower, memo, q)})
 
 	return memo[i]
 }
@@ -23,7 +23,7 @@ func mostPoints(questions [][]int) int64 {
 
 	memo := make([]int, n, n)
 
-	ans := dfs_2140(0, memo, questions)
+	ans := dfs(0, memo, questions)
 
 	return int64(ans)
 }

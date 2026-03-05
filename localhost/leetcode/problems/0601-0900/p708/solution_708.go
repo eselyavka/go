@@ -2,7 +2,7 @@ package p708
 
 import "localhost/leetcode/util"
 
-func insert_708(aNode *util.ListNode, x int) *util.ListNode {
+func insert(aNode *util.ListNode, x int) *util.ListNode {
 	if aNode == nil {
 		node := util.ListNode{Val: x, Next: nil}
 		node.Next = &node

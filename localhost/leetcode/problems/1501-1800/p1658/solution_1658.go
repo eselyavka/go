@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func minOperations_1658(nums []int, x int) int {
+func minOperations(nums []int, x int) int {
 	curr := util.Sum(nums)
 	ans := math.MaxInt
 	left := 0

@@ -2,7 +2,7 @@ package p1769
 
 import "localhost/leetcode/util"
 
-func minOperations_1769(boxes string) []int {
+func minOperations(boxes string) []int {
 	n := len(boxes)
 	ans := make([]int, n, n)
 

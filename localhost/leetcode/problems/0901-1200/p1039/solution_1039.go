@@ -2,7 +2,7 @@ package p1039
 
 import "localhost/leetcode/util"
 
-func rec_1039(memo [][]int, arr []int, i, j int) int {
+func rec(memo [][]int, arr []int, i, j int) int {
 	if i+1 == j {
 		return 0
 	}
@@ -14,7 +14,7 @@ func rec_1039(memo [][]int, arr []int, i, j int) int {
 	res := util.MaxInt
 
 	for k := i + 1; k < j; k++ {
-		curr := rec_1039(memo, arr, i, k) + rec_1039(memo, arr, k, j) + arr[i]*arr[j]*arr[k]
+		curr := rec(memo, arr, i, k) + rec(memo, arr, k, j) + arr[i]*arr[j]*arr[k]
 		res = util.MinInts([]int{res, curr})
 	}
 	memo[i][j] = res
@@ -34,6 +34,6 @@ func minScoreTriangulation(values []int) int {
 		}
 	}
 
-	ans := rec_1039(memo, values, 0, n-1)
+	ans := rec(memo, values, 0, n-1)
 	return ans
 }

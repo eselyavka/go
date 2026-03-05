@@ -2,7 +2,7 @@ package p131
 
 import "localhost/leetcode/util"
 
-func backtracking_131(local_ans []string, pos int, s string, ans *[][]string) {
+func backtracking(local_ans []string, pos int, s string, ans *[][]string) {
 	if pos >= len(s) {
 		tmp := make([]string, len(local_ans))
 		copy(tmp, local_ans)
@@ -13,7 +13,7 @@ func backtracking_131(local_ans []string, pos int, s string, ans *[][]string) {
 	for i := pos; i < len(s); i++ {
 		if util.IsPalindrome(s, pos, i) {
 			local_ans = append(local_ans, s[pos:i+1])
-			backtracking_131(local_ans, i+1, s, ans)
+			backtracking(local_ans, i+1, s, ans)
 			local_ans = local_ans[:len(local_ans)-1]
 		}
 	}
@@ -22,7 +22,7 @@ func backtracking_131(local_ans []string, pos int, s string, ans *[][]string) {
 func partition(s string) [][]string {
 	ans := make([][]string, 0)
 
-	backtracking_131([]string{}, 0, s, &ans)
+	backtracking([]string{}, 0, s, &ans)
 
 	return ans
 }
