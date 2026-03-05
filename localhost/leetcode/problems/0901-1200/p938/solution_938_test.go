@@ -20,6 +20,6 @@ func TestSolution938(t *testing.T) {
 	root.Left.Left = &util.TreeNode{Val: 3, Left: nil, Right: nil}
 	root.Left.Right = &util.TreeNode{Val: 7, Left: nil, Right: nil}
 	root.Right = &util.TreeNode{Val: 15, Left: nil, Right: nil}
-	root.Right.Right = &util.TreeNode{18, nil, nil}
+	root.Right.Right = &util.TreeNode{Val: 18, Left: nil, Right: nil}
 	assert.Equal(rangeSumBST(&root, 7, 15), 32, "Solution938")
 }
