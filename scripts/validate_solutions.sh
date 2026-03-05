@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-MODULE_DIR="${ROOT_DIR}/localhost/leetcode"
+MODULE_DIR="${ROOT_DIR}"
 PROBLEMS_DIR="${MODULE_DIR}/problems"
 
 if [[ ! -d "${MODULE_DIR}" ]]; then
@@ -34,7 +34,7 @@ for forbidden_file in \
   "${MODULE_DIR}/types.go"; do
   if [[ -e "${forbidden_file}" ]]; then
     echo "Deprecated file found: ${forbidden_file}"
-    echo "Use localhost/leetcode/util/{constants.go,helpers.go,types.go} instead."
+    echo "Use util/{constants.go,helpers.go,types.go} instead."
     exit 1
   fi
 done
@@ -52,7 +52,7 @@ for dir in "${PROBLEMS_DIR}"/*; do
   while IFS= read -r deprecated_range_file; do
     [[ -n "${deprecated_range_file}" ]] || continue
     echo "Deprecated shared file in range root: ${deprecated_range_file}"
-    echo "Use shared code from localhost/leetcode/util instead."
+    echo "Use shared code from util instead."
     exit 1
   done < <(find "${dir}" -maxdepth 1 -type f \( \
       -name 'constants.go' -o \

@@ -18,6 +18,7 @@ coverage.html
 
 # Dependency/cache directories
 pkg/
+.gomodcache/
 vendor/
 
 # Env files

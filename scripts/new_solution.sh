@@ -16,7 +16,7 @@ problem_id_num=$((10#${problem_id}))
 problem_id_norm="${problem_id_num}"
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-MODULE_DIR="${ROOT_DIR}/localhost/leetcode"
+MODULE_DIR="${ROOT_DIR}"
 PROBLEMS_DIR="${MODULE_DIR}/problems"
 
 range_start=$(( ((problem_id_num - 1) / 300) * 300 + 1 ))

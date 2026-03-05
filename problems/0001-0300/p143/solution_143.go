@@ -1,0 +1,63 @@
+package p143
+
+import "github.com/eseliavka/go/util"
+
+func reorderList(head *util.ListNode) {
+	slow := head
+	fast := head.Next
+
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+
+	var second, next, prev *util.ListNode
+
+	second = slow.Next
+	slow.Next = nil
+
+	for second != nil {
+		next = second.Next
+		second.Next = prev
+		prev = second
+		second = next
+	}
+
+	first := head
+	second = prev
+	var tmp1, tmp2 *util.ListNode
+	for second != nil {
+		tmp1 = first.Next
+		tmp2 = second.Next
+		first.Next = second
+		second.Next = tmp1
+		first = tmp1
+		second = tmp2
+	}
+}
+
+func reorderListMem(head *util.ListNode) {
+	arr := make([]int, 0)
+	it := head
+	for it != nil {
+		arr = append(arr, it.Val)
+		it = it.Next
+	}
+
+	l := 0
+	r := len(arr) - 1
+
+	ans := head
+	i := 0
+	for ans != nil {
+		if i%2 == 0 {
+			ans.Val = arr[l]
+			l++
+		} else {
+			ans.Val = arr[r]
+			r--
+		}
+		i++
+		ans = ans.Next
+	}
+}
