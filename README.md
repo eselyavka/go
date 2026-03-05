@@ -69,3 +69,9 @@ GitHub Actions runs on every push/PR:
 - lint (`golangci-lint v2`)
 
 For this repo, "CD" is continuous delivery of quality gates to `main` (no deployment target yet).
+
+## Workflow Notes
+
+- CI uses Go from `localhost/leetcode/go.mod` (currently `1.26`).
+- Lint workflow uses `golangci-lint-action@v9` with `golangci-lint v2`.
+- `scripts/validate_solutions.sh` supports both `rg` and `grep` so it works on runners without `ripgrep`.
