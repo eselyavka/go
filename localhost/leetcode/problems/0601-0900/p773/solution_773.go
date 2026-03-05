@@ -10,11 +10,11 @@ func slidingPuzzle(board [][]int) int {
 		for i := 0; i < m; i++ {
 			for j := 0; j < n; j++ {
 				if matrix[i][j] == 0 {
-					return util.TupleInt{i, j}
+					return util.TupleInt{Row: i, Col: j}
 				}
 			}
 		}
-		return util.TupleInt{-1, -1}
+		return util.TupleInt{Row: -1, Col: -1}
 	}
 
 	valid := func(matrix [][]int) bool {
@@ -25,7 +25,7 @@ func slidingPuzzle(board [][]int) int {
 		return 0
 	}
 
-	queue := []util.Tuple5{{0, board}}
+	queue := []util.Tuple5{{Steps: 0, Board: board}}
 	seen := make(map[string]struct{})
 	seen[util.TwoDSliceToString(board)] = struct{}{}
 

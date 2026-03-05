@@ -12,7 +12,7 @@ func verticalOrder(root *util.TreeNode) [][]int {
 
 	d := make(map[int][]int)
 
-	queue := []util.Tuple{util.Tuple{root, 0}}
+	queue := []util.Tuple{{Node: root, Col: 0}}
 	var t util.Tuple
 
 	for len(queue) > 0 {
@@ -25,11 +25,11 @@ func verticalOrder(root *util.TreeNode) [][]int {
 		}
 
 		if t.Node.Left != nil {
-			queue = append(queue, util.Tuple{t.Node.Left, t.Col - 1})
+			queue = append(queue, util.Tuple{Node: t.Node.Left, Col: t.Col - 1})
 		}
 
 		if t.Node.Right != nil {
-			queue = append(queue, util.Tuple{t.Node.Right, t.Col + 1})
+			queue = append(queue, util.Tuple{Node: t.Node.Right, Col: t.Col + 1})
 		}
 
 		queue = queue[1:]
