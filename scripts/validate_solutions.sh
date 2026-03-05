@@ -19,113 +19,101 @@ cd "${MODULE_DIR}"
 
 has_package_decl() {
   local file="$1"
+  local expected="$2"
   if command -v rg >/dev/null 2>&1; then
-    rg -q '^package solutions$' "${file}"
+    rg -q "^package ${expected}$" "${file}"
   else
-    grep -qE '^package solutions$' "${file}"
+    grep -qE "^package ${expected}$" "${file}"
   fi
 }
 
-unexpected_root_solution_files="$(find . -maxdepth 1 -type f -name 'solution_*.go' | sort)"
-if [[ -n "${unexpected_root_solution_files}" ]]; then
-  echo "Solution files must live under problems/<range>/, not module root:"
-  echo "${unexpected_root_solution_files}"
-  exit 1
-fi
-
-invalid_range_dirs=""
-while IFS= read -r dir; do
-  base="$(basename "${dir}")"
-  if [[ ! "${base}" =~ ^[0-9]{4}-[0-9]{4}$ ]]; then
-    invalid_range_dirs+="${dir}"$'\n'
+# Guardrails for the refactored layout: shared files must live in util/.
+for forbidden_file in \
+  "${MODULE_DIR}/constants.go" \
+  "${MODULE_DIR}/leetcode_shared_libs.go" \
+  "${MODULE_DIR}/types.go"; do
+  if [[ -e "${forbidden_file}" ]]; then
+    echo "Deprecated file found: ${forbidden_file}"
+    echo "Use localhost/leetcode/util/{constants.go,helpers.go,types.go} instead."
+    exit 1
   fi
-done < <(find "${PROBLEMS_DIR}" -mindepth 1 -maxdepth 1 -type d | sort)
-
-if [[ -n "${invalid_range_dirs}" ]]; then
-  echo "Invalid range directory names detected:"
-  printf "%s" "${invalid_range_dirs}"
-  echo "Expected format: problems/0001-0300"
-  exit 1
-fi
-
-if [[ -z "$(find "${PROBLEMS_DIR}" -mindepth 1 -maxdepth 1 -type d)" ]]; then
-  echo "No range directories found in ${PROBLEMS_DIR}"
-  exit 1
-fi
+done
 
 for dir in "${PROBLEMS_DIR}"/*; do
   [[ -d "${dir}" ]] || continue
 
-  if [[ ! -f "${dir}/types.go" || ! -e "${dir}/constants.go" || ! -e "${dir}/leetcode_shared_libs.go" ]]; then
-    echo "Missing required support files in ${dir}"
-    echo "Required: types.go, constants.go, leetcode_shared_libs.go"
+  base="$(basename "${dir}")"
+  if [[ ! "${base}" =~ ^[0-9]{4}-[0-9]{4}$ ]]; then
+    echo "Invalid range directory name: ${dir}"
     exit 1
   fi
 
-  if [[ ! -L "${dir}/constants.go" || ! -L "${dir}/leetcode_shared_libs.go" ]]; then
-    echo "Expected symlinks in ${dir}: constants.go and leetcode_shared_libs.go"
-    echo "They should point to module-level shared files."
+  # Deprecated shared compatibility files/symlinks must not exist at range roots.
+  while IFS= read -r deprecated_range_file; do
+    [[ -n "${deprecated_range_file}" ]] || continue
+    echo "Deprecated shared file in range root: ${deprecated_range_file}"
+    echo "Use shared code from localhost/leetcode/util instead."
+    exit 1
+  done < <(find "${dir}" -maxdepth 1 -type f \( \
+      -name 'constants.go' -o \
+      -name 'types.go' -o \
+      -name 'leetcode_shared_libs.go' \
+    \) | sort)
+
+  # No flat solution files at range root.
+  if find "${dir}" -maxdepth 1 -type f -name 'solution_*.go' | grep -q .; then
+    echo "Solution files must live under problems/<range>/p<id>/"
+    find "${dir}" -maxdepth 1 -type f -name 'solution_*.go' | sort
     exit 1
   fi
 
-  bad_solution_files=""
-  while IFS= read -r f; do
-    name="${f#${dir}/}"
-    if [[ ! "${name}" =~ ^solution_[0-9]+\.go$ ]]; then
-      bad_solution_files+="${f}"$'\n'
+  while IFS= read -r pdir; do
+    [[ -d "${pdir}" ]] || continue
+
+    pbase="$(basename "${pdir}")"
+    if [[ ! "${pbase}" =~ ^p[0-9]+$ ]]; then
+      echo "Invalid problem directory name: ${pdir}"
+      echo "Expected format: p<problem_id>"
+      exit 1
     fi
-  done < <(find "${dir}" -maxdepth 1 -type f -name 'solution_*.go' ! -name 'solution_*_test.go' | sort)
 
-  if [[ -n "${bad_solution_files}" ]]; then
-    echo "Invalid solution file names in ${dir}:"
-    printf "%s" "${bad_solution_files}"
-    echo "Expected pattern: solution_<problem_id>.go"
-    exit 1
-  fi
-
-  bad_test_files=""
-  while IFS= read -r f; do
-    name="${f#${dir}/}"
-    if [[ ! "${name}" =~ ^solution_[0-9]+_test\.go$ ]]; then
-      bad_test_files+="${f}"$'\n'
+    solution_files="$(find "${pdir}" -maxdepth 1 -type f -name 'solution_*.go' ! -name 'solution_*_test.go' | sort)"
+    if [[ -z "${solution_files}" ]]; then
+      echo "Missing required solution file in ${pdir}: solution_<id>.go"
+      exit 1
     fi
-  done < <(find "${dir}" -maxdepth 1 -type f -name 'solution_*_test.go' | sort)
+    if [[ "$(printf "%s\n" "${solution_files}" | wc -l | tr -d ' ')" -ne 1 ]]; then
+      echo "Expected exactly one solution file in ${pdir}, found:"
+      printf "%s\n" "${solution_files}"
+      exit 1
+    fi
 
-  if [[ -n "${bad_test_files}" ]]; then
-    echo "Invalid test file names in ${dir}:"
-    printf "%s" "${bad_test_files}"
-    echo "Expected pattern: solution_<problem_id>_test.go"
-    exit 1
-  fi
-
-  unexpected_go_files="$(
-    find "${dir}" -maxdepth 1 -type f -name '*.go' \
+    # Ensure only solution/test go files exist in the problem dir.
+    unexpected_go_files="$(find "${pdir}" -maxdepth 1 -type f -name '*.go' \
       ! -name 'solution_*.go' \
-      ! -name 'solution_*_test.go' \
-      ! -name 'types.go' \
-      ! -name 'constants.go' \
-      ! -name 'leetcode_shared_libs.go' \
-    | sort
-  )"
-  if [[ -n "${unexpected_go_files}" ]]; then
-    echo "Unexpected Go files in ${dir}:"
-    echo "${unexpected_go_files}"
-    exit 1
-  fi
-
-  invalid_package_files=""
-  while IFS= read -r go_file; do
-    if ! has_package_decl "${go_file}"; then
-      invalid_package_files+="${go_file}"$'\n'
+      ! -name 'solution_*_test.go' | sort)"
+    if [[ -n "${unexpected_go_files}" ]]; then
+      echo "Unexpected Go files in ${pdir}:"
+      echo "${unexpected_go_files}"
+      echo "Expected only solution_<id>.go and optional solution_<id>_test.go"
+      exit 1
     fi
-  done < <(find "${dir}" -maxdepth 1 -type f -name '*.go' | sort)
 
-  if [[ -n "${invalid_package_files}" ]]; then
-    echo "Files with non-standard package declaration in ${dir}:"
-    printf "%s" "${invalid_package_files}"
-    echo "Expected: package solutions"
-    exit 1
-  fi
+    # Ensure package name matches directory.
+    invalid_package_files=""
+    while IFS= read -r go_file; do
+      if ! has_package_decl "${go_file}" "${pbase}"; then
+        invalid_package_files+="${go_file}"$'\n'
+      fi
+    done < <(find "${pdir}" -maxdepth 1 -type f -name '*.go' | sort)
+
+    if [[ -n "${invalid_package_files}" ]]; then
+      echo "Files with wrong package declaration in ${pdir}:"
+      printf "%s" "${invalid_package_files}"
+      echo "Expected: package ${pbase}"
+      exit 1
+    fi
+  done < <(find "${dir}" -mindepth 1 -maxdepth 1 -type d | sort)
 done
 
 echo "Solution structure validation passed."

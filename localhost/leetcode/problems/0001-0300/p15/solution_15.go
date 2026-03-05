@@ -1,0 +1,39 @@
+package p15
+
+import (
+	"localhost/leetcode/util"
+	"sort"
+)
+
+func threeSum(nums []int) [][]int {
+	res := make(map[util.Tuple3]struct{})
+	dups := make(map[int]struct{})
+	seen := make(map[int]int)
+	n := len(nums)
+	for i := 0; i < n; i++ {
+		if _, ok := dups[nums[i]]; !ok {
+			dups[nums[i]] = struct{}{}
+			for j := i + 1; j < n; j++ {
+				s := (nums[i] + nums[j]) * -1
+				if val, ok := seen[s]; ok {
+					if val == i {
+						ints := []int{nums[i], nums[j], s}
+						sort.Ints(ints)
+						ans := util.Tuple3{Num1: ints[0], Num2: ints[1], Num3: ints[2]}
+						res[ans] = struct{}{}
+					}
+				}
+				seen[nums[j]] = i
+			}
+		}
+	}
+
+	ans := make([][]int, len(res))
+	i := 0
+	for k, _ := range res {
+		ans[i] = []int{k.Num1, k.Num2, k.Num3}
+		i += 1
+	}
+
+	return ans
+}
