@@ -27,6 +27,18 @@ has_package_decl() {
   fi
 }
 
+# Guardrails for the refactored layout: shared files must live in util/.
+for forbidden_file in \
+  "${MODULE_DIR}/constants.go" \
+  "${MODULE_DIR}/leetcode_shared_libs.go" \
+  "${MODULE_DIR}/types.go"; do
+  if [[ -e "${forbidden_file}" ]]; then
+    echo "Deprecated file found: ${forbidden_file}"
+    echo "Use localhost/leetcode/util/{constants.go,helpers.go,types.go} instead."
+    exit 1
+  fi
+done
+
 for dir in "${PROBLEMS_DIR}"/*; do
   [[ -d "${dir}" ]] || continue
 
@@ -35,6 +47,18 @@ for dir in "${PROBLEMS_DIR}"/*; do
     echo "Invalid range directory name: ${dir}"
     exit 1
   fi
+
+  # Deprecated shared compatibility files/symlinks must not exist at range roots.
+  while IFS= read -r deprecated_range_file; do
+    [[ -n "${deprecated_range_file}" ]] || continue
+    echo "Deprecated shared file in range root: ${deprecated_range_file}"
+    echo "Use shared code from localhost/leetcode/util instead."
+    exit 1
+  done < <(find "${dir}" -maxdepth 1 -type f \( \
+      -name 'constants.go' -o \
+      -name 'types.go' -o \
+      -name 'leetcode_shared_libs.go' \
+    \) | sort)
 
   # No flat solution files at range root.
   if find "${dir}" -maxdepth 1 -type f -name 'solution_*.go' | grep -q .; then

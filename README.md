@@ -6,27 +6,26 @@ Repository for practicing LeetCode problems in Go with standardized structure, C
 
 - `localhost/leetcode/`: Go module root.
 - `localhost/leetcode/problems/<0001-0300>/`: range folders (300 problems each).
-- `localhost/leetcode/problems/<range>/solution_<id>.go`: solution implementation.
-- `localhost/leetcode/problems/<range>/solution_<id>_test.go`: solution tests.
-- `localhost/leetcode/constants.go`: canonical shared constants file.
-- `localhost/leetcode/leetcode_shared_libs.go`: canonical shared helper functions.
-- `localhost/leetcode/problems/<range>/constants.go`: symlink to `../../constants.go`.
-- `localhost/leetcode/problems/<range>/leetcode_shared_libs.go`: symlink to `../../leetcode_shared_libs.go`.
-- `localhost/leetcode/problems/<range>/types.go`: range-local compatibility types.
+- `localhost/leetcode/problems/<range>/p<id>/solution_<id>.go`: solution implementation.
+- `localhost/leetcode/problems/<range>/p<id>/solution_<id>_test.go`: solution tests.
+- `localhost/leetcode/util/constants.go`: shared constants.
+- `localhost/leetcode/util/helpers.go`: shared helper functions.
+- `localhost/leetcode/util/types.go`: shared types.
 - `.github/workflows/ci.yml`: CI pipeline.
 - `scripts/new_solution.sh`: Creates standardized solution stubs.
-- `scripts/validate_solutions.sh`: Validates layout, naming, package conventions, and shared-file symlinks.
+- `scripts/validate_solutions.sh`: Validates per-problem layout and package conventions.
 - `.pre-commit-config.yaml`: Local pre-commit checks.
 
 ## Conventions
 
 - Go version: `1.26` (`go.mod` + `go.work`).
-- Each solution lives in a range folder:
-  - `localhost/leetcode/problems/<range>/solution_<problem_id>.go`
-- Each test lives alongside the solution:
-  - `localhost/leetcode/problems/<range>/solution_<problem_id>_test.go`
-- File package must be `solutions`.
-- Shared constants/helpers are single-source at module root and symlinked into each range folder.
+- Each solution lives in:
+  - `localhost/leetcode/problems/<range>/p<problem_id>/solution_<problem_id>.go`
+- Each test lives alongside the solution in the same `p<problem_id>` directory.
+- Package name must match the problem directory:
+  - directory `p382` uses `package p382`
+- Shared helpers/types/constants live under:
+  - `localhost/leetcode/util`
 
 ## Local Commands
 
@@ -72,6 +71,6 @@ For this repo, "CD" is continuous delivery of quality gates to `main` (no deploy
 
 ## Workflow Notes
 
-- CI uses Go from `localhost/leetcode/go.mod` (currently `1.26`).
+- CI pins Go to `1.26.x` in `.github/workflows/ci.yml`.
 - Lint workflow uses `golangci-lint-action@v9` with `golangci-lint v2`.
-- `scripts/validate_solutions.sh` supports both `rg` and `grep` so it works on runners without `ripgrep`.
+- `scripts/validate_solutions.sh` supports both `rg` and `grep`, so it works on runners without `ripgrep`.
