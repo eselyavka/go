@@ -1,0 +1,18 @@
+package p2436
+
+import "github.com/eseliavka/go/util"
+
+func minimumSplits(nums []int) int {
+	n := len(nums)
+	ans := 1
+	curr := nums[0]
+
+	for i := 1; i < n; i++ {
+		curr = util.GCD(curr, nums[i])
+		if curr == 1 {
+			curr = nums[i]
+			ans++
+		}
+	}
+	return ans
+}

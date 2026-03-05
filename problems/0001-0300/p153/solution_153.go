@@ -1,0 +1,13 @@
+package p153
+
+import "github.com/eseliavka/go/util"
+
+func findMin(nums []int) int {
+	n := len(nums)
+
+	if n == 1 {
+		return nums[0]
+	}
+
+	return util.BinarySearchMin(0, n-1, nums)
+}

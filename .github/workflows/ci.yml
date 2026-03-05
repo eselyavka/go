@@ -25,7 +25,7 @@ jobs:
         with:
           go-version: '1.26.x'
           cache-dependency-path: |
-            localhost/leetcode/go.sum
+            go.sum
 
       - name: Verify format and tests
         run: make verify
@@ -44,12 +44,11 @@ jobs:
         with:
           go-version: '1.26.x'
           cache-dependency-path: |
-            localhost/leetcode/go.sum
+            go.sum
 
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v9
         with:
           version: v2.8.0
           install-mode: goinstall
-          working-directory: localhost/leetcode
           args: --timeout=5m

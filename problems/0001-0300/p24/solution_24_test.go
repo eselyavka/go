@@ -1,0 +1,27 @@
+package p24
+
+import (
+	"github.com/eseliavka/go/util"
+	"github.com/stretchr/testify/assert"
+	"sort"
+	"strings"
+	"testing"
+)
+
+var (
+	_ = sort.Strings
+	_ = strings.Join
+)
+
+func TestSolution24(t *testing.T) {
+	assert := assert.New(t)
+	l := util.InitLinkedList([]int{1, 2, 3, 4})
+	root := swapPairs(l)
+	actual := make([]int, 0)
+	for root != nil {
+		actual = append(actual, root.Val)
+		root = root.Next
+	}
+
+	assert.Equal([]int{2, 1, 4, 3}, actual, "Solution24")
+}

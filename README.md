@@ -4,13 +4,13 @@ Repository for practicing LeetCode problems in Go with standardized structure, C
 
 ## Structure
 
-- `localhost/leetcode/`: Go module root.
-- `localhost/leetcode/problems/<0001-0300>/`: range folders (300 problems each).
-- `localhost/leetcode/problems/<range>/p<id>/solution_<id>.go`: solution implementation.
-- `localhost/leetcode/problems/<range>/p<id>/solution_<id>_test.go`: solution tests.
-- `localhost/leetcode/util/constants.go`: shared constants.
-- `localhost/leetcode/util/helpers.go`: shared helper functions.
-- `localhost/leetcode/util/types.go`: shared types.
+- repo root: Go module root.
+- `problems/<0001-0300>/`: range folders (300 problems each).
+- `problems/<range>/p<id>/solution_<id>.go`: solution implementation.
+- `problems/<range>/p<id>/solution_<id>_test.go`: solution tests.
+- `util/constants.go`: shared constants.
+- `util/helpers.go`: shared helper functions.
+- `util/types.go`: shared types.
 - `.github/workflows/ci.yml`: CI pipeline.
 - `scripts/new_solution.sh`: Creates standardized solution stubs.
 - `scripts/validate_solutions.sh`: Validates per-problem layout and package conventions.
@@ -18,14 +18,14 @@ Repository for practicing LeetCode problems in Go with standardized structure, C
 
 ## Conventions
 
-- Go version: `1.26` (`go.mod` + `go.work`).
+- Go version: `1.26` (`go.mod`).
 - Each solution lives in:
-  - `localhost/leetcode/problems/<range>/p<problem_id>/solution_<problem_id>.go`
+  - `problems/<range>/p<problem_id>/solution_<problem_id>.go`
 - Each test lives alongside the solution in the same `p<problem_id>` directory.
 - Package name must match the problem directory:
   - directory `p382` uses `package p382`
 - Shared helpers/types/constants live under:
-  - `localhost/leetcode/util`
+  - `util`
 
 ## Local Commands
 
