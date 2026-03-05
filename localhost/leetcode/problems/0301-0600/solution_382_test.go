@@ -19,12 +19,14 @@ func TestSolution382(t *testing.T) {
 	head := initLinkedList([]int{1, 2, 3})
 	actual := Constructor_382(head)
 
-	exists := false
-	for _, num := range []int{1, 2, 3} {
-		if num == actual.GetRandom() {
-			exists = true
-		}
+	allowed := map[int]struct{}{
+		1: {},
+		2: {},
+		3: {},
 	}
 
-	assert.True(exists, "Solution382")
+	for i := 0; i < 50; i++ {
+		_, ok := allowed[actual.GetRandom()]
+		assert.True(ok, "Solution382")
+	}
 }
