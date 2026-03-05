@@ -6,7 +6,7 @@ import (
 	"sort"
 )
 
-func minOperations_2033(grid [][]int, x int) int {
+func minOperations(grid [][]int, x int) int {
 	flattenArr := util.Flatten2DArray(grid)
 	rem := flattenArr[0] % x
 

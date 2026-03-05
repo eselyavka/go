@@ -2,7 +2,7 @@ package p1448
 
 import "localhost/leetcode/util"
 
-func rec_1448(root *util.TreeNode, max int) int {
+func rec(root *util.TreeNode, max int) int {
 	if root == nil {
 		return 0
 	}
@@ -15,9 +15,9 @@ func rec_1448(root *util.TreeNode, max int) int {
 		is_good = 0
 	}
 
-	return is_good + rec_1448(root.Left, util.MaxInts([]int{max, root.Val})) + rec_1448(root.Right, util.MaxInts([]int{max, root.Val}))
+	return is_good + rec(root.Left, util.MaxInts([]int{max, root.Val})) + rec(root.Right, util.MaxInts([]int{max, root.Val}))
 }
 
 func goodNodes(root *util.TreeNode) int {
-	return rec_1448(root, root.Val)
+	return rec(root, root.Val)
 }

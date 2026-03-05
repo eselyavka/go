@@ -48,7 +48,7 @@ class Solution(object):
         return ans
 */
 
-func binary_search_410(target int, nums []int, k int) bool {
+func binary_search(target int, nums []int, k int) bool {
 	cnt := 1
 	sub_sum := 0
 
@@ -79,7 +79,7 @@ func splitArray(nums []int, k int) int {
 	ans := 0
 	for start <= end {
 		mid := (start + end) / 2
-		if binary_search_410(mid, nums, k) {
+		if binary_search(mid, nums, k) {
 			ans = mid
 			end = mid - 1
 		} else {

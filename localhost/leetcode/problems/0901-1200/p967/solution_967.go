@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func rec_967(i, k, n int, acc []string, ans map[string]struct{}) {
+func rec(i, k, n int, acc []string, ans map[string]struct{}) {
 	if len(acc) == n {
 		ans[strings.Join(acc, "")] = struct{}{}
 		return
@@ -17,14 +17,14 @@ func rec_967(i, k, n int, acc []string, ans map[string]struct{}) {
 
 	acc = append(acc, strconv.Itoa(i))
 
-	rec_967(i+k, k, n, acc, ans)
-	rec_967(i-k, k, n, acc, ans)
+	rec(i+k, k, n, acc, ans)
+	rec(i-k, k, n, acc, ans)
 }
 func numsSameConsecDiff(n int, k int) []int {
 	buf := make(map[string]struct{})
 	acc := make([]string, 0)
 	for i := 1; i < 10; i++ {
-		rec_967(i, k, n, acc, buf)
+		rec(i, k, n, acc, buf)
 	}
 
 	ans := make([]int, 0)

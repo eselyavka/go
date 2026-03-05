@@ -10,7 +10,7 @@ type Solution struct {
 	length int
 }
 
-func Constructor_382(head *util.ListNode) Solution {
+func Constructor(head *util.ListNode) Solution {
 	it := head
 	length := 0
 	for it != nil {

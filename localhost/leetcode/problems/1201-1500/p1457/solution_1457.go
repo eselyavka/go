@@ -4,10 +4,10 @@ import "localhost/leetcode/util"
 
 func pseudoPalindromicPaths(root *util.TreeNode) int {
 	s := make(map[int]struct{})
-	res := rec_1457(root, s)
+	res := rec(root, s)
 	return res
 }
-func rec_1457(root *util.TreeNode, s map[int]struct{}) int {
+func rec(root *util.TreeNode, s map[int]struct{}) int {
 	if root == nil {
 		return 0
 	}
@@ -28,7 +28,7 @@ func rec_1457(root *util.TreeNode, s map[int]struct{}) int {
 			res = 0
 		}
 	} else {
-		res = res + rec_1457(root.Left, s) + rec_1457(root.Right, s)
+		res = res + rec(root.Left, s) + rec(root.Right, s)
 	}
 
 	_, prs = s[root.Val]

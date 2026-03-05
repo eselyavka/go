@@ -2,7 +2,7 @@ package p235
 
 import "localhost/leetcode/util"
 
-func dfs_235(root, node *util.TreeNode, path *[]*util.TreeNode) bool {
+func dfs(root, node *util.TreeNode, path *[]*util.TreeNode) bool {
 	if root == nil {
 		return false
 	}
@@ -13,7 +13,7 @@ func dfs_235(root, node *util.TreeNode, path *[]*util.TreeNode) bool {
 		return true
 	}
 
-	if dfs_235(root.Left, node, path) || dfs_235(root.Right, node, path) {
+	if dfs(root.Left, node, path) || dfs(root.Right, node, path) {
 		return true
 	}
 
@@ -25,8 +25,8 @@ func dfs_235(root, node *util.TreeNode, path *[]*util.TreeNode) bool {
 func lowestCommonAncestorTreeNode(root, p, q *util.TreeNode) *util.TreeNode {
 	p_to_p := make([]*util.TreeNode, 0)
 	p_to_q := make([]*util.TreeNode, 0)
-	_ = dfs_235(root, p, &p_to_p)
-	_ = dfs_235(root, q, &p_to_q)
+	_ = dfs(root, p, &p_to_p)
+	_ = dfs(root, q, &p_to_q)
 
 	for j := len(p_to_p) - 1; j >= 0; j-- {
 		for l := len(p_to_q) - 1; l >= 0; l-- {

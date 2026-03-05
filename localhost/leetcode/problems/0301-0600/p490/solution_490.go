@@ -2,7 +2,7 @@ package p490
 
 import "localhost/leetcode/util"
 
-func dfs_409(maze [][]int, visited [][]bool, pos []int, dest []int) bool {
+func dfs(maze [][]int, visited [][]bool, pos []int, dest []int) bool {
 	if visited[pos[0]][pos[1]] {
 		return false
 	}
@@ -21,28 +21,28 @@ func dfs_409(maze [][]int, visited [][]bool, pos []int, dest []int) bool {
 	for r < len(maze[0]) && maze[pos[0]][r] == 0 {
 		r++
 	}
-	if dfs_409(maze, visited, []int{pos[0], r - 1}, dest) {
+	if dfs(maze, visited, []int{pos[0], r - 1}, dest) {
 		return true
 	}
 
 	for l >= 0 && maze[pos[0]][l] == 0 {
 		l--
 	}
-	if dfs_409(maze, visited, []int{pos[0], l + 1}, dest) {
+	if dfs(maze, visited, []int{pos[0], l + 1}, dest) {
 		return true
 	}
 
 	for u < len(maze) && maze[u][pos[1]] == 0 {
 		u++
 	}
-	if dfs_409(maze, visited, []int{u - 1, pos[1]}, dest) {
+	if dfs(maze, visited, []int{u - 1, pos[1]}, dest) {
 		return true
 	}
 
 	for d >= 0 && maze[d][pos[1]] == 0 {
 		d--
 	}
-	if dfs_409(maze, visited, []int{d + 1, pos[1]}, dest) {
+	if dfs(maze, visited, []int{d + 1, pos[1]}, dest) {
 		return true
 	}
 
@@ -60,5 +60,5 @@ func hasPath(maze [][]int, start []int, destination []int) bool {
 		visited[i] = vector
 	}
 
-	return dfs_409(maze, visited, start, destination)
+	return dfs(maze, visited, start, destination)
 }

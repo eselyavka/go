@@ -15,7 +15,7 @@ var (
 
 func TestSolution2408(t *testing.T) {
 	assert := assert.New(t)
-	actual := Constructor_2408([]string{"one", "two", "three"}, []int{2, 3, 1})
+	actual := Constructor([]string{"one", "two", "three"}, []int{2, 3, 1})
 	actual.InsertRow("two", []string{"first", "second", "third"})
 	assert.Equal("third", actual.SelectCell("two", 1, 3), "Solution2408")
 	actual.InsertRow("two", []string{"fourth", "fifth", "sixth"})

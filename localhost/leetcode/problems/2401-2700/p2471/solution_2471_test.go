@@ -25,6 +25,6 @@ func TestSolution2471(t *testing.T) {
 	root.Right.Right = &util.TreeNode{Val: 5, Left: nil, Right: nil}
 	root.Right.Right.Left = &util.TreeNode{Val: 10, Left: nil, Right: nil}
 
-	actual := minimumOperations_2471(&root)
+	actual := minimumOperations(&root)
 	assert.Equal(actual, 3, "Solution2471")
 }

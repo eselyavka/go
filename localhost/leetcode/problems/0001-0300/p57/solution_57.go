@@ -2,7 +2,7 @@ package p57
 
 import "localhost/leetcode/util"
 
-func binary_search_57(intervals [][]int, newInterval []int) int {
+func binary_search(intervals [][]int, newInterval []int) int {
 	left := 0
 	right := len(intervals) - 1
 	var mid int
@@ -22,12 +22,12 @@ func binary_search_57(intervals [][]int, newInterval []int) int {
 	return right + 1
 }
 
-func insert_57(intervals [][]int, newInterval []int) [][]int {
+func insert(intervals [][]int, newInterval []int) [][]int {
 	if len(intervals) == 0 {
 		return [][]int{newInterval}
 	}
 
-	idx := binary_search_57(intervals, newInterval)
+	idx := binary_search(intervals, newInterval)
 
 	unmerged_intevals := make([][]int, 0)
 

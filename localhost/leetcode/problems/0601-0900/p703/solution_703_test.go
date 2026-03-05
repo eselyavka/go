@@ -15,7 +15,7 @@ var (
 
 func TestSolution703(t *testing.T) {
 	assert := assert.New(t)
-	actual := Constructor_703(3, []int{4, 5, 8, 2})
+	actual := Constructor(3, []int{4, 5, 8, 2})
 	assert.Equal(actual.Add(3), 4, "Solution703")
 	assert.Equal(actual.Add(5), 5, "Solution703")
 	assert.Equal(actual.Add(10), 5, "Solution703")

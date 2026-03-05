@@ -2,7 +2,7 @@ package p2654
 
 import "localhost/leetcode/util"
 
-func minOperations_2654(nums []int) int {
+func minOperations(nums []int) int {
 	n := len(nums)
 
 	ones := 0

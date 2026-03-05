@@ -17,7 +17,7 @@ func TestSolution382(t *testing.T) {
 	assert := assert.New(t)
 
 	head := util.InitLinkedList([]int{1, 2, 3})
-	actual := Constructor_382(head)
+	actual := Constructor(head)
 
 	allowed := map[int]struct{}{
 		1: {},

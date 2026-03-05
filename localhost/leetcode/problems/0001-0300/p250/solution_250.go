@@ -2,13 +2,13 @@ package p250
 
 import "localhost/leetcode/util"
 
-func rec_250(node *util.TreeNode, cnt *int) bool {
+func rec(node *util.TreeNode, cnt *int) bool {
 	if node == nil {
 		return true
 	}
 
-	left := rec_250(node.Left, cnt)
-	right := rec_250(node.Right, cnt)
+	left := rec(node.Left, cnt)
+	right := rec(node.Right, cnt)
 
 	if !left || !right {
 		return false
@@ -29,7 +29,7 @@ func rec_250(node *util.TreeNode, cnt *int) bool {
 }
 func countUnivalSubtrees(root *util.TreeNode) int {
 	cnt := 0
-	rec_250(root, &cnt)
+	rec(root, &cnt)
 
 	return cnt
 }

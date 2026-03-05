@@ -2,7 +2,7 @@ package p40
 
 import "sort"
 
-func backtracking_40(local_ans, candidates []int, pos, remain int, ans *[][]int) {
+func backtracking(local_ans, candidates []int, pos, remain int, ans *[][]int) {
 	if remain < 0 {
 		return
 	}
@@ -21,7 +21,7 @@ func backtracking_40(local_ans, candidates []int, pos, remain int, ans *[][]int)
 		}
 
 		local_ans = append(local_ans, candidates[i])
-		backtracking_40(local_ans, candidates, i+1, remain-candidates[i], ans)
+		backtracking(local_ans, candidates, i+1, remain-candidates[i], ans)
 		local_ans = local_ans[:len(local_ans)-1]
 
 		prev = candidates[i]
@@ -34,7 +34,7 @@ func combinationSum2(candidates []int, target int) [][]int {
 
 	sort.Ints(candidates)
 
-	backtracking_40(local_ans, candidates, 0, target, &ans)
+	backtracking(local_ans, candidates, 0, target, &ans)
 
 	return ans
 }

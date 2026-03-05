@@ -1,6 +1,6 @@
 package p3396
 
-func minimumOperations_3396(nums []int) int {
+func minimumOperations(nums []int) int {
 	n := len(nums)
 	operations := 0
 	i := 0

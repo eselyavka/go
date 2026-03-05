@@ -7,7 +7,7 @@ type MinStack struct {
 	min   []int
 }
 
-func Constructor_155() MinStack {
+func Constructor() MinStack {
 	obj := MinStack{stack: make([]int, 0), min: make([]int, 0)}
 
 	return obj

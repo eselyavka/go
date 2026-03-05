@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func rec_257(node *util.TreeNode, path *[]string, res *[]string) {
+func rec(node *util.TreeNode, path *[]string, res *[]string) {
 	if node == nil {
 		return
 	}
@@ -17,8 +17,8 @@ func rec_257(node *util.TreeNode, path *[]string, res *[]string) {
 		*res = append(*res, strings.Join(*path, "->"))
 	}
 
-	rec_257(node.Left, path, res)
-	rec_257(node.Right, path, res)
+	rec(node.Left, path, res)
+	rec(node.Right, path, res)
 
 	n := len(*path) - 1
 	*path = (*path)[:n]
@@ -28,7 +28,7 @@ func binaryTreePaths(root *util.TreeNode) []string {
 	path := make([]string, 0)
 	res := make([]string, 0)
 
-	rec_257(root, &path, &res)
+	rec(root, &path, &res)
 
 	return res
 }
