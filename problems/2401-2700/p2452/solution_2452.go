@@ -1,34 +1,27 @@
 package p2452
 
-func compare(s1, s2 string) int {
-	i := 0
+func withinTwo(s1, s2 string) bool {
 	edits := 0
-	for i < len(s1) {
+	for i := 0; i < len(s1); i++ {
 		if s1[i] != s2[i] {
 			edits++
 			if edits > 2 {
-				return -1
+				return false
 			}
 		}
-		i++
 	}
 
-	return edits
+	return true
 }
 
 func twoEditWords(queries []string, dictionary []string) []string {
 	ans := make([]string, 0)
-	var flag bool
-	for _, q := range queries {
-		flag = false
-		for _, d := range dictionary {
-			q_cmp := compare(q, d)
-			if q_cmp >= 0 {
-				flag = true
+	for _, query := range queries {
+		for _, word := range dictionary {
+			if withinTwo(query, word) {
+				ans = append(ans, query)
+				break
 			}
-		}
-		if flag {
-			ans = append(ans, q)
 		}
 	}
 	return ans
