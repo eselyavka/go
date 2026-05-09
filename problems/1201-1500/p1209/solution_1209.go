@@ -1,6 +1,9 @@
 package p1209
 
-import "github.com/eseliavka/go/util"
+type charCount struct {
+	char  uint8
+	count int
+}
 
 /*
 class Solution(object):
@@ -36,19 +39,19 @@ func removeDuplicatesString(s string, k int) string {
 		return s
 	}
 
-	stack := make([]util.TupleChar, 0)
+	stack := make([]charCount, 0)
 
 	i := 0
 
 	for i < len(s) {
-		if len(stack) > 0 && s[i] == stack[len(stack)-1].C {
+		if len(stack) > 0 && s[i] == stack[len(stack)-1].char {
 			node := stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
-			if node.Num < k-1 {
-				stack = append(stack, util.TupleChar{C: node.C, Num: node.Num + 1})
+			if node.count < k-1 {
+				stack = append(stack, charCount{char: node.char, count: node.count + 1})
 			}
 		} else {
-			stack = append(stack, util.TupleChar{C: s[i], Num: 1})
+			stack = append(stack, charCount{char: s[i], count: 1})
 		}
 
 		i++
@@ -56,8 +59,8 @@ func removeDuplicatesString(s string, k int) string {
 
 	ans := ""
 	for _, node := range stack {
-		for i := 0; i < node.Num; i++ {
-			ans += string(node.C)
+		for i := 0; i < node.count; i++ {
+			ans += string(node.char)
 		}
 	}
 

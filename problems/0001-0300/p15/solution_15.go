@@ -1,12 +1,17 @@
 package p15
 
 import (
-	"github.com/eseliavka/go/util"
 	"sort"
 )
 
+type triplet struct {
+	num1 int
+	num2 int
+	num3 int
+}
+
 func threeSum(nums []int) [][]int {
-	res := make(map[util.Tuple3]struct{})
+	res := make(map[triplet]struct{})
 	dups := make(map[int]struct{})
 	seen := make(map[int]int)
 	n := len(nums)
@@ -19,7 +24,7 @@ func threeSum(nums []int) [][]int {
 					if val == i {
 						ints := []int{nums[i], nums[j], s}
 						sort.Ints(ints)
-						ans := util.Tuple3{Num1: ints[0], Num2: ints[1], Num3: ints[2]}
+						ans := triplet{num1: ints[0], num2: ints[1], num3: ints[2]}
 						res[ans] = struct{}{}
 					}
 				}
@@ -31,7 +36,7 @@ func threeSum(nums []int) [][]int {
 	ans := make([][]int, len(res))
 	i := 0
 	for k, _ := range res {
-		ans[i] = []int{k.Num1, k.Num2, k.Num3}
+		ans[i] = []int{k.num1, k.num2, k.num3}
 		i += 1
 	}
 

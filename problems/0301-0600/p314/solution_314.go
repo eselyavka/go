@@ -5,6 +5,11 @@ import (
 	"sort"
 )
 
+type columnNode struct {
+	node *util.TreeNode
+	col  int
+}
+
 func verticalOrder(root *util.TreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
@@ -12,24 +17,24 @@ func verticalOrder(root *util.TreeNode) [][]int {
 
 	d := make(map[int][]int)
 
-	queue := []util.Tuple{{Node: root, Col: 0}}
-	var t util.Tuple
+	queue := []columnNode{{node: root, col: 0}}
+	var t columnNode
 
 	for len(queue) > 0 {
 		t = queue[0]
 
-		if _, ok := d[t.Col]; ok {
-			d[t.Col] = append(d[t.Col], t.Node.Val)
+		if _, ok := d[t.col]; ok {
+			d[t.col] = append(d[t.col], t.node.Val)
 		} else {
-			d[t.Col] = []int{t.Node.Val}
+			d[t.col] = []int{t.node.Val}
 		}
 
-		if t.Node.Left != nil {
-			queue = append(queue, util.Tuple{Node: t.Node.Left, Col: t.Col - 1})
+		if t.node.Left != nil {
+			queue = append(queue, columnNode{node: t.node.Left, col: t.col - 1})
 		}
 
-		if t.Node.Right != nil {
-			queue = append(queue, util.Tuple{Node: t.Node.Right, Col: t.Col + 1})
+		if t.node.Right != nil {
+			queue = append(queue, columnNode{node: t.node.Right, col: t.col + 1})
 		}
 
 		queue = queue[1:]
