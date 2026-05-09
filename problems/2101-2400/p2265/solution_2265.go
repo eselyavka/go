@@ -2,18 +2,23 @@ package p2265
 
 import "github.com/eseliavka/go/util"
 
-func subtree(node *util.TreeNode) util.Tuple4 {
+type subtreeStats struct {
+	count int
+	sum   int
+}
+
+func subtree(node *util.TreeNode) subtreeStats {
 	if node == nil {
-		return util.Tuple4{Count: 0, Sum: 0}
+		return subtreeStats{count: 0, sum: 0}
 	}
 
 	t_left := subtree(node.Left)
 	t_right := subtree(node.Right)
 
-	c := t_left.Count + t_right.Count
-	s := t_left.Sum + t_right.Sum
+	c := t_left.count + t_right.count
+	s := t_left.sum + t_right.sum
 
-	return util.Tuple4{Count: 1 + c, Sum: node.Val + s}
+	return subtreeStats{count: 1 + c, sum: node.Val + s}
 }
 
 func averageOfSubtree(root *util.TreeNode) int {
@@ -36,7 +41,7 @@ func averageOfSubtree(root *util.TreeNode) int {
 
 		t_s_c := subtree(node)
 
-		if node.Val == t_s_c.Sum/t_s_c.Count {
+		if node.Val == t_s_c.sum/t_s_c.count {
 			ans++
 		}
 	}

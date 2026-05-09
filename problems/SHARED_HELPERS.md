@@ -10,8 +10,7 @@ Defined in `util/types.go`:
 - `ListNode`
 - `Node`
 - `NodeNext`
-- `SparseVector`
-- `PickIdx`
+- `TupleInt`
 
 ## Global Constants
 

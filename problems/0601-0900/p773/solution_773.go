@@ -2,6 +2,11 @@ package p773
 
 import "github.com/eseliavka/go/util"
 
+type boardState struct {
+	steps int
+	board [][]int
+}
+
 func slidingPuzzle(board [][]int) int {
 	m := len(board)
 	n := len(board[0])
@@ -25,7 +30,7 @@ func slidingPuzzle(board [][]int) int {
 		return 0
 	}
 
-	queue := []util.Tuple5{{Steps: 0, Board: board}}
+	queue := []boardState{{steps: 0, board: board}}
 	seen := make(map[string]struct{})
 	seen[util.TwoDSliceToString(board)] = struct{}{}
 
@@ -34,24 +39,24 @@ func slidingPuzzle(board [][]int) int {
 		for cnt > 0 {
 			item := queue[0]
 			queue = queue[1:]
-			if valid(item.Board) {
-				return item.Steps
+			if valid(item.board) {
+				return item.steps
 			}
-			currIdx := findZero(item.Board)
+			currIdx := findZero(item.board)
 			for _, d := range [][]int{{0, 1}, {0, -1}, {1, 0}, {-1, 0}} {
 				dx := currIdx.Row + d[0]
 				dy := currIdx.Col + d[1]
 				if 0 <= dx && dx < m && 0 <= dy && dy < n {
-					newItem := util.Copy2DArray(item.Board)
+					newItem := util.Copy2DArray(item.board)
 					tmp := newItem[currIdx.Row][currIdx.Col]
 					newItem[currIdx.Row][currIdx.Col] = newItem[dx][dy]
 					newItem[dx][dy] = tmp
 					newItemTuple := util.TwoDSliceToString(newItem)
 					if _, ok := seen[newItemTuple]; !ok {
 						seen[newItemTuple] = struct{}{}
-						queue = append(queue, util.Tuple5{
-							Steps: item.Steps + 1,
-							Board: newItem,
+						queue = append(queue, boardState{
+							steps: item.steps + 1,
+							board: newItem,
 						})
 					}
 				}
