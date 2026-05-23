@@ -31,3 +31,42 @@ func findDiagonalOrder(mat [][]int) []int {
 
 	return res
 }
+
+func findDiagonalOrder2(mat [][]int) []int {
+	rows := len(mat)
+	cols := len(mat[0])
+	res := make([]int, 0, rows*cols)
+	row := 0
+	col := 0
+	direction := 1
+
+	for i := 0; i < rows*cols; i++ {
+		res = append(res, mat[row][col])
+
+		if direction == 1 {
+			if col == cols-1 {
+				row++
+				direction = -1
+			} else if row == 0 {
+				col++
+				direction = -1
+			} else {
+				row--
+				col++
+			}
+		} else {
+			if row == rows-1 {
+				col++
+				direction = 1
+			} else if col == 0 {
+				row++
+				direction = 1
+			} else {
+				row++
+				col--
+			}
+		}
+	}
+
+	return res
+}
